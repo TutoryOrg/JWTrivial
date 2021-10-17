@@ -1,6 +1,23 @@
 # JWTrivial
 Jw Trival Game made with React Native
 
+# To Run The App 
+
+After cloning the repository...
+
+```
+cd jwgame
+```
+```
+npm install
+```
+```
+npx run start
+```
+```
+npx run android
+```
+
 ## Progres.
 
 Idea. 
