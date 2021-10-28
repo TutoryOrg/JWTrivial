@@ -8,8 +8,10 @@ Jw Trival Game made with React Native
 ![image](https://user-images.githubusercontent.com/66746179/139348995-2276b82f-d4eb-4203-b468-6300981eec1e.png)
 
 ## Stack and Data
-![links](https://docs.google.com/drawings/d/1EJM08WkckPTJwnE2PnWPWmKxUk999Nm0U1iF1AcIBGo/edit?usp=sharing)
 https://docs.google.com/drawings/d/1EJM08WkckPTJwnE2PnWPWmKxUk999Nm0U1iF1AcIBGo/edit?usp=sharing
+
+![Screenshot from 2021-10-29 01-51-10](https://user-images.githubusercontent.com/66746179/139351460-bf389098-e4a7-4459-8ba0-511621d72d4b.png)
+
 
 # To Run The App 
 
