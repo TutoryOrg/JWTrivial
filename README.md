@@ -1,6 +1,12 @@
 # JWTrivial
 Jw Trival Game made with React Native
 
+## Figma Design
+
+https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1
+
+
+
 # To Run The App 
 
 After cloning the repository...
