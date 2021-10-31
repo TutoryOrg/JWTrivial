@@ -5,7 +5,8 @@ Jw Trival Game made with React Native
 
 https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1
 
-![image](https://user-images.githubusercontent.com/66746179/139348995-2276b82f-d4eb-4203-b468-6300981eec1e.png)
+![Screenshot 2021-10-31 at 12 54 42](https://user-images.githubusercontent.com/66746179/139581827-3cdad3f1-6d81-497d-ad7f-a0b30f99acff.png)
+
 
 ## Stack and Data
 https://docs.google.com/drawings/d/1EJM08WkckPTJwnE2PnWPWmKxUk999Nm0U1iF1AcIBGo/edit?usp=sharing
