@@ -3,7 +3,7 @@ Jw Trival Game made with React Native
 
 ## Figma Design
 
-![link](https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1)
+https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1
 
 ![image](https://user-images.githubusercontent.com/66746179/139348995-2276b82f-d4eb-4203-b468-6300981eec1e.png)
 
