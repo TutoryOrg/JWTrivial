@@ -22,10 +22,6 @@ import {
 import {Section} from '../components/Section';
 
 const Home = ({navigation}: any) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
     <View>
