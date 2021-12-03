@@ -8,18 +8,43 @@
  * @format
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Home} from './src/screens/Home';
+import {Profile} from './src/screens/Profile';
 
-const Stack = createNativeStackNavigator();
+const GameStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
+
+const Game = () => {
+  return (
+    <GameStack.Navigator>
+      <GameStack.Screen
+        name={'Home'}
+        component={Home}
+        options={{headerShown: false}}
+      />
+    </GameStack.Navigator>
+  );
+};
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-
-      </Stack.Navigator>
+      <HomeStack.Navigator>
+        <HomeStack.Screen
+          name={'Game'}
+          component={Game}
+          options={{headerShown: false}}
+        />
+        <HomeStack.Screen
+          name={'Profile'}
+          component={Profile}
+          options={{headerShown: true, presentation: 'modal'}}
+        />
+      </HomeStack.Navigator>
     </NavigationContainer>
   );
 };
