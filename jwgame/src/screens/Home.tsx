@@ -1,33 +1,16 @@
 import React from 'react';
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-} from 'react-native';
+import {Text, View, Button} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import {Section} from '../components/Section';
-
-const Home = ({navigation}: any) => {
-
+const Home = () => {
+  const navigation = useNavigation();
+  console.log(navigation);
   return (
     <View>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Details... again"
+        title="Go To Detail"
         onPress={() => navigation.navigate('Profile')}
       />
     </View>
