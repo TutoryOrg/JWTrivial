@@ -5,7 +5,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type GameStackParamList = {
   HomeScreen: undefined;
-  ProfileScreen: undefined;
 };
 
 const GameStack = createNativeStackNavigator<GameStackParamList>();
@@ -16,11 +15,6 @@ const Game = () => {
       <GameStack.Screen
         name={'HomeScreen'}
         component={HomeScreen}
-        options={{headerShown: false}}
-      />
-      <GameStack.Screen
-        name={'ProfileScreen'}
-        component={ProfileScreen}
         options={{headerShown: false}}
       />
     </GameStack.Navigator>

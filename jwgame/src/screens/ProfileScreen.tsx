@@ -1,8 +1,18 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Button} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {GameStackParamList} from '@src/navigation/GameNavigator';
+import {MainStackParamList} from '@src/navigation/MainNavigator';
+
 import styled from 'styled-components/native';
 
-function ProfileScreen() {
+type ProfileNavProp = CompositeScreenProps<
+  NativeStackScreenProps<GameStackParamList>,
+  NativeStackScreenProps<MainStackParamList, "ProfileScreen">
+>;
+
+function ProfileScreen({route, navigation}: ProfileNavProp) {
   const ButtonContainer = styled.TouchableOpacity`
     width: 100px;
     height: 40px
@@ -15,6 +25,7 @@ function ProfileScreen() {
     <View>
       <Text>Profile Text</Text>
       <ButtonContainer />
+      <Button title="go Home" onPress={() => navigation.navigate('HomeScreen')} />
     </View>
   );
 }
