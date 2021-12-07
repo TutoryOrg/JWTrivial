@@ -1,15 +1,17 @@
-export const lightTheme = {
-  body: '#E2E2E2',
-  text: '#363537',
-  toggleBorder: '#FFF',
-  gradient: 'linear-gradient(#39598A, #79D7ED)',
-  button: '#FFFA',
+import { DefaultTheme } from "styled-components";
+
+export const lightTheme: DefaultTheme = {
+  backgroundColor: '#E2E2E2',
+  primary: '#363537',
+  text: '#FFFFFF',
+  error: 'linear-gradient(#39598A, #79D7ED)',
+  button: '#FFAAAA',
 };
 
-export const darkTheme = {
-  body: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  gradient: 'linear-gradient(#091236, #1E215D)',
-  button: '#000F',
+export const darkTheme: DefaultTheme = {
+  backgroundColor: '#363537',
+  primary: '#FAFAFA',
+  text: '#6B8096',
+  error: 'linear-gradient(#091236, #1E215D)',
+  button: '#000F00',
 };
