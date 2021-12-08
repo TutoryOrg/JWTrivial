@@ -1,6 +1,5 @@
 import React from 'react';
 import {HomeScreen} from '../screens/HomeScreen';
-import {ProfileScreen} from '../screens/ProfileScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type GameStackParamList = {
