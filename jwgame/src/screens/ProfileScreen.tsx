@@ -2,8 +2,8 @@ import React from 'react';
 import {Text, View, Button} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CompositeScreenProps} from '@react-navigation/native';
-import {GameStackParamList} from '@src/navigation/GameNavigator';
-import {MainStackParamList} from '@src/navigation/MainNavigator';
+import {GameStackParamList} from '@navigation/GameNavigator';
+import {MainStackParamList} from '@navigation/MainNavigator';
 import {useTranslation} from 'react-i18next';
 
 import styled from 'styled-components/native';

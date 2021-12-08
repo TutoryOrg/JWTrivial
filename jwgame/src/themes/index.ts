@@ -1,4 +1,15 @@
+import 'styled-components/native';
 import { DefaultTheme } from "styled-components";
+
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    backgroundColor: string;
+    primary: string;
+    text: string;
+    error: string;
+    button: string;
+  }
+}
 
 export const lightTheme: DefaultTheme = {
   backgroundColor: '#E2E2E2',
