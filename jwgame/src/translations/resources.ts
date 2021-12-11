@@ -1,14 +1,18 @@
 const resources = {
   en: {
     translation: {
-      'Welcome to React': 'Welcome to React and react-i18next',
-      welcome_home: 'Welcome to JW Trivial',
+      welcome: 'Welcome to Jw Trivial',
+      sub_welcome:'This game does not claim to be educational',
+      accept: 'Accept',
+      play: 'Play',
     },
   },
   es: {
     translation: {
-      'Welcome to React': 'Bienvenido a React and react-i18next',
-      welcome_home: 'Bienvenido a JW Trivial',
+      welcome: 'Bienvenido a Jw Trivial',
+      sub_welcome:'Este juego no pretende educar ',
+      accept: 'Aceptar',
+      play: 'Jugar',
     },
   },
 };
