@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text} from '../../components/Text';
+import {fontFamilies, fontSizes, gridSizes} from '../../constants/';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CompositeScreenProps} from '@react-navigation/native';
 import {GameStackParamList} from '@navigation/GameNavigator';
@@ -14,14 +15,16 @@ const HomeView = styled.SafeAreaView`
 `;
 
 const HeaderText = styled(Text)`
-  font-size: 34px;
-  font-family: "Nunito-Regular";
+  font-size: ${fontSizes.xxLarge}px;
+  font-family: ${fontFamilies.Nunito};
+  padding-top: ${gridSizes.grid6x}px;
   color: ${props => props.theme.textColor};
 `;
 
 const SubHeaderText = styled.Text`
-  font-size: 24px;
-  font-family: "Nunito-Regular";
+  font-size: ${fontSizes.large}px;
+  font-family: ${fontFamilies.Nunito};
+  padding-top: ${gridSizes.grid6x}px;
   color: ${props => props.theme.textColor};
 `;
 

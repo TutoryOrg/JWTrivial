@@ -32,6 +32,5 @@ interface Props extends TextProps {
 
 export const Text = (props: Props) => {
   const {color, ...rest} = props;
-
   return <BaseText color={color} {...rest} />;
 };

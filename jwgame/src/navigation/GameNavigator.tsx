@@ -19,4 +19,5 @@ const Game = () => {
     </GameStack.Navigator>
   );
 };
+
 export {Game};
