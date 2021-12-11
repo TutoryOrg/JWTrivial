@@ -7,7 +7,7 @@ import {MainStackParamList} from '@navigation/MainNavigator';
 import {useTranslation} from 'react-i18next';
 import styled from 'styled-components/native';
 
-const HomeView = styled.View`
+const HomeView = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   background-color: ${props => props.theme.viewBg};
