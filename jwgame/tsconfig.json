@@ -24,7 +24,9 @@
       "@screens/*": ["screens/*"],
       "@store/*": ["store/*"],
       "@themes/*": ["themes/*"],
-      "@translations/*": ["translations/*"]
+      "@translations/*": ["translations/*"],
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
