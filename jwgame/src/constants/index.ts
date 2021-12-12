@@ -3,10 +3,10 @@ export const fontSizes = {
   small: 14,
   normal: 16,
   large: 18,
-  xLarge: 20,
-  xxLarge: 24,
-  xxxLarge: 28,
-  xxxxLarge: 32,
+  xLarge: 22,
+  xxLarge: 26,
+  xxxLarge: 32,
+  xxxxLarge: 38,
 };
 
 export const gridSizes = {
@@ -15,6 +15,8 @@ export const gridSizes = {
   grid3x: 24,
   grid4x: 32,
   grid6x: 64,
+  grid8x: 80,
+  grid12x: 128,
 };
 
 export const fontFamilies = {
