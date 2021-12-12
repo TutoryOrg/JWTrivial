@@ -20,23 +20,13 @@ type HomeNavProp = CompositeScreenProps<
 function HomeScreen({navigation}: HomeNavProp) {
   const {t, i18n} = useTranslation();
 
-  const onPlay = () => {
-    console.log('Press Play');
-  };
-
-  const onAccept = () => {
-    console.log('Press Accept');
-  };
-
   return (
     <HomeView>
       <HeaderText>{t('welcome')}</HeaderText>
       <SubHeaderText>{t('sub_welcome')}</SubHeaderText>
 
-      <PlayButton onPressBn={onPlay} primary>
-        {t('play')}
-      </PlayButton>
-      <AcceptButton onPressBn={onAccept}>{t('accept')}</AcceptButton>
+      <PlayButton primary>{t('play')}</PlayButton>
+      <AcceptButton>{t('accept')}</AcceptButton>
     </HomeView>
   );
 }

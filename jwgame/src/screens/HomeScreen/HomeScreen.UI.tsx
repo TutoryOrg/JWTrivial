@@ -1,7 +1,7 @@
 import {Text} from '../../components/Text';
 import {Button} from '../../components/Button';
+import {fontSizes} from '../../constants';
 import {Dimensions} from 'react-native';
-import {fontSizes, gridSizes} from '../../constants';
 
 import styled from 'styled-components/native';
 
@@ -15,19 +15,21 @@ export const HomeView = styled.SafeAreaView`
 `;
 
 export const HeaderText = styled(Text)`
-  font-size: ${fontSizes.xxxLarge}px;
-  top: ${gridSizes.grid6x}px;
+  font-size: ${windowHeight < 700 ? fontSizes.xxxLarge : 50}px;
+  padding-top: 100px;
 `;
 
 export const SubHeaderText = styled(Text)`
-  font-size: ${fontSizes.large}px;
-  top: ${gridSizes.grid6x}px;
+  font-size: ${windowHeight < 700 ? fontSizes.xLarge : 25}px;
+  padding-top: 20px;
 `;
 
 export const PlayButton = styled(Button)`
-  top: ${windowHeight - 300}px;
+  position: absolute;
+  bottom: 130px;
 `;
 
 export const AcceptButton = styled(Button)`
-  top: ${windowHeight - 280}px;
+  position: absolute;
+  bottom: 50px;
 `;
