@@ -1,3 +1,4 @@
+import React from 'react';
 import {Text} from '../../components/Text';
 import {Button} from '../../components/Button';
 import {fontSizes} from '../../constants';
@@ -5,7 +6,7 @@ import {Dimensions} from 'react-native';
 
 import styled from 'styled-components/native';
 
-const windowWidth = Dimensions.get('window').width;
+//const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export const HomeView = styled.SafeAreaView`
@@ -33,3 +34,27 @@ export const AcceptButton = styled(Button)`
   position: absolute;
   bottom: 50px;
 `;
+
+
+type TProfileButton = {
+  onPress: () => void;
+};
+
+export const ProfileButton = ({onPress}: TProfileButton) => {
+  const UserIcon = styled.Image`
+    width: 40px;
+    height: 40px;
+  `;
+  const ContainerTouchable = styled.TouchableOpacity`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  `;
+  return (
+    <ContainerTouchable onPress={onPress}>
+      <UserIcon source={require('../../assets/icons/userIcon_250.png')} />
+    </ContainerTouchable>
+  );
+};
+
+

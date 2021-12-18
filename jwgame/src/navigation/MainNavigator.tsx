@@ -1,12 +1,11 @@
 import React from 'react';
-import {NavigatorScreenParams} from '@react-navigation/native';
+import {HomeScreen} from '../screens/HomeScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Game, GameStackParamList} from './GameNavigator';
 import {ProfileScreen} from '../screens/ProfileScreen';
 
 export type MainStackParamList = {
-  GameStack: NavigatorScreenParams<GameStackParamList>;
-  ProfileScreen: {userId: string};
+  HomeScreen: undefined;
+  ProfileScreen: undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
@@ -15,8 +14,8 @@ const MainNavigator = () => {
   return (
     <MainStack.Navigator>
       <MainStack.Screen
-        name={'GameStack'}
-        component={Game}
+        name={'HomeScreen'}
+        component={HomeScreen}
         options={{headerShown: false}}
       />
       <MainStack.Screen

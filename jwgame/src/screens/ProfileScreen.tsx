@@ -14,13 +14,12 @@ type ProfileNavProp = CompositeScreenProps<
 >;
 
 function ProfileScreen({route, navigation}: ProfileNavProp) {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
   const ButtonContainer = styled.TouchableOpacity`
     width: 100px;
     height: 40px
     padding: 12px;
     border-radius: 10px;
-    background-color: ${props => props.theme.button};
 `;
 
   return (

@@ -16,7 +16,7 @@ const BaseText = styled.Text<{
 }>`
   font-family: ${props =>
     props.fontFamily ? fontFamilies[props.fontFamily] : fontFamilies.Nunito};
-  font-size: ${props => props.fontSize ?? fontSizes.normal}px;
+  font-size: ${props => props.fontSize ?? fontSizes.xLarge}px;
   color: ${props => (props.color ? props.color : props.theme.textColor)};
   ${props =>
     props.textAlign ? `text-align: ${props.textAlign}` : 'text-align: center'};
