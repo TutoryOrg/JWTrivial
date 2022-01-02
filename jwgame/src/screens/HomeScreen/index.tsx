@@ -15,13 +15,16 @@ type HomeNavProp = NativeStackScreenProps<MainStackParamList>;
 
 function HomeScreen({navigation}: HomeNavProp) {
   const {t} = useTranslation();
-  console.log('navigation : ', navigation);
+
   return (
     <HomeView>
       <ProfileButton onPress={() => navigation.navigate('ProfileScreen')} />
       <HeaderText>{t('welcome')}</HeaderText>
+
       <SubHeaderText>{t('sub_welcome')}</SubHeaderText>
-      <PlayButton primary>{t('play')}</PlayButton>
+      <PlayButton primary onPressBn={() => navigation.navigate('MenuScreen')}>
+        {t('play')}
+      </PlayButton>
       <AcceptButton>{t('accept')}</AcceptButton>
     </HomeView>
   );

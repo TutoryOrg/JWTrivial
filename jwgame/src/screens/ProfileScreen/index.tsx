@@ -13,7 +13,7 @@ type ProfileNavProp = CompositeScreenProps<
   NativeStackScreenProps<MainStackParamList, 'ProfileScreen'>
 >;
 
-function ProfileScreen({route, navigation}: ProfileNavProp) {
+function ProfileScreen({navigation}: ProfileNavProp) {
   const {t} = useTranslation();
   const ButtonContainer = styled.TouchableOpacity`
     width: 100px;
