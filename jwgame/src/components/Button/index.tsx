@@ -1,12 +1,10 @@
 import React from 'react';
 import {Text} from '../Text';
 import {Dimensions} from 'react-native';
-import {colors, fontSizes, gridSizes} from '../../constants';
-
+import {colors, gridSizes} from '../../constants';
 import styled from 'styled-components/native';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 const Container = styled.TouchableOpacity<{
   height?: number;

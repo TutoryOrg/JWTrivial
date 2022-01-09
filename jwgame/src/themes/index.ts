@@ -9,6 +9,7 @@ declare module 'styled-components' {
     primaryBnTextColor: string;
     secondaryBnColor: string;
     secondaryBnTextColor: string;
+    textInputBnColor: string;
   }
 }
 
@@ -19,6 +20,7 @@ export const lightTheme: DefaultTheme = {
   primaryBnTextColor: '#F6F1FB',
   secondaryBnColor: '#EBEAEC',
   secondaryBnTextColor: '#3F414E',
+  textInputBnColor: '#F2F3F7',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -28,4 +30,5 @@ export const darkTheme: DefaultTheme = {
   primaryBnTextColor: '#F6F1FB',
   secondaryBnColor: '#FF00A8',
   secondaryBnTextColor: '#3F414E',
+  textInputBnColor: '#F2E3B5',
 };

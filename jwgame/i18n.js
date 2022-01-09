@@ -9,23 +9,20 @@ let locale =
     : NativeModules.I18nManager.localeIdentifier;
 
 if (locale === undefined) {
-    // iOS 13 workaround, take first of AppleLanguages array  ["en", "en-NZ"]
-    locale = NativeModules.SettingsManager.settings.AppleLanguages[0]
-    if (locale == undefined) {
-          locale = "en" // default language
-    }
+  locale = NativeModules.SettingsManager.settings.AppleLanguages[0];
+  if (locale == undefined) {
+    locale = 'en';
+  }
 }
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    resources,
-    lng: locale.substring(0, 2),
-    fallbackLng: ['es', 'en'],
-    interpolation: {
-      escapeValue: false, // react already safes from xss
-    },
-    compatibilityJSON: 'v3',
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: locale.substring(0, 2),
+  fallbackLng: ['es', 'en'],
+  interpolation: {
+    escapeValue: false,
+  },
+  compatibilityJSON: 'v3',
+});
 
 export default i18n;

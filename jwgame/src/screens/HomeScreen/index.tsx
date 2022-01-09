@@ -4,7 +4,6 @@ import {MainStackParamList} from '@navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
   HomeView,
-  ProfileButton,
   HeaderText,
   SubHeaderText,
   PlayButton,
@@ -18,14 +17,16 @@ function HomeScreen({navigation}: HomeNavProp) {
 
   return (
     <HomeView>
-      <ProfileButton onPress={() => navigation.navigate('ProfileScreen')} />
       <HeaderText>{t('welcome')}</HeaderText>
-
       <SubHeaderText>{t('sub_welcome')}</SubHeaderText>
+
       <PlayButton primary onPressBn={() => navigation.navigate('MenuScreen')}>
         {t('play')}
       </PlayButton>
-      <AcceptButton>{t('accept')}</AcceptButton>
+
+      <AcceptButton onPressBn={() => navigation.navigate('LoginScreen')}>
+        {t('login_admin')}
+      </AcceptButton>
     </HomeView>
   );
 }

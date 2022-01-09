@@ -3,7 +3,6 @@ import {Text} from '../../components/Text';
 import {Button} from '../../components/Button';
 import {fontSizes} from '../../constants';
 import {Dimensions} from 'react-native';
-
 import styled from 'styled-components/native';
 
 const windowHeight = Dimensions.get('window').height;
@@ -33,7 +32,6 @@ export const AcceptButton = styled(Button)`
   position: absolute;
   bottom: 50px;
 `;
-
 
 type TProfileButton = {
   onPress: () => void;

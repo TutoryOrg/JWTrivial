@@ -1,5 +1,5 @@
 import React from 'react';
-import {colors, fontFamilies, fontSizes} from '../../constants';
+import {fontFamilies, fontSizes} from '../../constants';
 import styled from 'styled-components/native';
 
 type TextAlign = 'center' | 'left';
