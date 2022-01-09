@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {Text} from '../../components/Text';
+import { HeaderText } from './LoginScreen.UI';
 import {
   BgView,
   TxtInputUser,
@@ -13,7 +13,7 @@ function LoginScreen() {
 
   return (
     <BgView>
-      <Text>{'Titl'}</Text>
+      <HeaderText>{t('login_admin')}</HeaderText>
       <TxtInputUser label={t('user_name')} placeHolder={t('user_name')} />
       <TxtInputPassw label={t('password')} passw placeHolder={t('password')} />
       <LoginButton>Login Button</LoginButton>

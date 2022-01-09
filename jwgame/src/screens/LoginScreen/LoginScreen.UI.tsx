@@ -1,4 +1,6 @@
 import {Dimensions} from 'react-native';
+import {fontSizes} from '../../constants';
+import {Text} from '../../components/Text';
 import {Button} from '../../components/Button';
 import {TextInput} from '../../components/TextInput';
 
@@ -10,6 +12,11 @@ export const BgView = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   background-color: ${props => props.theme.viewBg};
+`;
+
+export const HeaderText = styled(Text)`
+  font-size: ${windowHeight < 700 ? fontSizes.xxxLarge : 50}px;
+  top: 50px;
 `;
 
 export const TxtInputUser = styled(TextInput)`
@@ -24,5 +31,5 @@ export const LoginButton = styled(Button)`
   top: ${windowHeight / 1.5}px;
   width: 85%;
   height: 55px;
-  border-radius: 2px;
+  border-radius: 5px;
 `;

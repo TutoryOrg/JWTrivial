@@ -10,14 +10,14 @@ const Container = styled.View`
 
 const TxtLabel = styled.Text`
   font-family: ${fontFamilies.Nunito};
-  font-size: ${fontSizes.large};
+  font-size: ${fontSizes.large}px;
 `;
 
 const TxtInput = styled.TextInput`
   background-color: ${props => props.theme.textInputBnColor};
   border-radius: 10px;
   font-size: 20px;
-  font-family: ${fontFamilies.Nunito};
+  font-family: ${fontFamilies.Nunito}px;
   text-align: center;
 `;
 

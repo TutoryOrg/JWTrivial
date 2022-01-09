@@ -30,5 +30,5 @@ export const darkTheme: DefaultTheme = {
   primaryBnTextColor: '#F6F1FB',
   secondaryBnColor: '#FF00A8',
   secondaryBnTextColor: '#3F414E',
-  textInputBnColor: '#F2E3B5',
+  textInputBnColor: '#800080',
 };
