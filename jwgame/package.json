@@ -6,6 +6,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "upgrade": "react-native upgrade",
+    "link": "react-native link",
+    "eject": "react-native eject",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
@@ -20,7 +23,7 @@
     "lodash": "^4.17.21",
     "react": "17.0.2",
     "react-i18next": "^11.14.3",
-    "react-native": "0.66.4",
+    "react-native": "0.68.1",
     "react-native-gesture-handler": "^2.0.0",
     "react-native-reanimated": "^2.2.4",
     "react-native-safe-area-context": "^3.3.2",
