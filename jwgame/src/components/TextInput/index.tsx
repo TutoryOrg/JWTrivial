@@ -8,32 +8,32 @@ const Container = styled.View`
   width: 85%;
 `;
 
-const TxtLabel = styled.Text`
-  font-family: ${fontFamilies.Nunito};
-  font-size: ${fontSizes.large}px;
-`;
-
-const TxtInput = styled.TextInput`
-  background-color: ${props => props.theme.textInputBnColor};
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: ${fontFamilies.Nunito}px;
-  text-align: center;
-`;
-
 interface TextInputProps {
-  passw?: boolean;
+  isPassw?: boolean;
   label?: string;
   value?: string;
   placeHolder?: string;
 }
 
+const TxtLabel = styled.Text<TextInputProps>`
+  font-family: ${fontFamilies.Nunito};
+  font-size: ${fontSizes.large}px;
+`;
+
+const TxtInput = styled.TextInput<TextInputProps>`
+  background-color: ${props => props.theme.textInputBnColor};
+  border-radius: 10px;
+  text-align: center;
+  font-size: ${fontSizes.normal}px;
+  font-family: ${fontFamilies.Nunito}px;
+`;
+
 export const TextInput = (props: TextInputProps) => {
-  const {passw, placeHolder, label, ...rest} = props;
+  const {isPassw, placeHolder, label, ...rest} = props;
   return (
     <Container {...rest}>
-      <TxtLabel>{label}</TxtLabel>
-      <TxtInput secureTextEntry={passw} placeholder={placeHolder}></TxtInput>
+      <TxtLabel {...rest}>{label}</TxtLabel>
+      <TxtInput {...rest} secureTextEntry={isPassw} placeholder={placeHolder} />
     </Container>
   );
 };

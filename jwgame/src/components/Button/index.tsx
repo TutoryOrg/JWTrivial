@@ -14,7 +14,7 @@ const Container = styled.TouchableOpacity<{
   background-color: ${props =>
     props.primary ? props.theme.primaryBnColor : props.theme.secondaryBnColor};
   height: ${props => props.height ?? gridSizes.grid6x}px;
-  width: ${windowWidth < 500 ? `90%` : '500px'};
+  width: ${windowWidth < 500 ? '90%' : '500px'};
   border-radius: 90px;
   align-items: center;
   justify-content: center;
