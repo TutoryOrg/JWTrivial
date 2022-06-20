@@ -9,30 +9,27 @@ import {useTranslation} from 'react-i18next';
 import styled from 'styled-components/native';
 
 type ProfileNavProp = CompositeScreenProps<
-  NativeStackScreenProps<GameStackParamList>,
-  NativeStackScreenProps<MainStackParamList, 'ProfileScreen'>
+    NativeStackScreenProps<GameStackParamList>,
+    NativeStackScreenProps<MainStackParamList, 'ProfileScreen'>
 >;
 
 function ProfileScreen({navigation}: ProfileNavProp) {
-  const {t} = useTranslation();
-  const ButtonContainer = styled.TouchableOpacity`
+    const {t} = useTranslation();
+    const ButtonContainer = styled.TouchableOpacity`
     width: 100px;
     height: 40px
     padding: 12px;
     border-radius: 10px;
 `;
 
-  return (
-    <View>
-      <Text>Profile Text</Text>
-      <Text>{t('Welcome to React')}</Text>
-      <ButtonContainer />
-      <Button
-        title="go Home"
-        onPress={() => navigation.navigate('HomeScreen')}
-      />
-    </View>
-  );
+    return (
+        <View>
+            <Text>Profile Text</Text>
+            <Text>{t('Welcome to React')}</Text>
+            <ButtonContainer />
+            <Button title="go Home" onPress={() => navigation.navigate('HomeScreen')} />
+        </View>
+    );
 }
 
 export {ProfileScreen};

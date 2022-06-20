@@ -6,42 +6,42 @@ import {LoginScreen} from '../screens/LoginScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
-  HomeScreen: undefined;
-  ProfileScreen: undefined;
-  MenuScreen: undefined;
-  LoginScreen: undefined;
+    HomeScreen: undefined;
+    ProfileScreen: undefined;
+    MenuScreen: undefined;
+    LoginScreen: undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
 
 const MainNavigator = () => {
-  return (
-    <MainStack.Navigator>
-      <MainStack.Screen
-        name={'HomeScreen'}
-        component={HomeScreen}
-        options={{headerShown: false}}
-      />
+    return (
+        <MainStack.Navigator>
+            <MainStack.Screen
+                name={'HomeScreen'}
+                component={HomeScreen}
+                options={{headerShown: false}}
+            />
 
-      <MainStack.Screen
-        name={'ProfileScreen'}
-        component={ProfileScreen}
-        options={{headerShown: false}}
-      />
+            <MainStack.Screen
+                name={'ProfileScreen'}
+                component={ProfileScreen}
+                options={{headerShown: false}}
+            />
 
-      <MainStack.Screen
-        name={'MenuScreen'}
-        component={MenuScreen}
-        options={{headerShown: false}}
-      />
+            <MainStack.Screen
+                name={'MenuScreen'}
+                component={MenuScreen}
+                options={{headerShown: false}}
+            />
 
-      <MainStack.Screen
-        name={'LoginScreen'}
-        component={LoginScreen}
-        options={{headerShown: false}}
-      />
-    </MainStack.Navigator>
-  );
+            <MainStack.Screen
+                name={'LoginScreen'}
+                component={LoginScreen}
+                options={{headerShown: false}}
+            />
+        </MainStack.Navigator>
+    );
 };
 
 export {MainNavigator};

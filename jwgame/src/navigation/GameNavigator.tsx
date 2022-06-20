@@ -3,21 +3,21 @@ import {HomeScreen} from '../screens/HomeScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type GameStackParamList = {
-  HomeScreen: undefined;
+    HomeScreen: undefined;
 };
 
 const GameStack = createNativeStackNavigator<GameStackParamList>();
 
 const Game = () => {
-  return (
-    <GameStack.Navigator>
-      <GameStack.Screen
-        name={'HomeScreen'}
-        component={HomeScreen}
-        options={{headerShown: false}}
-      />
-    </GameStack.Navigator>
-  );
+    return (
+        <GameStack.Navigator>
+            <GameStack.Screen
+                name={'HomeScreen'}
+                component={HomeScreen}
+                options={{headerShown: false}}
+            />
+        </GameStack.Navigator>
+    );
 };
 
 export {Game};
