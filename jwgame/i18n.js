@@ -10,7 +10,7 @@ let locale =
 
 if (locale === undefined) {
   locale = NativeModules.SettingsManager.settings.AppleLanguages[0];
-  if (locale == undefined) {
+  if (locale === undefined) {
     locale = 'en';
   }
 }
