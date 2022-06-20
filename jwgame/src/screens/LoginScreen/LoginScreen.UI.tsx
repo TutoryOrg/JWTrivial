@@ -1,8 +1,8 @@
 import {Dimensions} from 'react-native';
-import {fontSizes} from '../../constants';
-import {Text} from '../../components/Text';
-import {Button} from '../../components/Button';
-import {TextInput} from 'components/TextInput';
+import {fontSizes} from '@constants';
+import {Text} from '@components/Text';
+import {Button} from '@components/Button';
+import {TextInput} from '@components/TextInput';
 
 import styled from 'styled-components/native';
 
@@ -11,7 +11,7 @@ const windowHeight = Dimensions.get('window').height;
 export const BgView = styled.SafeAreaView`
     flex: 1;
     align-items: center;
-    background-color: ${props => props.theme.viewBg};
+    background-color: ${(props: {theme: {viewBg: unknown}}) => props.theme.viewBg};
 `;
 
 export const HeaderText = styled(Text)`
