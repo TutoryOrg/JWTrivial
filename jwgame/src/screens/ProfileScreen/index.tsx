@@ -2,8 +2,8 @@ import React from 'react';
 import {Text, View, Button} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {CompositeScreenProps} from '@react-navigation/native';
-import {GameStackParamList} from '@navigation/GameNavigator';
-import {MainStackParamList} from '@navigation/MainNavigator';
+import {GameStackParamList} from 'navigation/GameNavigator';
+import {MainStackParamList} from 'navigation/MainNavigator';
 import {useTranslation} from 'react-i18next';
 
 import styled from 'styled-components/native';
@@ -13,7 +13,7 @@ type ProfileNavProp = CompositeScreenProps<
     NativeStackScreenProps<MainStackParamList, 'ProfileScreen'>
 >;
 
-function ProfileScreen({navigation}: ProfileNavProp): React.ReactElement {
+function ProfileScreen({navigation}: ProfileNavProp): JSX.Element {
     const {t} = useTranslation();
     const ButtonContainer = styled.TouchableOpacity`
     width: 100px;

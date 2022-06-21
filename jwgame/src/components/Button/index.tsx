@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text} from '../Text';
+import {Text} from 'components/Text';
 import {Dimensions} from 'react-native';
-import {colors, gridSizes} from '../../constants';
+import {colors, gridSizes} from 'constants';
 import styled from 'styled-components/native';
 
 const windowWidth = Dimensions.get('window').width;
@@ -20,7 +20,7 @@ const Container = styled.TouchableOpacity<{
     justify-content: center;
 `;
 
-const ContainerText = styled(Text)<{
+const ButtonText = styled(Text)<{
     primary?: boolean;
 }>`
     color: ${props => (props.primary ? colors.white : colors.black)};
@@ -35,11 +35,11 @@ interface ButtonProps {
     onPressBn?: () => void;
 }
 
-export const Button = (props: ButtonProps) => {
+export const Button = (props: ButtonProps): JSX.Element => {
     const {onPressBn, ...rest} = props;
     return (
         <Container onPress={onPressBn} {...rest}>
-            <ContainerText primary={props.primary}>{props.children}</ContainerText>
+            <ButtonText primary={props.primary}>{props.children}</ButtonText>
         </Container>
     );
 };

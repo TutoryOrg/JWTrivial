@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text} from '../../components/Text';
-import {Button} from '../../components/Button';
-import {fontSizes} from '../../constants';
+import {Text} from 'components/Text';
+import {Button} from 'components/Button';
+import {fontSizes} from 'constants';
 import {Dimensions} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -37,7 +37,7 @@ type TProfileButton = {
     onPress: () => void;
 };
 
-export const ProfileButton = ({onPress}: TProfileButton) => {
+export const ProfileButton = ({onPress}: TProfileButton): JSX.Element => {
     const UserIcon = styled.Image`
         width: 40px;
         height: 40px;

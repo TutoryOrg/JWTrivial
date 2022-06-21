@@ -1,8 +1,8 @@
 import {Dimensions} from 'react-native';
 import {fontSizes} from '@constants';
-import {Text} from '@components/Text';
-import {Button} from '@components/Button';
-import {TextInput} from '@components/TextInput';
+import {Text} from 'components/Text';
+import {Button} from 'components/Button';
+import {TextInput} from 'components/TextInput';
 
 import styled from 'styled-components/native';
 

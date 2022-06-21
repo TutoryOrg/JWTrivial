@@ -7,10 +7,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
-    "plugins": [
-        "prettier",
-        "@typescript-eslint"
-    ],
+    "plugins": ["prettier", "@typescript-eslint"],
     "settings": {
         "react": {
             "version": "detect"
@@ -24,7 +21,5 @@
         "ecmaVersion": 2017,
         "sourceType": "module"
     },
-    "ignorePatterns": [
-        "./node_modules/*"
-    ]
+    "ignorePatterns": ["./node_modules/*"]
 }

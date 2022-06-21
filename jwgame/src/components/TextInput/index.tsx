@@ -1,5 +1,5 @@
 import React from 'react';
-import {fontFamilies, fontSizes} from '../../constants';
+import {fontFamilies, fontSizes} from 'constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
@@ -28,7 +28,7 @@ const TxtInput = styled.TextInput<TextInputProps>`
     font-family: ${fontFamilies.Nunito}px;
 `;
 
-export const TextInput = (props: TextInputProps) => {
+export const TextInput = (props: TextInputProps): JSX.Element => {
     const {isPassw, placeHolder, label, ...rest} = props;
     return (
         <Container {...rest}>

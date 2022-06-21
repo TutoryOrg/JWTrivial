@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {HeaderText} from './LoginScreen.UI';
 import {BgView, TxtInputUser, TxtInputPassw, LoginButton} from './LoginScreen.UI';
 
-function LoginScreen() {
+function LoginScreen(): JSX.Element {
     const {t} = useTranslation();
 
     return (

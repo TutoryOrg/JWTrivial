@@ -1,5 +1,5 @@
 import React from 'react';
-import {fontFamilies, fontSizes} from '../../constants';
+import {fontFamilies, fontSizes} from 'constants';
 import styled from 'styled-components/native';
 
 type TextAlign = 'center' | 'left';
@@ -26,6 +26,6 @@ const BaseText = styled.Text<TextProps>`
     ${props => (props.lineHeight ? `line-height: ${props.lineHeight}px` : '')};
 `;
 
-export const Text = (props: TextProps) => {
+export const Text = (props: TextProps): JSX.Element => {
     return <BaseText {...props} />;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeScreen} from '../screens/HomeScreen';
+import {HomeScreen} from 'screens/HomeScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type GameStackParamList = {
@@ -8,7 +8,7 @@ export type GameStackParamList = {
 
 const GameStack = createNativeStackNavigator<GameStackParamList>();
 
-const Game = () => {
+const Game = (): JSX.Element => {
     return (
         <GameStack.Navigator>
             <GameStack.Screen

@@ -10,7 +10,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {MainNavigator} from './src/navigation/MainNavigator';
 import {lightTheme, darkTheme} from './src/themes';
 
-const App = () => {
+const App = (): JSX.Element => {
     const isDarkMode = useColorScheme() === 'dark';
     return (
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>

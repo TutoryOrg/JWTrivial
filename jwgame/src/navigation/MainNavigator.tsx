@@ -1,8 +1,8 @@
 import React from 'react';
-import {HomeScreen} from '../screens/HomeScreen';
-import {ProfileScreen} from '../screens/ProfileScreen';
-import {MenuScreen} from '../screens/MenuScreen';
-import {LoginScreen} from '../screens/LoginScreen';
+import {HomeScreen} from 'screens/HomeScreen';
+import {ProfileScreen} from 'screens/ProfileScreen';
+import {MenuScreen} from 'screens/MenuScreen';
+import {LoginScreen} from 'screens/LoginScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
@@ -14,7 +14,7 @@ export type MainStackParamList = {
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
 
-const MainNavigator = () => {
+const MainNavigator = (): JSX.Element => {
     return (
         <MainStack.Navigator>
             <MainStack.Screen
