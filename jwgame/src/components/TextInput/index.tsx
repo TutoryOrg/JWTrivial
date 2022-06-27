@@ -3,7 +3,6 @@ import {fontFamilies, fontSizes} from 'constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
-    position: absolute;
     height: 55px;
     width: 85%;
 `;

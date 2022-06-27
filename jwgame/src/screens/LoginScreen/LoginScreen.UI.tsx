@@ -11,27 +11,27 @@ const windowHeight = Dimensions.get('window').height;
 export const BgView = styled.SafeAreaView`
     flex: 1;
     align-items: center;
+    justify-content: space-around;
     background-color: ${(props: {theme: {viewBg: unknown}}) => props.theme.viewBg};
+    padding: 50px 0px;
 `;
 
 export const HeaderText = styled(Text)`
     font-size: ${windowHeight < 700 ? fontSizes.xxxLarge : 50}px;
-    top: 40px;
+    bottom: 40px;
 `;
 
 export const TxtInputUser = styled(TextInput)`
-    top: ${windowHeight / 7}px;
+    bottom: 20px;
 `;
 
 export const TxtInputPassw = styled(TextInput)`
-    top: ${windowHeight / 3.8}px;
+    bottom: 10px;
 `;
 
 export const LoginButton = styled(Button)`
-    margin-bottom: 10px;
-    bottom: 10px;
-    position: absolute;
+    top: 40px;
     width: 85%;
-    height: 55px;
+    height: 40px;
     border-radius: 5px;
 `;
