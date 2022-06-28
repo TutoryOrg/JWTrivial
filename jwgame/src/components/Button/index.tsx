@@ -1,10 +1,7 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {Dimensions} from 'react-native';
 import {colors, gridSizes} from 'constants';
 import styled from 'styled-components/native';
-
-const windowWidth = Dimensions.get('window').width;
 
 const Container = styled.TouchableOpacity<{
     height?: number;
@@ -13,9 +10,9 @@ const Container = styled.TouchableOpacity<{
 }>`
     background-color: ${props =>
         props.primary ? props.theme.primaryBnColor : props.theme.secondaryBnColor};
-    height: ${props => props.height ?? gridSizes.grid6x}px;
-    width: ${windowWidth < 500 ? '90%' : '500px'};
-    border-radius: 90px;
+    height: ${gridSizes.grid7x}px;
+    width: 70%;
+    border-radius: 15px;
     align-items: center;
     justify-content: center;
 `;

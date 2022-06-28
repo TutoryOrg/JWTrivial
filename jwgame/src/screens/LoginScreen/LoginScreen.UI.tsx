@@ -3,7 +3,6 @@ import {fontSizes} from '@constants';
 import {Text} from 'components/Text';
 import {Button} from 'components/Button';
 import {TextInput} from 'components/TextInput';
-
 import styled from 'styled-components/native';
 
 const windowHeight = Dimensions.get('window').height;
@@ -31,7 +30,4 @@ export const TxtInputPassw = styled(TextInput)`
 
 export const LoginButton = styled(Button)`
     top: 40px;
-    width: 85%;
-    height: 40px;
-    border-radius: 5px;
 `;

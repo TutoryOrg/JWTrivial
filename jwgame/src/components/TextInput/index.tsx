@@ -1,10 +1,10 @@
 import React from 'react';
-import {fontFamilies, fontSizes} from 'constants';
+import {fontFamilies, fontSizes, gridSizes} from 'constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
-    height: 55px;
-    width: 85%;
+    height: ${gridSizes.grid7x}px;
+    width: 75%;
 `;
 
 interface TextInputProps {
@@ -16,14 +16,14 @@ interface TextInputProps {
 
 const TxtLabel = styled.Text<TextInputProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${fontSizes.large}px;
+    font-size: ${fontSizes.normal}px;
 `;
 
 const TxtInput = styled.TextInput<TextInputProps>`
     background-color: ${props => props.theme.textInputBnColor};
     border-radius: 10px;
     text-align: center;
-    font-size: ${fontSizes.normal}px;
+    font-size: ${fontSizes.small}px;
     font-family: ${fontFamilies.Nunito}px;
 `;
 
