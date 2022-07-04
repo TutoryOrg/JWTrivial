@@ -11,8 +11,8 @@
         "link": "react-native link",
         "eject": "react-native eject",
         "test": "jest",
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-        "prettify": "prettier --write \"src/**/*.js*\""
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+        "prettify": "prettier --write \"src/**/*.ts*\""
     },
     "dependencies": {
         "@react-native-community/cli-platform-ios": "^6.2.0",
