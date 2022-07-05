@@ -1,11 +1,7 @@
-import {Dimensions} from 'react-native';
-import {fontSizes} from '@constants';
 import {Text} from 'components/Text';
 import {Button} from 'components/Button';
 import {TextInput} from 'components/TextInput';
 import styled from 'styled-components/native';
-
-const windowHeight = Dimensions.get('window').height;
 
 export const BgView = styled.SafeAreaView`
     flex: 1;
@@ -16,7 +12,6 @@ export const BgView = styled.SafeAreaView`
 `;
 
 export const HeaderText = styled(Text)`
-    font-size: ${windowHeight < 700 ? fontSizes.xxxLarge : 50}px;
     bottom: 40px;
 `;
 

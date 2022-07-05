@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {colors, gridSizes} from 'constants';
+import {colors, fontSizes, gridSizes} from 'constants';
+import {scale, verticalScale} from 'utils/utils';
 import styled from 'styled-components/native';
 
 const Container = styled.TouchableOpacity<{
@@ -10,9 +11,9 @@ const Container = styled.TouchableOpacity<{
 }>`
     background-color: ${props =>
         props.primary ? props.theme.primaryBnColor : props.theme.secondaryBnColor};
-    height: ${gridSizes.grid7x}px;
+    height: ${verticalScale(gridSizes.grid7x)}px;
     width: 70%;
-    border-radius: 15px;
+    border-radius: ${verticalScale(15)}px;
     align-items: center;
     justify-content: center;
 `;
@@ -21,6 +22,7 @@ const ButtonText = styled(Text)<{
     primary?: boolean;
 }>`
     color: ${props => (props.primary ? colors.white : colors.black)};
+    font-size: ${scale(fontSizes.normal)}px;
 `;
 
 interface ButtonProps {

@@ -1,5 +1,6 @@
 import React from 'react';
 import {fontFamilies, fontSizes} from 'constants';
+import {scale} from 'utils/utils';
 import styled from 'styled-components/native';
 
 type TextAlign = 'center' | 'left';
@@ -18,7 +19,7 @@ interface TextProps {
 
 const BaseText = styled.Text<TextProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${fontSizes.xLarge}px;
+    font-size: ${scale(fontSizes.xLarge)}px;
     color: ${props => props.theme.textColor};
     text-align: center;
 `;

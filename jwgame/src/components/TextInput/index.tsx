@@ -1,9 +1,10 @@
 import React from 'react';
 import {fontFamilies, fontSizes, gridSizes} from 'constants';
+import {scale, verticalScale} from 'utils/utils';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
-    height: ${gridSizes.grid7x}px;
+    height: ${verticalScale(gridSizes.grid7x)}px;
     width: 75%;
 `;
 
@@ -16,14 +17,15 @@ interface TextInputProps {
 
 const TxtLabel = styled.Text<TextInputProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${fontSizes.normal}px;
+    font-size: ${scale(fontSizes.normal)}px;
 `;
 
 const TxtInput = styled.TextInput<TextInputProps>`
     background-color: ${props => props.theme.textInputBnColor};
-    border-radius: 10px;
+    height: ${verticalScale(gridSizes.grid7x)}px;
+    border-radius: ${verticalScale(15)}px;
     text-align: center;
-    font-size: ${fontSizes.small}px;
+    font-size: ${scale(fontSizes.small)}px;
     font-family: ${fontFamilies.Nunito}px;
 `;
 

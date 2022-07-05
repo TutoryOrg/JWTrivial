@@ -14,13 +14,13 @@ declare module 'styled-components' {
 }
 
 export const lightTheme: DefaultTheme = {
-    viewBg: '#FFFFFF',
-    textColor: '#3F414E',
-    primaryBnColor: '#9AA2FD',
+    viewBg: '#8E97FD',
+    textColor: '#EBEAEC',
+    primaryBnColor: '#5B3C88',
     primaryBnTextColor: '#F6F1FB',
     secondaryBnColor: '#EBEAEC',
     secondaryBnTextColor: '#3F414E',
-    textInputBnColor: '#F2F3F7',
+    textInputBnColor: '#D7D7DF',
 };
 
 export const darkTheme: DefaultTheme = {

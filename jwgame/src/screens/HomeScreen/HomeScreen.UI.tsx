@@ -1,11 +1,9 @@
 import React from 'react';
 import {Text} from 'components/Text';
 import {Button} from 'components/Button';
-import {fontSizes} from 'constants';
-import {Dimensions} from 'react-native';
+import {fontSizes, gridSizes} from 'constants';
+import {scale, verticalScale} from 'utils/utils';
 import styled from 'styled-components/native';
-
-const windowHeight = Dimensions.get('window').height;
 
 export const HomeView = styled.SafeAreaView`
     flex: 1;
@@ -14,23 +12,23 @@ export const HomeView = styled.SafeAreaView`
 `;
 
 export const HeaderText = styled(Text)`
-    font-size: ${windowHeight < 700 ? fontSizes.xxxLarge : 50}px;
-    padding-top: 100px;
+    font-size: ${scale(fontSizes.xxxLarge)}px;
+    padding-top: ${verticalScale(gridSizes.grid9x)}px;
 `;
 
 export const SubHeaderText = styled(Text)`
-    font-size: ${windowHeight < 700 ? fontSizes.xLarge : 25}px;
+    font-size: ${scale(fontSizes.normal)}px;
     padding-top: 20px;
 `;
 
 export const PlayButton = styled(Button)`
     position: absolute;
-    bottom: 130px;
+    bottom: ${verticalScale(gridSizes.grid10x)}px;
 `;
 
 export const AcceptButton = styled(Button)`
     position: absolute;
-    bottom: 50px;
+    bottom: ${verticalScale(gridSizes.grid8x)}px;
 `;
 
 type TProfileButton = {
