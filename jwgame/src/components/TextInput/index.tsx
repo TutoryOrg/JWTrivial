@@ -11,7 +11,6 @@ const Container = styled.View`
 interface TextInputProps {
     isPassw?: boolean;
     label?: string;
-    value?: string;
     placeHolder?: string;
 }
 
@@ -33,8 +32,8 @@ export const TextInput = (props: TextInputProps): JSX.Element => {
     const {isPassw, placeHolder, label, ...rest} = props;
     return (
         <Container {...rest}>
-            <TxtLabel {...rest}>{label}</TxtLabel>
-            <TxtInput {...rest} secureTextEntry={isPassw} placeholder={placeHolder} />
+            <TxtLabel>{label}</TxtLabel>
+            <TxtInput secureTextEntry={isPassw} placeholder={placeHolder} />
         </Container>
     );
 };

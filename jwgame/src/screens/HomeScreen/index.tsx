@@ -11,16 +11,19 @@ function HomeScreen({navigation}: HomeNavProp): JSX.Element {
 
     return (
         <HomeView>
-            <HeaderText>{t('welcome')}</HeaderText>
-            <SubHeaderText>{t('sub_welcome')}</SubHeaderText>
+            <HeaderText text={t('welcome')} />
+            <SubHeaderText text={t('sub_welcome')} />
 
-            <PlayButton primary onPressBn={() => navigation.navigate('MenuScreen')}>
-                {t('play')}
-            </PlayButton>
+            <PlayButton
+                primary
+                text={t('play')}
+                onPressBn={() => navigation.navigate('MenuScreen')}
+            />
 
-            <AcceptButton onPressBn={() => navigation.navigate('LoginScreen')}>
-                {t('login_admin')}
-            </AcceptButton>
+            <AcceptButton
+                text={t('login_admin')}
+                onPressBn={() => navigation.navigate('LoginScreen')}
+            />
         </HomeView>
     );
 }

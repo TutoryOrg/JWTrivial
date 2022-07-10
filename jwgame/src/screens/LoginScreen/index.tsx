@@ -8,10 +8,10 @@ function LoginScreen(): JSX.Element {
 
     return (
         <BgView>
-            <HeaderText>{t('login_admin')}</HeaderText>
+            <HeaderText text={t('login_admin')} />
             <TxtInputUser label={t('user_name')} placeHolder={t('user_name')} />
             <TxtInputPassw isPassw label={t('password')} placeHolder={t('password')} />
-            <LoginButton>{t('login')}</LoginButton>
+            <LoginButton text={t('login')} />
         </BgView>
     );
 }

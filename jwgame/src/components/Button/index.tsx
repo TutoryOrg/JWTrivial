@@ -5,8 +5,6 @@ import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
 const Container = styled.TouchableOpacity<{
-    height?: number;
-    width?: number;
     primary?: boolean;
 }>`
     background-color: ${props =>
@@ -26,19 +24,16 @@ const ButtonText = styled(Text)<{
 `;
 
 interface ButtonProps {
-    children: React.ReactNode;
     text?: string;
-    height?: number;
-    width?: number;
     primary?: boolean;
     onPressBn?: () => void;
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
-    const {onPressBn, ...rest} = props;
+    const {onPressBn, text, primary, ...rest} = props;
     return (
-        <Container onPress={onPressBn} {...rest}>
-            <ButtonText primary={props.primary}>{props.children}</ButtonText>
+        <Container onPress={onPressBn} primary={primary} {...rest}>
+            <ButtonText primary={primary} text={text} />
         </Container>
     );
 };

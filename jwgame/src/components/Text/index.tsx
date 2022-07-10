@@ -8,7 +8,7 @@ type TextJustify = 'center' | 'right';
 type FontFamily = keyof typeof fontFamilies;
 
 interface TextProps {
-    children: React.ReactNode;
+    text: string;
     color?: string;
     fontSize?: number;
     fontFamily?: FontFamily;
@@ -19,11 +19,11 @@ interface TextProps {
 
 const BaseText = styled.Text<TextProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${scale(fontSizes.xLarge)}px;
+    font-size: ${scale(fontSizes.normal)}px;
     color: ${props => props.theme.textColor};
     text-align: center;
 `;
 
 export const Text = (props: TextProps): JSX.Element => {
-    return <BaseText {...props} />;
+    return <BaseText {...props}>{props.text}</BaseText>;
 };

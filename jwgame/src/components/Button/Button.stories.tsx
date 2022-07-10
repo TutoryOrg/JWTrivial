@@ -27,8 +27,10 @@ export const Basic_lightTheme: ComponentStory<typeof Button> = args => {
 
 Basic_darkTheme.args = {
     text: 'Hello World',
+    primary: false,
 };
 
 Basic_lightTheme.args = {
     text: 'Hello World',
+    primary: true,
 };
