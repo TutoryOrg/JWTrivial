@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {colors, fontSizes, gridSizes} from 'constants';
-import {scale, verticalScale} from 'utils/utils';
+import {colors, fontSizes, gridSizes} from '@utils/constants';
+import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
 const Container = styled.TouchableOpacity<{

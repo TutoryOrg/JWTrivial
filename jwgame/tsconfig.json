@@ -23,7 +23,7 @@
         "baseUrl": "src",
         "paths": {
             "@components/*": ["components/*"],
-            "@constants": ["constants"],
+            "@constants": ["constants/*"],
             "@domain/*": ["domain/*"],
             "@lib/*": ["lib/*"],
             "@views/*": ["views/*"],

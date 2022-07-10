@@ -1,6 +1,6 @@
 import React from 'react';
-import {fontFamilies, fontSizes} from 'constants';
-import {scale} from 'utils/utils';
+import {fontFamilies, fontSizes} from '@utils/constants';
+import {scale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
 type TextAlign = 'center' | 'left';

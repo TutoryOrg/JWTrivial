@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text} from 'components/Text';
 import {Button} from 'components/Button';
-import {fontSizes, gridSizes} from 'constants';
-import {scale, verticalScale} from 'utils/utils';
+import {fontSizes, gridSizes} from '@utils/constants';
+import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
 export const HomeView = styled.SafeAreaView`
