@@ -46,7 +46,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
     const {onPressBn, text, primary, ...rest} = props;
     return (
         <Container onPress={onPressBn} primary={primary} {...rest}>
-            <ButtonText primary={primary} text={text?.toUpperCase()} {...rest} />
+            <ButtonText primary={primary} text={text?.toUpperCase()} />
         </Container>
     );
 };
