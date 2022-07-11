@@ -3,25 +3,23 @@ import {fontFamilies, fontSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
-type TextAlign = 'center' | 'left';
-type TextJustify = 'center' | 'right';
-type FontFamily = keyof typeof fontFamilies;
-
 interface TextProps {
     text: string;
     color?: string;
     fontSize?: number;
-    fontFamily?: FontFamily;
-    textAlign?: TextAlign;
+    fontFamily?: string;
+    fontWeight?: string;
+    textAlign?: string;
     lineHeight?: number;
-    textJustify?: TextJustify;
+    textJustify?: string;
 }
 
 const BaseText = styled.Text<TextProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${scale(fontSizes.normal)}px;
-    color: ${props => props.theme.textColor};
+    font-size: ${props => props?.fontSize ?? scale(fontSizes.normal)}px;
+    color: ${props => props?.color ?? props.theme.textColor};
     text-align: center;
+    font-weight: ${props => props?.fontWeight ?? 'normal'};
 `;
 
 export const Text = (props: TextProps): JSX.Element => {

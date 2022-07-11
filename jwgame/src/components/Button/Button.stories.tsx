@@ -3,6 +3,8 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {Button} from './index';
+import {fontSizes, gridSizes} from '@utils/constants';
+import {scale, verticalScale} from '@utils/scaleFunctions';
 
 export default {
     title: 'components/Button',
@@ -26,11 +28,23 @@ export const Basic_lightTheme: ComponentStory<typeof Button> = args => {
 };
 
 Basic_darkTheme.args = {
-    text: 'Hello World',
+    text: 'Press Me',
+    height: verticalScale(gridSizes.grid7x),
+    width: 70,
+    color: darkTheme.secondaryBnTextColor,
+    backgroundColor: darkTheme.secondaryBnColor,
+    fontSize: scale(fontSizes.normal),
     primary: false,
+    onPressBn: () => console.log('pressed!'),
 };
 
 Basic_lightTheme.args = {
-    text: 'Hello World',
-    primary: true,
+    text: 'Press Me',
+    height: verticalScale(gridSizes.grid7x),
+    width: 70,
+    color: lightTheme.secondaryBnTextColor,
+    backgroundColor: lightTheme.secondaryBnColor,
+    fontSize: scale(fontSizes.normal),
+    primary: false,
+    onPressBn: () => console.log('pressed!'),
 };

@@ -14,7 +14,7 @@ declare module 'styled-components' {
 }
 
 export const lightTheme: DefaultTheme = {
-    viewBg: '#8E97FD',
+    viewBg: '#A3ABFF',
     textColor: '#EBEAEC',
     primaryBnColor: '#5B3C88',
     primaryBnTextColor: '#F6F1FB',
@@ -24,8 +24,8 @@ export const lightTheme: DefaultTheme = {
 };
 
 export const darkTheme: DefaultTheme = {
-    viewBg: '#9AA2FD',
-    textColor: '#E6E7F2',
+    viewBg: '#8E97FD',
+    textColor: '#06E7F2',
     primaryBnColor: '#5B3C88',
     primaryBnTextColor: '#F6F1FB',
     secondaryBnColor: '#FF00A8',

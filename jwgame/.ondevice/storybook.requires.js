@@ -30,7 +30,11 @@ try {
 } catch {}
 
 const getStories = () => {
-  return [require("../src/components/Button/Button.stories.tsx")];
+  return [
+    require("../src/components/Button/Button.stories.tsx"),
+    require("../src/components/Text/Text.stories.tsx"),
+    require("../src/components/TextInput/TextInput.stories.tsx"),
+  ];
 };
 
 configure(getStories, module, false);

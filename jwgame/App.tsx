@@ -12,12 +12,8 @@ import {lightTheme, darkTheme} from './src/themes';
 import StorybookUIRoot from './.ondevice/Storybook';
 import Config from 'react-native-config';
 
-// Config.API_URL; // 'https://myapi.com'
-// Config.GOOGLE_MAPS_API_KEY; // 'abcdefgh'
-
 const App = (): JSX.Element => {
     const isDarkMode = useColorScheme() === 'dark';
-    console.log(Config);
     return (
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <NavigationContainer>
