@@ -48,8 +48,6 @@ Create figma UX/UI design.
 
 ![Screenshot from 2021-12-18 11-50-53](https://user-images.githubusercontent.com/66746179/146638377-bc2be187-60ac-454f-acfe-f624773b8ff3.png)
 
-![Screenshot 2021-10-17 at 22 21 42](https://user-images.githubusercontent.com/66746179/137643591-b28c8c5d-a41b-43b9-b8d7-a4110b06b585.png)
-
 
 # jul. Update Added Storybook to RN
 ![Screenshot from 2022-07-11 14-07-53](https://user-images.githubusercontent.com/66746179/178260822-0915e1ec-17f8-47aa-a67c-265c8f8d4a46.png)
