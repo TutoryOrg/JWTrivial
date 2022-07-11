@@ -27,7 +27,8 @@ const ButtonText = styled(Text)<{
     color?: string;
 }>`
     color: ${props => (props.primary ? colors.white : props?.color ?? colors.black)};
-    font-size: ${props => props?.fontSize ?? scale(fontSizes.normal)}px;
+    font-size: ${props => props?.fontSize ?? scale(fontSizes.xSmall)}px;
+    font-weight: bold;
 `;
 
 interface ButtonProps {
@@ -45,7 +46,7 @@ export const Button = (props: ButtonProps): JSX.Element => {
     const {onPressBn, text, primary, ...rest} = props;
     return (
         <Container onPress={onPressBn} primary={primary} {...rest}>
-            <ButtonText primary={primary} text={text} {...rest} />
+            <ButtonText primary={primary} text={text?.toUpperCase()} {...rest} />
         </Container>
     );
 };

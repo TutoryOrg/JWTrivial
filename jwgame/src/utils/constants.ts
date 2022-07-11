@@ -16,10 +16,11 @@ export const gridSizes = {
     grid4x: 16,
     grid5x: 24,
     grid6x: 32,
-    grid7x: 48,
-    grid8x: 64,
-    grid9x: 80,
-    grid10x: 128,
+    grid7x: 40,
+    grid8x: 48,
+    grid9x: 64,
+    grid10x: 80,
+    grid11x: 128,
 };
 
 export const fontFamilies = {

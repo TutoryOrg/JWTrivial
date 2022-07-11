@@ -44,7 +44,7 @@ Basic_lightTheme.args = {
     width: 70,
     color: lightTheme.secondaryBnTextColor,
     backgroundColor: lightTheme.secondaryBnColor,
-    fontSize: scale(fontSizes.normal),
+    fontSize: scale(fontSizes.xSmall),
     primary: false,
     onPressBn: () => console.log('pressed!'),
 };
