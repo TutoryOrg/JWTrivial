@@ -21,7 +21,7 @@ const TxtLabel = styled.Text<TextInputProps>`
 
 const TxtInput = styled.TextInput<TextInputProps>`
     background-color: ${props => props.theme.textInputBnColor};
-    height: ${verticalScale(gridSizes.grid7x)}px;
+    height: ${verticalScale(gridSizes.grid10x)}px;
     border-radius: ${verticalScale(15)}px;
     text-align: center;
     font-size: ${scale(fontSizes.small)}px;

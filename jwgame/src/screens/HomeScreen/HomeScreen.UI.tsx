@@ -13,7 +13,7 @@ export const HomeView = styled.SafeAreaView`
 
 export const HeaderText = styled(Text)`
     font-size: ${scale(fontSizes.xxxLarge)}px;
-    padding-top: ${verticalScale(gridSizes.grid8x)}px;
+    padding-top: ${verticalScale(gridSizes.grid14x)}px;
 `;
 
 export const SubHeaderText = styled(Text)`
@@ -23,12 +23,12 @@ export const SubHeaderText = styled(Text)`
 
 export const PlayButton = styled(Button)`
     position: absolute;
-    bottom: ${verticalScale(gridSizes.grid11x)}px;
+    bottom: ${verticalScale(gridSizes.grid17x)}px;
 `;
 
 export const AcceptButton = styled(Button)`
     position: absolute;
-    bottom: ${verticalScale(gridSizes.grid7x)}px;
+    bottom: ${verticalScale(gridSizes.grid11x)}px;
 `;
 
 type TProfileButton = {
