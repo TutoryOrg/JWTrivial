@@ -53,6 +53,8 @@ Create figma UX/UI design.
 ![Screenshot from 2022-07-11 15-32-42](https://user-images.githubusercontent.com/66746179/178292509-677a682b-21b9-44ed-a8aa-97fbac83678c.png)
 
 
+![New Project](https://user-images.githubusercontent.com/66746179/178447663-26f8f89a-6028-4d65-9aa1-fb64a11d7aa2.gif)
+
 
 
 
