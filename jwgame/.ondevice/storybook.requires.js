@@ -31,6 +31,7 @@ try {
 
 const getStories = () => {
   return [
+    require("../src/components/ArrowButton/ArrowButton.stories.tsx"),
     require("../src/components/Button/Button.stories.tsx"),
     require("../src/components/Text/Text.stories.tsx"),
     require("../src/components/TextInput/TextInput.stories.tsx"),
