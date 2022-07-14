@@ -26,13 +26,17 @@ export const Basic_lightTheme: ComponentStory<typeof TextInput> = args => {
 };
 
 Basic_darkTheme.args = {
-    isPassw: false,
-    placeHolder: 'PlaceHolder',
-    label: 'Label',
+    isSecret: true,
+    isEditable: true,
+    placeHolder: 'password',
+    label: 'Password',
+    defaultValue: '',
 };
 
 Basic_lightTheme.args = {
-    isPassw: false,
+    isSecret: true,
+    isEditable: false,
     placeHolder: 'PlaceHolder',
     label: 'Label',
+    defaultValue: 'clue',
 };

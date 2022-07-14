@@ -30,7 +30,7 @@ export const Basic_lightTheme: ComponentStory<typeof Button> = args => {
 Basic_darkTheme.args = {
     text: 'Press Me',
     height: verticalScale(gridSizes.grid7x),
-    width: 70,
+    width: 60,
     color: darkTheme.secondaryBnTextColor,
     backgroundColor: darkTheme.secondaryBnColor,
     fontSize: scale(fontSizes.normal),
@@ -41,7 +41,7 @@ Basic_darkTheme.args = {
 Basic_lightTheme.args = {
     text: 'Press Me',
     height: verticalScale(gridSizes.grid7x),
-    width: 70,
+    width: 60,
     color: lightTheme.secondaryBnTextColor,
     backgroundColor: lightTheme.secondaryBnColor,
     fontSize: scale(fontSizes.xSmall),
