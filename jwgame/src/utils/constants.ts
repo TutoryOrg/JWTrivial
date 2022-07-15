@@ -64,4 +64,10 @@ export const colors = {
     paleOrange: '#FFCFAA',
     failure: '#E32704',
     paleBlue: '#DEEAF7',
+    menuPurple: '#8E97FD',
+    menuOrange: '#FA6E5A',
+    menuPale: '#FEB18F',
+    menuYellow: '#FFCF86',
+    menuBlue: '#7583CA',
+    menuPink: '#D9A5B5',
 };
