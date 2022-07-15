@@ -9,52 +9,26 @@ https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1
 ![Screenshot 2021-10-31 at 12 54 42](https://user-images.githubusercontent.com/66746179/139581827-3cdad3f1-6d81-497d-ad7f-a0b30f99acff.png)
 
 
-![2022-07-12 10-05-02](https://user-images.githubusercontent.com/66746179/178448914-385c151d-2c75-49a4-a944-3a8b7c68fb4e.gif)
-
-
-
 ## Stack and Data
 https://docs.google.com/drawings/d/1EJM08WkckPTJwnE2PnWPWmKxUk999Nm0U1iF1AcIBGo/edit?usp=sharing
 
 ![Screenshot from 2021-10-29 01-51-10](https://user-images.githubusercontent.com/66746179/139351460-bf389098-e4a7-4459-8ba0-511621d72d4b.png)
 
 
-# To Run The App 
-
-After cloning the repository...
-
+# Mode Storybook UI
+.env
 ```
-cd jwgame
-```
-```
-npm install
-```
-```
-npx run start
-```
-```
-npx run android
+STORYBOOK_MODE = true
 ```
 
-## Progres.
-
-Idea. 
-
-Install everything && Setting up the development environment. 
-
-Create repository to the next unicorn idea. 
-
-Create figma UX/UI design.
+Build and Test UI Components on Storybook.
+![Screenshot from 2022-07-11 15-32-54](https://user-images.githubusercontent.com/66746179/179183763-d9d1e765-e5c2-4355-addc-989394045e0e.png)
 
 
+# Mode App
+.env
+```
+STORYBOOK_MODE = false
+```
 
-1 Day.  Init App. 
-
-![Screenshot from 2021-12-18 11-50-53](https://user-images.githubusercontent.com/66746179/146638377-bc2be187-60ac-454f-acfe-f624773b8ff3.png)
-
-# jul. Update Added Storybook to RN
-
-![Screenshot from 2022-07-11 15-32-42](https://user-images.githubusercontent.com/66746179/178292509-677a682b-21b9-44ed-a8aa-97fbac83678c.png)
-
-
-
+![2022-07-12 10-05-02](https://user-images.githubusercontent.com/66746179/178448914-385c151d-2c75-49a4-a944-3a8b7c68fb4e.gif)
