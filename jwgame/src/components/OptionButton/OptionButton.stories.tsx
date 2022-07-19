@@ -26,9 +26,17 @@ export const Basic_lightTheme: ComponentStory<typeof OptionButton> = args => {
 };
 
 Basic_darkTheme.args = {
+    optionText: 'A',
+    description: 'primary description',
+    subDescription: 'sub description',
+    isSelected: false,
     onPress: () => console.log('Pressed!'),
 };
 
 Basic_lightTheme.args = {
+    optionText: 'A',
+    description: 'primary description',
+    subDescription: 'sub description',
+    isSelected: false,
     onPress: () => console.log('Pressed!'),
 };

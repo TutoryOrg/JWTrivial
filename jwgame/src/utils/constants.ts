@@ -40,6 +40,7 @@ export const fontFamilies = {
 export const colors = {
     black: '#000',
     white: '#FFF',
+    backgroundWhite: '#FBFCFC',
     darkGrey: '#999999',
     yellow: '#FFCC00',
     primaryGray: '#555555',
@@ -70,4 +71,5 @@ export const colors = {
     menuYellow: '#FFCF86',
     menuBlue: '#7583CA',
     menuPink: '#D9A5B5',
+    indigo: '#5B3C88',
 };
