@@ -10,7 +10,7 @@ export const BgView = styled.SafeAreaView`
     align-items: center;
     justify-content: space-between;
     background-color: ${(props: {theme: {viewBg: unknown}}) => props.theme.viewBg};
-    padding: 50px 0px;
+    padding: ${verticalScale(gridSizes.grid10x)}px 0px;
 `;
 
 export const HeaderText = styled(Text)`
@@ -20,13 +20,13 @@ export const HeaderText = styled(Text)`
 `;
 
 export const TxtInputUser = styled(TextInput)`
-    bottom: ${verticalScale(gridSizes.grid6x)}px;
+    padding-top: ${verticalScale(gridSizes.grid5x)}px;
 `;
 
 export const TxtInputPassw = styled(TextInput)`
-    bottom: ${verticalScale(gridSizes.grid6x)}px;
+    padding-top: ${verticalScale(gridSizes.grid5x)}px;
 `;
 
 export const LoginButton = styled(Button)`
-    top: ${verticalScale(gridSizes.grid2x)}px;
+    top: ${verticalScale(gridSizes.grid5x)}px;
 `;
