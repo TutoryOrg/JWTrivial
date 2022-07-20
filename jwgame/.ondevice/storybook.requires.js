@@ -37,6 +37,7 @@ const getStories = () => {
     require("../src/components/OptionButton/OptionButton.stories.tsx"),
     require("../src/components/Text/Text.stories.tsx"),
     require("../src/components/TextInput/TextInput.stories.tsx"),
+    require("../src/components/Timer/Timer.stories.tsx"),
   ];
 };
 

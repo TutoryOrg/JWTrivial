@@ -35,7 +35,7 @@ const OptionText = styled(Text)<{
 `;
 
 const Description = styled.View`
-    margin-left: 10px;
+    margin-left: ${scale(gridSizes.grid4x)}px;
     align-items: center;
     justify-content: center;
 `;
@@ -47,6 +47,7 @@ const DescriptionText = styled(Text)`
     font-size: ${scale(fontSizes.small)}px;
     font-family: ${fontFamilies.NunitoBold};
 `;
+
 const SubDescriptionText = styled(Text)`
     width: 100%;
     text-align: left;

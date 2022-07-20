@@ -31,10 +31,9 @@ const TxtInput = styled.TextInput<TextInputProps>`
 `;
 
 const EyeIcon = styled.Image`
-    height: ${scale(gridSizes.grid6x)}px;
-    width: ${scale(gridSizes.grid6x)}px;
+    height: ${scale(gridSizes.grid5x)}px;
+    width: ${scale(gridSizes.grid5x)}px;
     right: ${scale(gridSizes.grid8x)}px;
-    z-index: 10;
 `;
 
 interface TextInputProps {
