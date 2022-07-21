@@ -9,6 +9,8 @@ const resources = {
             sub_welcome: 'This game does not claim to be educational',
             accept: 'Accept',
             play: 'Play',
+            min: 'Min',
+            sec: 'Sec',
         },
     },
     es: {
@@ -21,6 +23,8 @@ const resources = {
             sub_welcome: 'Este juego no pretende educar ',
             accept: 'Aceptar',
             play: 'Jugar',
+            min: 'Min',
+            sec: 'Seg',
         },
     },
 };

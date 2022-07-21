@@ -10,7 +10,8 @@ export const fontSizes = {
 };
 
 export const gridSizes = {
-    gridx: 4,
+    gridx: 2,
+    grid1x: 4,
     grid2x: 8,
     grid3x: 12,
     grid4x: 16,

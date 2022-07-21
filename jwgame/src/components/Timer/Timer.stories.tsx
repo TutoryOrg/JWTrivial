@@ -25,6 +25,14 @@ export const Basic_lightTheme: ComponentStory<typeof Timer> = args => {
     );
 };
 
-Basic_darkTheme.args = {};
+Basic_darkTheme.args = {
+    minutes: 1,
+    seconds: 3,
+    onTimeUp: () => console.log('Time up!'),
+};
 
-Basic_lightTheme.args = {};
+Basic_lightTheme.args = {
+    minutes: 1,
+    seconds: 3,
+    onTimeUp: () => console.log('Time up!'),
+};
