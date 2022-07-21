@@ -75,11 +75,12 @@ interface TimerProps {
 }
 
 export const Timer = (props: TimerProps): JSX.Element => {
-    const {t} = useTranslation();
     const {minutes, seconds, onTimeUp} = props;
 
-    const [min, setMin] = useState(minutes ?? 2);
-    const [sec, setSec] = useState(seconds ?? 3);
+    const {t} = useTranslation();
+
+    const [min, setMin] = useState(minutes ?? 0);
+    const [sec, setSec] = useState(seconds ?? 0);
 
     useEffect(() => {
         if (sec === 0 && min === 0) {
