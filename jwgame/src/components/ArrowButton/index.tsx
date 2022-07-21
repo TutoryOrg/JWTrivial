@@ -27,15 +27,15 @@ const ArrowIcon = styled.Image<{
 type directionTypes = 'top' | 'right' | 'left' | 'down';
 
 interface ArrowButtonProps {
-    direction: directionTypes;
+    direction?: directionTypes;
     onPress: () => void;
 }
 
 export const ArrowButton = (props: ArrowButtonProps): JSX.Element => {
-    const {direction, onPress} = props;
+    const {direction, onPress, ...rest} = props;
 
     return (
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={onPress} {...rest}>
             <ArrowIcon direction={direction} source={require('assets/icons/arrow.png')} />
         </TouchableOpacity>
     );

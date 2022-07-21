@@ -1,11 +1,10 @@
-import React from 'react';
 import {Text} from 'components/Text';
-import {Button} from 'components/Button';
 import {fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
+import {Button} from '@components/Button';
 
-export const HomeView = styled.SafeAreaView`
+export const SafeViewBg = styled.SafeAreaView`
     flex: 1;
     align-items: center;
     background-color: ${props => props.theme.viewBg};
@@ -23,31 +22,5 @@ export const SubHeaderText = styled(Text)`
 
 export const PlayButton = styled(Button)`
     position: absolute;
-    bottom: ${verticalScale(gridSizes.grid17x)}px;
+    bottom: ${verticalScale(gridSizes.grid15x)}px;
 `;
-
-export const AcceptButton = styled(Button)`
-    position: absolute;
-    bottom: ${verticalScale(gridSizes.grid11x)}px;
-`;
-
-type TProfileButton = {
-    onPress: () => void;
-};
-
-export const ProfileButton = ({onPress}: TProfileButton): JSX.Element => {
-    const UserIcon = styled.Image`
-        width: 40px;
-        height: 40px;
-    `;
-    const ContainerTouchable = styled.TouchableOpacity`
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    `;
-    return (
-        <ContainerTouchable onPress={onPress}>
-            <UserIcon source={require('../../assets/icons/userIcon_250.png')} />
-        </ContainerTouchable>
-    );
-};

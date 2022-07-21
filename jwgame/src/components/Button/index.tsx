@@ -32,14 +32,14 @@ const ButtonText = styled(Text)<{
 `;
 
 interface ButtonProps {
-    text?: string;
+    text: string;
     height?: number;
     width?: number;
     fontSize?: number;
     color?: string;
     primary?: boolean;
     backgroundColor?: string;
-    onPressBn?: () => void;
+    onPressBn: () => void;
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {

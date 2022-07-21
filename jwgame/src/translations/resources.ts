@@ -11,6 +11,7 @@ const resources = {
             play: 'Play',
             min: 'Min',
             sec: 'Sec',
+            menu: 'Menu',
         },
     },
     es: {
@@ -25,6 +26,7 @@ const resources = {
             play: 'Jugar',
             min: 'Min',
             sec: 'Seg',
+            menu: 'Menú',
         },
     },
 };

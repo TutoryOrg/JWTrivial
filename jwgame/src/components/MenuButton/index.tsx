@@ -29,10 +29,10 @@ interface MenuButton {
 }
 
 export const MenuButton = (props: MenuButton): JSX.Element => {
-    const {onPress, text, color} = props;
+    const {onPress, text, color, ...rest} = props;
 
     return (
-        <ButtonContainer onPress={onPress} color={color}>
+        <ButtonContainer onPress={onPress} color={color} {...rest}>
             <TextContainer text={text} />
         </ButtonContainer>
     );
