@@ -2,41 +2,44 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {gridSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
-import {TouchableOpacity} from 'react-native';
 
 const ArrowIcon = styled.Image<{
-    direction;
+    directionArrow;
 }>`
     height: ${scale(gridSizes.grid6x)}px;
     width: ${scale(gridSizes.grid6x)}px;
     transform: ${props => {
-        if (props?.direction === 'top') {
+        if (props?.directionArrow === 'top') {
             return 'rotate(90deg)';
         }
-        if (props?.direction === 'down') {
+        if (props?.directionArrow === 'down') {
             return 'rotate(270deg)';
         }
-        if (props?.direction === 'right') {
+        if (props?.directionArrow === 'right') {
             return 'rotate(180deg)';
         }
         return 'rotate(0deg)';
     }};
-    z-index: 10;
+    z-index: 0;
+`;
+
+const TouchableContainer = styled.TouchableOpacity`
+    z-index: 1;
 `;
 
 type directionTypes = 'top' | 'right' | 'left' | 'down';
 
 interface ArrowButtonProps {
-    direction?: directionTypes;
+    directionArrow?: directionTypes;
     onPress: () => void;
 }
 
 export const ArrowButton = (props: ArrowButtonProps): JSX.Element => {
-    const {direction, onPress, ...rest} = props;
+    const {directionArrow, onPress, ...rest} = props;
 
     return (
-        <TouchableOpacity onPress={onPress} {...rest}>
-            <ArrowIcon direction={direction} source={require('assets/icons/arrow.png')} />
-        </TouchableOpacity>
+        <TouchableContainer onPress={onPress} {...rest}>
+            <ArrowIcon directionArrow={directionArrow} source={require('assets/icons/arrow.png')} />
+        </TouchableContainer>
     );
 };

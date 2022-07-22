@@ -1,7 +1,6 @@
+import React from 'react';
 import {MainStackParamList} from '@navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {colors} from '@utils/constants';
-import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {
     MenuOptionButton,
@@ -9,6 +8,8 @@ import {
     HeaderText,
     MenuContainer,
     SafeViewBg,
+    HeaderContainer,
+    MenuOptions,
 } from './MenuScreen.UI';
 
 type MenuScreenProps = NativeStackScreenProps<MainStackParamList>;
@@ -20,45 +21,20 @@ function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
 
     return (
         <SafeViewBg>
-            <HeaderText text={t('menu')} />
-            <GoBackButton onPress={onGoBack} />
+            <HeaderContainer>
+                <GoBackButton onPress={onGoBack} />
+                <HeaderText text={t('menu')} />
+            </HeaderContainer>
 
             <MenuContainer>
-                <MenuOptionButton
-                    text={'Quién fue .. ? '}
-                    color={`${colors.menuYellow}`}
-                    onPress={() => console.log('')}
-                />
-
-                <MenuOptionButton
-                    text={'Historia'}
-                    color={`${colors.menuOrange}`}
-                    onPress={() => console.log('')}
-                />
-
-                <MenuOptionButton
-                    text={'Profecías'}
-                    color={`${colors.menuPale}`}
-                    onPress={() => console.log('')}
-                />
-
-                <MenuOptionButton
-                    text={'Quién dijo .. ?'}
-                    color={`${colors.menuBlue}`}
-                    onPress={() => console.log('')}
-                />
-
-                <MenuOptionButton
-                    text={'Ajustes'}
-                    color={`${colors.green}`}
-                    onPress={() => console.log('')}
-                />
-
-                <MenuOptionButton
-                    text={'Estadísticas'}
-                    color={`${colors.yellow}`}
-                    onPress={() => console.log('')}
-                />
+                {MenuOptions.map((menu, index) => (
+                    <MenuOptionButton
+                        key={index}
+                        text={t(menu.text)}
+                        color={menu.color}
+                        onPress={() => navigation.navigate(menu.goToScreen)}
+                    />
+                ))}
             </MenuContainer>
         </SafeViewBg>
     );

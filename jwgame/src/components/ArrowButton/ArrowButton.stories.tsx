@@ -8,7 +8,7 @@ export default {
     title: 'components/ArrowButton',
     component: ArrowButton,
     argTypes: {
-        direction: {
+        directionArrow: {
             options: ['top', 'left', 'right', 'down'],
             control: {type: 'select'},
         },
@@ -32,11 +32,11 @@ export const Basic_lightTheme: ComponentStory<typeof ArrowButton> = args => {
 };
 
 Basic_darkTheme.args = {
-    direction: 'top',
+    directionArrow: 'top',
     onPress: () => console.log('Pressed!'),
 };
 
 Basic_lightTheme.args = {
-    direction: 'top',
+    directionArrow: 'top',
     onPress: () => console.log('Pressed!'),
 };

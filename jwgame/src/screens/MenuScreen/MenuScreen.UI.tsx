@@ -1,9 +1,10 @@
 import {Text} from 'components/Text';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
-import {scale} from '@utils/scaleFunctions';
-import styled from 'styled-components/native';
-import {ArrowButton} from '@components/ArrowButton';
+import {Screens} from 'navigation/constants';
 import {MenuButton} from '@components/MenuButton';
+import {ArrowButton} from '@components/ArrowButton';
+import {scale, windowWidth} from '@utils/scaleFunctions';
+import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import styled from 'styled-components/native';
 
 export const SafeViewBg = styled.SafeAreaView`
     flex: 1;
@@ -11,22 +12,27 @@ export const SafeViewBg = styled.SafeAreaView`
     background-color: ${props => props.theme.lightViewBg};
 `;
 
+export const HeaderContainer = styled.View`
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    top: ${scale(gridSizes.grid3x)}px;
+`;
+
 export const GoBackButton = styled(ArrowButton)`
-    position: absolute;
-    top: ${scale(gridSizes.grid4x)}px;
-    left: ${scale(gridSizes.grid4x)}px;
+    left: ${scale(gridSizes.grid3x)}px;
 `;
 
 export const HeaderText = styled(Text)`
-    font-size: ${scale(fontSizes.xxxLarge)}px;
-    font-family: ${fontFamilies.NunitoBold};
     color: ${colors.primaryGray};
-    top: ${scale(gridSizes.grid2x)}px;
+    font-family: ${fontFamilies.NunitoBold};
+    font-size: ${scale(fontSizes.xxxLarge)}px;
+    width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
 `;
 
 export const MenuContainer = styled.View`
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     top: ${scale(gridSizes.grid9x)}px;
 `;
@@ -35,3 +41,36 @@ export const MenuOptionButton = styled(MenuButton)`
     margin: ${scale(gridSizes.grid6x)}px ${scale(gridSizes.grid4x)}px ${scale(gridSizes.grid3x)}px
         ${scale(gridSizes.grid4x)}px;
 `;
+
+export const MenuOptions = [
+    {
+        text: 'whowas',
+        color: colors.menuYellow,
+        goToScreen: Screens.HomeScreen,
+    },
+    {
+        text: 'history',
+        color: colors.menuOrange,
+        goToScreen: Screens.HomeScreen,
+    },
+    {
+        text: 'prophecies',
+        color: colors.menuPale,
+        goToScreen: Screens.MenuScreen,
+    },
+    {
+        text: 'whosaid',
+        color: colors.menuBlue,
+        goToScreen: Screens.HomeScreen,
+    },
+    {
+        text: 'settings',
+        color: colors.green,
+        goToScreen: Screens.MenuScreen,
+    },
+    {
+        text: 'stats',
+        color: colors.yellow,
+        goToScreen: Screens.HomeScreen,
+    },
+];
