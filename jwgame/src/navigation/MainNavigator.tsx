@@ -11,39 +11,37 @@ export type MainStackParamList = {
     [Screens.ProfileScreen]: undefined;
     [Screens.MenuScreen]: undefined;
     [Screens.LoginScreen]: undefined;
-    [Screens.GameScreen]: undefined;
+    [Screens.GameScreen]: {title: string} | undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
 
-const MainNavigator = (): JSX.Element => {
-    return (
-        <MainStack.Navigator>
-            <MainStack.Screen
-                name={Screens.HomeScreen}
-                component={HomeScreen}
-                options={{headerShown: false}}
-            />
+const MainNavigator = (): JSX.Element => (
+    <MainStack.Navigator>
+        <MainStack.Screen
+            name={Screens.HomeScreen}
+            component={HomeScreen}
+            options={{headerShown: false}}
+        />
 
-            <MainStack.Screen
-                name={Screens.MenuScreen}
-                component={MenuScreen}
-                options={{headerShown: false}}
-            />
+        <MainStack.Screen
+            name={Screens.MenuScreen}
+            component={MenuScreen}
+            options={{headerShown: false}}
+        />
 
-            <MainStack.Screen
-                name={Screens.GameScreen}
-                component={GameScreen}
-                options={{headerShown: false}}
-            />
+        <MainStack.Screen
+            name={Screens.GameScreen}
+            component={GameScreen}
+            options={{headerShown: false}}
+        />
 
-            <MainStack.Screen
-                name={Screens.LoginScreen}
-                component={LoginScreen}
-                options={{headerShown: false}}
-            />
-        </MainStack.Navigator>
-    );
-};
+        <MainStack.Screen
+            name={Screens.LoginScreen}
+            component={LoginScreen}
+            options={{headerShown: false}}
+        />
+    </MainStack.Navigator>
+);
 
 export {MainNavigator};

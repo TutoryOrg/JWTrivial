@@ -51,26 +51,26 @@ export const MenuOptions = [
     {
         text: 'history',
         color: colors.menuOrange,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.GameScreen,
     },
     {
         text: 'prophecies',
         color: colors.menuPale,
-        goToScreen: Screens.MenuScreen,
+        goToScreen: Screens.GameScreen,
     },
     {
         text: 'whosaid',
         color: colors.menuBlue,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.GameScreen,
     },
     {
         text: 'settings',
         color: colors.green,
-        goToScreen: Screens.MenuScreen,
+        goToScreen: Screens.GameScreen,
     },
     {
         text: 'stats',
         color: colors.yellow,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.GameScreen,
     },
 ];
