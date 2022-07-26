@@ -3,4 +3,5 @@ export enum Screens {
     ProfileScreen = 'ProfileScreen',
     MenuScreen = 'MenuScreen',
     LoginScreen = 'LoginScreen',
+    GameScreen = 'GameScreen',
 }

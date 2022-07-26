@@ -1,9 +1,9 @@
 import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from 'screens/HomeScreen';
-import {ProfileScreen} from 'screens/ProfileScreen';
 import {MenuScreen} from 'screens/MenuScreen';
 import {LoginScreen} from 'screens/LoginScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {GameScreen} from 'screens/GameScreen';
 import {Screens} from './constants';
 
 export type MainStackParamList = {
@@ -11,6 +11,7 @@ export type MainStackParamList = {
     [Screens.ProfileScreen]: undefined;
     [Screens.MenuScreen]: undefined;
     [Screens.LoginScreen]: undefined;
+    [Screens.GameScreen]: undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
@@ -25,14 +26,14 @@ const MainNavigator = (): JSX.Element => {
             />
 
             <MainStack.Screen
-                name={Screens.ProfileScreen}
-                component={ProfileScreen}
+                name={Screens.MenuScreen}
+                component={MenuScreen}
                 options={{headerShown: false}}
             />
 
             <MainStack.Screen
-                name={Screens.MenuScreen}
-                component={MenuScreen}
+                name={Screens.GameScreen}
+                component={GameScreen}
                 options={{headerShown: false}}
             />
 

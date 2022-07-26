@@ -18,7 +18,7 @@ const TextContainer = styled(Text)`
     bottom: ${moderateScale(gridSizes.grid3x)}px;
     left: ${moderateScale(gridSizes.grid2x)}px;
     font-family: ${fontFamilies.NunitoBold};
-    color: ${colors.primaryGray};
+    color: ${colors.primaryGrey};
 `;
 
 interface MenuButton {

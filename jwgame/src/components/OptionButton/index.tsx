@@ -31,7 +31,7 @@ const OptionText = styled(Text)<{
 }>`
     height: 100%;
     font-family: ${fontFamilies.NunitoBold};
-    color: ${props => (props.selected ? colors.white : colors.primaryGray)};
+    color: ${props => (props.selected ? colors.white : colors.primaryGrey)};
 `;
 
 const Description = styled.View`
@@ -43,7 +43,7 @@ const Description = styled.View`
 const DescriptionText = styled(Text)`
     width: 100%;
     text-align: left;
-    color: ${colors.primaryGray};
+    color: ${colors.primaryGrey};
     font-size: ${scale(fontSizes.small)}px;
     font-family: ${fontFamilies.NunitoBold};
 `;
@@ -51,7 +51,7 @@ const DescriptionText = styled(Text)`
 const SubDescriptionText = styled(Text)`
     width: 100%;
     text-align: left;
-    color: ${colors.primaryGray};
+    color: ${colors.primaryGrey};
     font-size: ${scale(fontSizes.xSmall)}px;
     bottom: ${verticalScale(gridSizes.gridx)}px;
 `;

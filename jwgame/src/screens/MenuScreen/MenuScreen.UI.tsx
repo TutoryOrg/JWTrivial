@@ -24,7 +24,7 @@ export const GoBackButton = styled(ArrowButton)`
 `;
 
 export const HeaderText = styled(Text)`
-    color: ${colors.primaryGray};
+    color: ${colors.primaryGrey};
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.xxxLarge)}px;
     width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
@@ -46,7 +46,7 @@ export const MenuOptions = [
     {
         text: 'whowas',
         color: colors.menuYellow,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.GameScreen,
     },
     {
         text: 'history',
