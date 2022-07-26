@@ -9,7 +9,7 @@ const TouchableContainer = styled.TouchableOpacity`
     align-items: center;
     flex-direction: row;
     background-color: ${colors.backgroundGrey};
-    height: ${verticalScale(gridSizes.grid12x)}px;
+    height: ${verticalScale(gridSizes.grid10x)}px;
     border-radius: ${scale(gridSizes.grid2x)}px;
 `;
 

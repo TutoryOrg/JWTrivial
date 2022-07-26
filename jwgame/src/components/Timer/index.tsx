@@ -20,20 +20,20 @@ const UnitContainer = styled.View`
 
 const UnitText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
-    font-size: ${scale(fontSizes.xxLarge)}px;
+    font-size: ${scale(fontSizes.xLarge)}px;
     color: ${colors.indigo};
     margin-bottom: 10px;
 `;
 
 const NumberText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
-    font-size: ${scale(fontSizes.xxLarge)}px;
+    font-size: ${scale(fontSizes.xLarge)}px;
     color: ${colors.black};
 `;
 
 const NumberTextFade = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
-    font-size: ${scale(fontSizes.xLarge)}px;
+    font-size: ${scale(fontSizes.large)}px;
     color: ${colors.fadedGrey};
     opacity: 0.5;
 `;
