@@ -5,11 +5,11 @@ import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
 
 const TouchableContainer = styled.TouchableOpacity`
-    flex-direction: row;
+    width: 90%;
     align-items: center;
-    background-color: ${colors.backgroundWhite};
-    width: 55%;
-    height: ${verticalScale(gridSizes.grid10x)}px;
+    flex-direction: row;
+    background-color: ${colors.backgroundGrey};
+    height: ${verticalScale(gridSizes.grid12x)}px;
     border-radius: ${scale(gridSizes.grid2x)}px;
 `;
 

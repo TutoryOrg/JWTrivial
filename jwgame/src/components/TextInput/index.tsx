@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import {fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 import {TouchableOpacity} from 'react-native';
 
 const Container = styled.View`
-    flex: 1;
-    height: ${verticalScale(gridSizes.grid7x)}px;
-    width: 70%;
+    height: ${verticalScale(gridSizes.grid8x)}px;
+    width: 80%;
 `;
 
 const ContainerInput = styled.View`
@@ -17,12 +16,12 @@ const ContainerInput = styled.View`
 
 const TxtLabel = styled.Text<TextInputProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${scale(fontSizes.normal)}px;
+    font-size: ${scale(fontSizes.xLarge)}px;
 `;
 
 const TxtInput = styled.TextInput<TextInputProps>`
     background-color: ${props => props.theme.textInputBnColor};
-    height: ${verticalScale(gridSizes.grid10x)}px;
+    height: ${verticalScale(gridSizes.grid11x)}px;
     width: 100%;
     border-radius: ${verticalScale(15)}px;
     text-align: center;
@@ -37,11 +36,11 @@ const EyeIcon = styled.Image`
 `;
 
 interface TextInputProps {
-    isSecret?: boolean;
-    isEditable?: boolean;
-    label?: string;
-    placeHolder?: string;
-    defaultValue?: string;
+    isSecret: boolean;
+    isEditable: boolean;
+    label: string;
+    placeHolder: string;
+    defaultValue: string;
 }
 export const TextInput = (props: TextInputProps): JSX.Element => {
     const {isSecret, isEditable, placeHolder, label, defaultValue, ...rest} = props;

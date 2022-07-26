@@ -66,11 +66,11 @@ export const MenuOptions = [
     {
         text: 'settings',
         color: colors.green,
-        goToScreen: Screens.GameScreen,
+        goToScreen: Screens.HomeScreen,
     },
     {
         text: 'stats',
         color: colors.yellow,
-        goToScreen: Screens.GameScreen,
+        goToScreen: Screens.HomeScreen,
     },
 ];

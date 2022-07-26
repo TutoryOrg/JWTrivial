@@ -8,6 +8,16 @@ export const SafeViewBg = styled.SafeAreaView`
     flex: 1;
     align-items: center;
     background-color: ${props => props.theme.lightViewBg};
+    height: 100%;
+`;
+
+export const GameContainer = styled.View`
+    height: 80%;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-around;
+    // background-color: ${colors.paleBlue};
 `;
 
 export const HeaderContainer = styled.View`
@@ -26,4 +36,10 @@ export const HeaderText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.xxxLarge)}px;
     width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
+`;
+
+export const QuestionText = styled(Text)`
+    color: ${colors.darkGrey};
+    font-size: ${scale(fontSizes.normal)}px;
+    text-align: left;
 `;

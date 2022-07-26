@@ -3,7 +3,17 @@ import {useTranslation} from 'react-i18next';
 import {Screens} from '@navigation/constants';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {GoBackButton, HeaderContainer, HeaderText, SafeViewBg} from './GameScreen.UI';
+import {
+    GameContainer,
+    GoBackButton,
+    HeaderContainer,
+    HeaderText,
+    QuestionText,
+    SafeViewBg,
+} from './GameScreen.UI';
+import {Timer} from '@components/Timer';
+import {OptionButton} from '@components/OptionButton';
+import {TextInput} from '@components/TextInput';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 
@@ -18,6 +28,48 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
                 <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t(route?.params?.title as string)} />
             </HeaderContainer>
+
+            <GameContainer>
+                <QuestionText
+                    text={
+                        'LoLorem Ipsum is simply dummy text of the printing and typesetting industryrem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum'
+                    }
+                />
+
+                <Timer minutes={1} seconds={4} onTimeUp={() => console.log('Time up!')} />
+
+                <OptionButton
+                    optionText={'A'}
+                    description={'Option button'}
+                    isSelected={true}
+                    subDescription={'subdescription'}
+                    onPress={() => console.log('OptionPressed')}
+                />
+
+                <OptionButton
+                    optionText={'B'}
+                    description={'Option button'}
+                    isSelected={false}
+                    subDescription={'subdescription'}
+                    onPress={() => console.log('OptionPressed')}
+                />
+
+                <OptionButton
+                    optionText={'C'}
+                    description={'Option button'}
+                    isSelected={false}
+                    subDescription={'subdescription'}
+                    onPress={() => console.log('OptionPressed')}
+                />
+
+                <TextInput
+                    isSecret={true}
+                    isEditable={false}
+                    label={'Pista'}
+                    placeHolder={'placeholder'}
+                    defaultValue={'pista numero 1'}
+                />
+            </GameContainer>
         </SafeViewBg>
     );
 }

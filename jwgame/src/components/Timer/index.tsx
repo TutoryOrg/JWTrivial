@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {scale, verticalScale} from '@utils/scaleFunctions';
-import {colors, fontFamilies, gridSizes} from '@utils/constants';
+import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {Text} from '@components/Text';
 import styled from 'styled-components/native';
 
@@ -20,17 +20,20 @@ const UnitContainer = styled.View`
 
 const UnitText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
+    font-size: ${scale(fontSizes.xxLarge)}px;
     color: ${colors.indigo};
     margin-bottom: 10px;
 `;
 
 const NumberText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
+    font-size: ${scale(fontSizes.xxLarge)}px;
     color: ${colors.black};
 `;
 
 const NumberTextFade = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
+    font-size: ${scale(fontSizes.xLarge)}px;
     color: ${colors.fadedGrey};
     opacity: 0.5;
 `;
