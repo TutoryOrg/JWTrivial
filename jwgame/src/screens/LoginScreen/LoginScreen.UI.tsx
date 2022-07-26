@@ -1,9 +1,7 @@
-import {Text} from 'components/Text';
-import {Button} from 'components/Button';
-import {TextInput} from 'components/TextInput';
-import styled from 'styled-components/native';
+import {Text, Button, TextInput} from 'components';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import {fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import styled from 'styled-components/native';
 
 export const BgView = styled.SafeAreaView`
     flex: 1;

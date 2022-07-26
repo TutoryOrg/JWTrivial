@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {Screens} from '@navigation/constants';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {Button, OptionButton, TextInput, Timer} from 'components';
 import {
     GameContainer,
     GoBackButton,
@@ -11,10 +12,6 @@ import {
     QuestionText,
     SafeViewBg,
 } from './GameScreen.UI';
-import {Timer} from '@components/Timer';
-import {OptionButton} from '@components/OptionButton';
-import {TextInput} from '@components/TextInput';
-import {Button} from '@components/Button';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 

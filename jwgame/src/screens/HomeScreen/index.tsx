@@ -1,9 +1,9 @@
 import React from 'react';
+import {Screens} from 'navigation/constants';
 import {useTranslation} from 'react-i18next';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {SafeViewBg, HeaderText, SubHeaderText, PlayButton} from './HomeScreen.UI';
-import {Screens} from 'navigation/constants';
 
 type HomeNavProp = NativeStackScreenProps<MainStackParamList>;
 

@@ -1,7 +1,6 @@
 import {Text} from 'components/Text';
 import {Screens} from 'navigation/constants';
-import {MenuButton} from '@components/MenuButton';
-import {ArrowButton} from '@components/ArrowButton';
+import {MenuButton, ArrowButton} from 'components';
 import {scale, windowWidth} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
@@ -65,12 +64,12 @@ export const MenuOptions = [
     },
     {
         text: 'settings',
-        color: colors.green,
+        color: colors.yellow,
         goToScreen: Screens.HomeScreen,
     },
     {
-        text: 'stats',
-        color: colors.yellow,
+        text: 'profile',
+        color: colors.green,
         goToScreen: Screens.HomeScreen,
     },
 ];

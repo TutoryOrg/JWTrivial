@@ -18,6 +18,7 @@ const resources = {
             whosaid: 'Who said ... ?',
             settings: 'Settings',
             stats: 'Stats',
+            profile: 'Profile',
         },
     },
     es: {
@@ -39,6 +40,7 @@ const resources = {
             whosaid: '¿Quién dijo..?',
             settings: 'Ajustes',
             stats: 'Estadísticas',
+            profile: 'Perfil',
         },
     },
 };

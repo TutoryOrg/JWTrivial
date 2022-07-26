@@ -17,7 +17,6 @@ export const GameContainer = styled.View`
     margin-top: 20px;
     align-items: center;
     justify-content: space-around;
-    // background-color: ${colors.paleBlue};
 `;
 
 export const HeaderContainer = styled.View`
