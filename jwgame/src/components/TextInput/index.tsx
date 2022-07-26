@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 import {TouchableOpacity} from 'react-native';
 
 const Container = styled.View`
-    height: ${verticalScale(gridSizes.grid8x)}px;
+    height: ${verticalScale(gridSizes.grid6x)}px;
     width: 80%;
 `;
 
@@ -16,12 +16,12 @@ const ContainerInput = styled.View`
 
 const TxtLabel = styled.Text<TextInputProps>`
     font-family: ${fontFamilies.Nunito};
-    font-size: ${scale(fontSizes.xLarge)}px;
+    font-size: ${scale(fontSizes.large)}px;
 `;
 
 const TxtInput = styled.TextInput<TextInputProps>`
     background-color: ${props => props.theme.textInputBnColor};
-    height: ${verticalScale(gridSizes.grid11x)}px;
+    height: ${verticalScale(gridSizes.grid9x)}px;
     width: 100%;
     border-radius: ${verticalScale(15)}px;
     text-align: center;

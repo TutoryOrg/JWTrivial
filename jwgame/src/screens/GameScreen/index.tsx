@@ -14,6 +14,7 @@ import {
 import {Timer} from '@components/Timer';
 import {OptionButton} from '@components/OptionButton';
 import {TextInput} from '@components/TextInput';
+import {Button} from '@components/Button';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 
@@ -61,6 +62,8 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
                     subDescription={'subdescription'}
                     onPress={() => console.log('OptionPressed')}
                 />
+
+                <Button primary text={'Ok'} onPressBn={() => console.log('pressed ok')} />
 
                 <TextInput
                     isSecret={true}
