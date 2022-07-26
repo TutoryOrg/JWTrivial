@@ -26,7 +26,7 @@ const TxtInput = styled.TextInput<TextInputProps>`
     border-radius: ${verticalScale(15)}px;
     text-align: center;
     font-size: ${scale(fontSizes.small)}px;
-    font-family: ${fontFamilies.Nunito}px;
+    font-family: ${fontFamilies.Nunito};
 `;
 
 const EyeIcon = styled.Image`
