@@ -41,4 +41,5 @@ export const QuestionText = styled(Text)`
     color: ${colors.darkGrey};
     font-size: ${scale(fontSizes.normal)}px;
     text-align: left;
+    width: 75%;
 `;

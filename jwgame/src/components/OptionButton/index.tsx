@@ -48,7 +48,10 @@ const DescriptionText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
 `;
 
-const SubDescriptionText = styled(Text)`
+const SubDescriptionText = styled(Text)<{
+    text;
+}>`
+    display: ${props => (props?.text === '' ? 'none' : 'flex')};
     width: 100%;
     text-align: left;
     color: ${colors.primaryGrey};

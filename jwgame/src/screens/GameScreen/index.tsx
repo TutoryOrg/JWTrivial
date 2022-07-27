@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {RefTimer} from '@components/Timer';
 import {Screens} from '@navigation/constants';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Button, OptionButton, TextInput, Timer} from 'components';
+import {QuestionEntry} from '../../../types';
 import {
     GameContainer,
     GoBackButton,
@@ -12,13 +14,27 @@ import {
     QuestionText,
     SafeViewBg,
 } from './GameScreen.UI';
+import questionsData from 'utils/gamequestions.json';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
-
+type selectedOptionType = 'A' | 'B' | 'C';
 function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
+    const timerRef = useRef<RefTimer>(null);
+
+    const [numQuestion, setNumQuestion] = useState<number>(0);
+    const [selectedOption, setSelectedOption] = useState<selectedOptionType>();
+
+    const questions: Array<QuestionEntry> = questionsData.filter(
+        question => question.typeQuestion === (route?.params?.title as string)
+    ) as Array<QuestionEntry>;
 
     const onGoBack = () => navigation.goBack();
+
+    const onTimeUp = () => {
+        console.log('Time Up!');
+        setTimeout(() => timerRef.current?.onReset(), 3000);
+    };
 
     return (
         <SafeViewBg>
@@ -28,46 +44,31 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
             </HeaderContainer>
 
             <GameContainer>
-                <QuestionText
-                    text={
-                        'LoLorem Ipsum is simply dummy text of the printing and typesetting industryrem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum'
-                    }
-                />
+                <QuestionText text={questions[numQuestion].question} />
 
-                <Timer minutes={1} seconds={4} onTimeUp={() => console.log('Time up!')} />
+                <Timer ref={timerRef} minutes={1} seconds={4} onTimeUp={onTimeUp} />
 
-                <OptionButton
-                    optionText={'A'}
-                    description={'Option button'}
-                    isSelected={true}
-                    subDescription={'subdescription'}
-                    onPress={() => console.log('OptionPressed')}
-                />
-
-                <OptionButton
-                    optionText={'B'}
-                    description={'Option button'}
-                    isSelected={false}
-                    subDescription={'subdescription'}
-                    onPress={() => console.log('OptionPressed')}
-                />
-
-                <OptionButton
-                    optionText={'C'}
-                    description={'Option button'}
-                    isSelected={false}
-                    subDescription={'subdescription'}
-                    onPress={() => console.log('OptionPressed')}
-                />
+                {Object.keys(questions[numQuestion].options).map((option, index) => {
+                    return (
+                        <OptionButton
+                            key={index}
+                            optionText={option}
+                            description={questions[numQuestion].options[option]}
+                            isSelected={selectedOption === option}
+                            subDescription={''}
+                            onPress={() => setSelectedOption(option as selectedOptionType)}
+                        />
+                    );
+                })}
 
                 <Button primary text={'Ok'} onPressBn={() => console.log('pressed ok')} />
 
                 <TextInput
                     isSecret={true}
                     isEditable={false}
-                    label={'Pista'}
+                    label={t('clue')}
                     placeHolder={'placeholder'}
-                    defaultValue={'pista numero 1'}
+                    defaultValue={questions[numQuestion].clue}
                 />
             </GameContainer>
         </SafeViewBg>

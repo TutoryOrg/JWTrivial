@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect, useState} from 'react';
+import React, {forwardRef, useEffect, useState} from 'react';
 import {Text} from '@components/Text';
 import {useTranslation} from 'react-i18next';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
+import {useImperativeHandle} from 'react';
+import {Ref} from 'react';
 
 const Container = styled.View`
     flex-direction: row;
@@ -76,14 +78,25 @@ interface TimerProps {
     seconds: number;
     onTimeUp: () => void;
 }
+export interface RefTimer {
+    onReset: () => void;
+}
 
-export const Timer = (props: TimerProps): JSX.Element => {
+export const Timer = forwardRef((props: TimerProps, ref: Ref<RefTimer>): JSX.Element => {
     const {minutes, seconds, onTimeUp} = props;
-
     const {t} = useTranslation();
 
     const [min, setMin] = useState(minutes ?? 0);
     const [sec, setSec] = useState(seconds ?? 0);
+
+    const onReset = () => {
+        setMin(minutes);
+        setSec(seconds);
+    };
+
+    useImperativeHandle(ref, () => {
+        return {onReset};
+    });
 
     useEffect(() => {
         if (sec === 0 && min === 0) {
@@ -107,4 +120,4 @@ export const Timer = (props: TimerProps): JSX.Element => {
             <ContainerUnit unit={t('sec')} value={sec} />
         </Container>
     );
-};
+});

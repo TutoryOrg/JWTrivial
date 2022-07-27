@@ -19,6 +19,7 @@ const resources = {
             settings: 'Settings',
             stats: 'Stats',
             profile: 'Profile',
+            clue: 'Clue',
         },
     },
     es: {
@@ -41,6 +42,7 @@ const resources = {
             settings: 'Ajustes',
             stats: 'Estadísticas',
             profile: 'Perfil',
+            clue: 'Pista',
         },
     },
 };
