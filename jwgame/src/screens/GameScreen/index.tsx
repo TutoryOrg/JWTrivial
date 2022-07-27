@@ -18,6 +18,7 @@ import questionsData from 'utils/gamequestions.json';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C';
+
 function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
     const timerRef = useRef<RefTimer>(null);
@@ -31,8 +32,17 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
     const onGoBack = () => navigation.goBack();
 
+    const onCheck = () => {
+        if (selectedOption === questions[numQuestion].correctAnswer) {
+            if (numQuestion < questions.length - 1) {
+                setNumQuestion(prev => prev + 1);
+            }
+        }
+
+        timerRef.current?.onReset();
+    };
+
     const onTimeUp = () => {
-        console.log('Time Up!');
         setTimeout(() => timerRef.current?.onReset(), 3000);
     };
 
@@ -61,13 +71,13 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
                     );
                 })}
 
-                <Button primary text={'Ok'} onPressBn={() => console.log('pressed ok')} />
+                <Button primary text={'ok'} onPressBn={onCheck} />
 
                 <TextInput
                     isSecret={true}
                     isEditable={false}
                     label={t('clue')}
-                    placeHolder={'placeholder'}
+                    placeHolder={''}
                     defaultValue={questions[numQuestion].clue}
                 />
             </GameContainer>
