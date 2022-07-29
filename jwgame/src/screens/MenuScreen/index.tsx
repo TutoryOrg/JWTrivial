@@ -32,7 +32,12 @@ function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
                         key={index}
                         text={t(menu.text)}
                         color={menu.color}
-                        onPress={() => navigation.navigate(menu.goToScreen, {title: menu.text})}
+                        onPress={() =>
+                            navigation.navigate(menu.goToScreen, {
+                                title: menu.text,
+                                color: menu.bgColor ?? '',
+                            })
+                        }
                     />
                 ))}
             </MenuContainer>

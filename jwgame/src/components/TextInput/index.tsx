@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
-import {TouchableOpacity} from 'react-native';
 
 const Container = styled.View`
     height: ${verticalScale(gridSizes.grid6x)}px;
@@ -29,10 +28,17 @@ const TxtInput = styled.TextInput<TextInputProps>`
     font-family: ${fontFamilies.Nunito};
 `;
 
+const EyeTouchableContainer = styled.TouchableOpacity`
+    right: ${scale(gridSizes.grid10x)}px;
+    height: 100%;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+`;
+
 const EyeIcon = styled.Image`
     height: ${scale(gridSizes.grid5x)}px;
     width: ${scale(gridSizes.grid5x)}px;
-    right: ${scale(gridSizes.grid8x)}px;
 `;
 
 interface TextInputProps {
@@ -57,16 +63,18 @@ export const TextInput = (props: TextInputProps): JSX.Element => {
                     placeholder={placeHolder}
                     maxLength={20}
                 />
-                {isSecret &&
-                    (hideText ? (
-                        <TouchableOpacity onPress={() => setHideText(false)}>
-                            <EyeIcon source={require('assets/icons/eye_hidden.png')} />
-                        </TouchableOpacity>
-                    ) : (
-                        <TouchableOpacity onPress={() => setHideText(true)}>
-                            <EyeIcon source={require('assets/icons/eye.png')} />
-                        </TouchableOpacity>
-                    ))}
+
+                {isSecret && (
+                    <EyeTouchableContainer onPress={() => setHideText(!hideText)}>
+                        <EyeIcon
+                            source={
+                                hideText
+                                    ? require('assets/icons/eye_hidden.png')
+                                    : require('assets/icons/eye.png')
+                            }
+                        />
+                    </EyeTouchableContainer>
+                )}
             </ContainerInput>
         </Container>
     );

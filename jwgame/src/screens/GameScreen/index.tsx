@@ -15,12 +15,16 @@ import {
     SafeViewBg,
 } from './GameScreen.UI';
 import questionsData from 'utils/gamequestions.json';
+import _ from 'lodash';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C';
 
 function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
+    const title = route?.params?.title ?? '';
+    const color = route?.params?.color ?? '';
+
     const timerRef = useRef<RefTimer>(null);
 
     const [numQuestion, setNumQuestion] = useState<number>(0);
@@ -50,26 +54,27 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
         <SafeViewBg>
             <HeaderContainer>
                 <GoBackButton onPress={onGoBack} />
-                <HeaderText text={t(route?.params?.title as string)} />
+                <HeaderText text={t(title)} />
             </HeaderContainer>
 
             <GameContainer>
-                <QuestionText text={questions[numQuestion].question} />
+                <QuestionText text={!_.isEmpty(questions) && questions[numQuestion].question} />
 
                 <Timer ref={timerRef} minutes={1} seconds={4} onTimeUp={onTimeUp} />
 
-                {Object.keys(questions[numQuestion].options).map((option, index) => {
-                    return (
-                        <OptionButton
-                            key={index}
-                            optionText={option}
-                            description={questions[numQuestion].options[option]}
-                            isSelected={selectedOption === option}
-                            subDescription={''}
-                            onPress={() => setSelectedOption(option as selectedOptionType)}
-                        />
-                    );
-                })}
+                {!_.isEmpty(questions) &&
+                    Object.keys(questions[numQuestion].options).map((option, index) => {
+                        return (
+                            <OptionButton
+                                key={index}
+                                optionText={option}
+                                description={questions[numQuestion].options[option]}
+                                isSelected={selectedOption === option}
+                                subDescription={''}
+                                onPress={() => setSelectedOption(option as selectedOptionType)}
+                            />
+                        );
+                    })}
 
                 <Button primary text={'ok'} onPressBn={onCheck} />
 
@@ -78,7 +83,7 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
                     isEditable={false}
                     label={t('clue')}
                     placeHolder={''}
-                    defaultValue={questions[numQuestion].clue}
+                    defaultValue={!_.isEmpty(questions) ? questions[numQuestion].clue : ''}
                 />
             </GameContainer>
         </SafeViewBg>

@@ -46,21 +46,25 @@ export const MenuOptions = [
         text: 'whowas',
         color: colors.menuYellow,
         goToScreen: Screens.GameScreen,
+        bgColor: colors.fadeYellow,
     },
     {
         text: 'history',
         color: colors.menuOrange,
         goToScreen: Screens.GameScreen,
+        bgColor: colors.fadeRed,
     },
     {
         text: 'prophecies',
         color: colors.menuPale,
         goToScreen: Screens.GameScreen,
+        bgColor: colors.fadeOrange,
     },
     {
         text: 'whosaid',
         color: colors.menuBlue,
         goToScreen: Screens.GameScreen,
+        bgColor: colors.fadeBlue,
     },
     {
         text: 'settings',

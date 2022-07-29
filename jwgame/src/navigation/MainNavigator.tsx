@@ -11,7 +11,7 @@ export type MainStackParamList = {
     [Screens.ProfileScreen]: undefined;
     [Screens.MenuScreen]: undefined;
     [Screens.LoginScreen]: undefined;
-    [Screens.GameScreen]: {title: string} | undefined;
+    [Screens.GameScreen]: {title: string; color: string} | undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
