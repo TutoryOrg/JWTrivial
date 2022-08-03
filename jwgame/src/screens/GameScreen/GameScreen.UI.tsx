@@ -4,10 +4,13 @@ import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale, windowWidth} from '@utils/scaleFunctions';
 import styled from 'styled-components/native';
 
-export const SafeViewBg = styled.SafeAreaView`
+export const SafeViewBg = styled.SafeAreaView<{
+    color;
+}>`
     flex: 1;
     align-items: center;
-    background-color: ${props => props.theme.lightViewBg};
+    // background-color: ${props => props.theme.lightViewBg};
+    background-color: ${props => props.color};
     height: 100%;
 `;
 

@@ -51,7 +51,7 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     };
 
     return (
-        <SafeViewBg>
+        <SafeViewBg color={color}>
             <HeaderContainer>
                 <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t(title)} />
