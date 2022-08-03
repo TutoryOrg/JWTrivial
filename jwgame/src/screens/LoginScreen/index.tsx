@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {HeaderText} from './LoginScreen.UI';
 import {BgView, TxtInputUser, TxtInputPassw, LoginButton} from './LoginScreen.UI';
 
-function LoginScreen(): JSX.Element {
+export function LoginScreen(): JSX.Element {
     const {t} = useTranslation();
 
     return (
@@ -15,5 +15,3 @@ function LoginScreen(): JSX.Element {
         </BgView>
     );
 }
-
-export {LoginScreen};

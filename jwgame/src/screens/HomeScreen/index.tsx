@@ -7,7 +7,7 @@ import {SafeViewBg, HeaderText, SubHeaderText, PlayButton} from './HomeScreen.UI
 
 type HomeNavProp = NativeStackScreenProps<MainStackParamList>;
 
-function HomeScreen({navigation}: HomeNavProp): JSX.Element {
+export function HomeScreen({navigation}: HomeNavProp): JSX.Element {
     const {t} = useTranslation();
 
     setTimeout(() => navigation.navigate(Screens.MenuScreen), 1000);
@@ -25,5 +25,3 @@ function HomeScreen({navigation}: HomeNavProp): JSX.Element {
         </SafeViewBg>
     );
 }
-
-export {HomeScreen};

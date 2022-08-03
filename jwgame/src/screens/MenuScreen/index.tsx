@@ -14,7 +14,7 @@ import {
 
 type MenuScreenProps = NativeStackScreenProps<MainStackParamList>;
 
-function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
+export function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
     const {t} = useTranslation();
 
     const onGoBack = () => navigation.goBack();
@@ -44,5 +44,3 @@ function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
         </SafeViewBg>
     );
 }
-
-export {MenuScreen};

@@ -20,7 +20,7 @@ import _ from 'lodash';
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C';
 
-function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
+export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
     const title = route?.params?.title ?? '';
     const color = route?.params?.color ?? '';
@@ -89,5 +89,3 @@ function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
         </SafeViewBg>
     );
 }
-
-export {GameScreen};
