@@ -1,12 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, {forwardRef, useEffect, useState} from 'react';
-import {Text} from '@components/Text';
+import React, {useImperativeHandle, forwardRef, useEffect, useState, Ref} from 'react';
+import {Text} from 'components/Text';
 import {useTranslation} from 'react-i18next';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
-import {useImperativeHandle} from 'react';
-import {Ref} from 'react';
 
 const Container = styled.View`
     flex-direction: row;
@@ -106,11 +103,11 @@ export const Timer = forwardRef((props: TimerProps, ref: Ref<RefTimer>): JSX.Ele
 
         if (sec < 0) {
             setSec(59);
-            setMin(min - 1);
+            setMin(m => m - 1);
             return;
         }
 
-        const timerId = setInterval(() => setSec(sec - 1), 1000);
+        const timerId = setInterval(() => setSec(s => s - 1), 1000);
         return () => clearInterval(timerId);
     }, [sec]);
 

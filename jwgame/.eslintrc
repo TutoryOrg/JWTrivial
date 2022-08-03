@@ -21,5 +21,9 @@
         "ecmaVersion": 2017,
         "sourceType": "module"
     },
-    "ignorePatterns": ["./node_modules/*"]
+    "ignorePatterns": ["./node_modules/*"],
+    "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn" // <--- THIS IS THE NEW RULE
+    }
 }

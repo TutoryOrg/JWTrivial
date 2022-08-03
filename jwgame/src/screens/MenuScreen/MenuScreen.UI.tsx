@@ -1,6 +1,5 @@
-import {Text} from 'components/Text';
 import {Screens} from 'navigation/constants';
-import {MenuButton, ArrowButton} from 'components';
+import {Text, MenuButton, ArrowButton} from 'components';
 import {scale, windowWidth} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';

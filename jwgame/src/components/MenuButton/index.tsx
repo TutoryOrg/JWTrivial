@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import {Text} from 'components/Text';
 import {colors, fontFamilies, gridSizes} from '@utils/constants';
 import {moderateScale, scale, verticalScale} from '@utils/scaleFunctions';
+import styled from 'styled-components/native';
 
 const ButtonContainer = styled.TouchableOpacity<{
     color: string;

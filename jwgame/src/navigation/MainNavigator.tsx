@@ -8,9 +8,9 @@ import {Screens} from './constants';
 
 export type MainStackParamList = {
     [Screens.HomeScreen]: undefined;
-    [Screens.ProfileScreen]: undefined;
     [Screens.MenuScreen]: undefined;
     [Screens.LoginScreen]: undefined;
+    [Screens.ProfileScreen]: undefined;
     [Screens.GameScreen]: {title: string; color: string} | undefined;
 };
 

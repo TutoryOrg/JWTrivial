@@ -23,4 +23,4 @@ const App = (): JSX.Element => {
     );
 };
 
-export default Config.STORYBOOK_MODE === 'true' ? StorybookUIRoot : App;
+export default Config.STORYBOOK_MODE === 'false' ? StorybookUIRoot : App;

@@ -1,7 +1,6 @@
-import {Text} from 'components/Text';
-import {ArrowButton} from '@components/ArrowButton';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {Text, ArrowButton} from 'components';
 import {scale, windowWidth} from '@utils/scaleFunctions';
+import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
 
 export const SafeViewBg = styled.SafeAreaView<{
@@ -9,7 +8,6 @@ export const SafeViewBg = styled.SafeAreaView<{
 }>`
     flex: 1;
     align-items: center;
-    // background-color: ${props => props.theme.lightViewBg};
     background-color: ${props => props.color};
     height: 100%;
 `;

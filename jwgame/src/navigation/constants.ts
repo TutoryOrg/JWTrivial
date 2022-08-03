@@ -1,7 +1,7 @@
 export enum Screens {
-    HomeScreen = 'HomeScreen',
-    ProfileScreen = 'ProfileScreen',
-    MenuScreen = 'MenuScreen',
-    LoginScreen = 'LoginScreen',
     GameScreen = 'GameScreen',
+    MenuScreen = 'MenuScreen',
+    HomeScreen = 'HomeScreen',
+    LoginScreen = 'LoginScreen',
+    ProfileScreen = 'ProfileScreen',
 }
