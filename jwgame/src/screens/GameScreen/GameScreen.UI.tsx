@@ -10,6 +10,7 @@ export const SafeViewBg = styled.SafeAreaView<{
     align-items: center;
     background-color: ${props => props.color};
     height: 100%;
+    transform: rotate(0deg);
 `;
 
 export const GameContainer = styled.View`
