@@ -8,12 +8,6 @@ https://www.figma.com/file/7eQezAyABiRfOrCIQ2S2r1/JWGame?node-id=0%3A1
 
 ![Screenshot 2021-10-31 at 12 54 42](https://user-images.githubusercontent.com/66746179/139581827-3cdad3f1-6d81-497d-ad7f-a0b30f99acff.png)
 
-
-## Stack and Data
-https://docs.google.com/drawings/d/1EJM08WkckPTJwnE2PnWPWmKxUk999Nm0U1iF1AcIBGo/edit?usp=sharing
-
-![Screenshot from 2021-10-29 01-51-10](https://user-images.githubusercontent.com/66746179/139351460-bf389098-e4a7-4459-8ba0-511621d72d4b.png)
-
 # Mode App
 .env
 ```
