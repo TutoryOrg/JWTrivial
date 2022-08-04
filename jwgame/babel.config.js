@@ -6,12 +6,12 @@ module.exports = {
             {
                 root: ['./src'],
                 extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
-                alias: {
-                    tests: ['./tests/'],
-                    '@components': './src/components',
-                    '@constants': './src/constants',
-                    '@utils': './src/utils',
-                },
+                // alias: {
+                // tests: ['./tests/'],
+                // '@components': './src/components',
+                // '@constants': './src/constants',
+                // '@utils': './src/utils',
+                // },
             },
         ],
         '@babel/plugin-proposal-export-namespace-from',

@@ -1,8 +1,9 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import {Button, Text} from 'components';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
 import {Animated} from 'react-native';
+import {useFadeAnimation} from 'hooks/useFadeAnimation';
 import styled from 'styled-components/native';
 
 const Container = styled(Animated.View)`
@@ -96,15 +97,7 @@ export const ModalCountPoints = (props: ModalCountPointsProps): JSX.Element => {
         ...rest
     } = props;
 
-    const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
-
-    useEffect(() => {
-        Animated.timing(fadeAnim, {
-            toValue: 1,
-            duration: 500,
-            useNativeDriver: true,
-        }).start();
-    }, [fadeAnim]);
+    const {fadeAnim} = useFadeAnimation({fromValue: 0, toValue: 1, duration: 500});
 
     return (
         <Container {...rest} style={{opacity: fadeAnim}}>
