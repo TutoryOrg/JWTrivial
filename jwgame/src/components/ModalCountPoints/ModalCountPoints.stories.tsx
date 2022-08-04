@@ -27,12 +27,20 @@ export const Basic_lightTheme: ComponentStory<typeof ModalCountPoints> = args =>
 
 Basic_darkTheme.args = {
     title: 'Ohh..',
-    pointsGained: 0,
-    pointsAcumulated: 0,
+    pointsGained: 5,
+    pointsAcumulated: 4,
+    leftButtonText: 'Menu',
+    rightButtonText: 'Reintentar',
+    onPressLeftButton: () => console.log('Left Button Pressed!'),
+    onPressRightButton: () => console.log('Right Button Pressed!'),
 };
 
 Basic_lightTheme.args = {
     title: 'Ohh..',
-    pointsGained: 0,
-    pointsAcumulated: 0,
+    pointsGained: 8,
+    pointsAcumulated: 3,
+    leftButtonText: 'Menu',
+    rightButtonText: 'Reintentar',
+    onPressLeftButton: () => console.log('Left Button Pressed!'),
+    onPressRightButton: () => console.log('Right Button Pressed!'),
 };
