@@ -1,7 +1,7 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {MainStackParamList} from '@navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {useTranslation} from 'react-i18next';
 import {
     MenuOptionButton,
     GoBackButton,

@@ -1,5 +1,5 @@
-import {useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
+import {useEffect, useRef} from 'react';
 
 interface useFadeAnimationProps {
     fromValue: number;

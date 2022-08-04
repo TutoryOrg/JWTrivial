@@ -1,6 +1,6 @@
 import React from 'react';
-import {useTranslation} from 'react-i18next';
 import {HeaderText} from './LoginScreen.UI';
+import {useTranslation} from 'react-i18next';
 import {BgView, TxtInputUser, TxtInputPassw, LoginButton} from './LoginScreen.UI';
 
 export function LoginScreen(): JSX.Element {

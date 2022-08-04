@@ -1,10 +1,10 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Screens} from './constants';
 import {HomeScreen} from 'screens/HomeScreen';
+import {GameScreen} from 'screens/GameScreen';
 import {MenuScreen} from 'screens/MenuScreen';
 import {LoginScreen} from 'screens/LoginScreen';
-import {GameScreen} from 'screens/GameScreen';
-import {Screens} from './constants';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
     [Screens.HomeScreen]: undefined;

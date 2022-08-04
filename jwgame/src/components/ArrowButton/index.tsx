@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import {gridSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
+import styled from 'styled-components/native';
 
 const ArrowIcon = styled.Image<{
     directionArrow;
