@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button, Text} from 'components';
+import {Button} from 'components/Button';
+import {Text} from 'components/Text';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
 import {Animated} from 'react-native';

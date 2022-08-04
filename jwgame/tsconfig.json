@@ -35,7 +35,8 @@
             "@utils/*": ["utils/*"],
             "@logger/*": ["logger/*"],
             "@navigation/*": ["navigation/*"],
-            "@linking/*": ["linking/*"]
+            "@linking/*": ["linking/*"],
+            "@types": ["types.d.ts"]
         },
         "types": [
             "react",

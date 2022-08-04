@@ -1,11 +1,11 @@
 import React, {useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RefTimer} from '@components/Timer';
+import {QuestionEntry} from '../../../types';
 import {Screens} from '@navigation/constants';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Button, OptionButton, TextInput, Timer} from 'components';
-import {QuestionEntry} from '../../../types';
+import {PointsCounter, Button, OptionButton, ModalCountPoints, TextInput, Timer} from 'components';
 import {
     GameContainer,
     GoBackButton,
@@ -16,21 +16,20 @@ import {
 } from './GameScreen.UI';
 import questionsData from 'utils/gamequestions.json';
 import _ from 'lodash';
-import {PointsCounter} from '@components/PointsCounter';
-import {ModalCountPoints} from '@components/ModalCountPoints';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C';
 
 export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
+    const timerRef = useRef<RefTimer>(null);
+
     const title = route?.params?.title ?? '';
     const color = route?.params?.color ?? '';
 
-    const timerRef = useRef<RefTimer>(null);
-
-    const [showModalCount, setShowModalCount] = useState<boolean>(false);
     const [numQuestion, setNumQuestion] = useState<number>(0);
+    const [correctAnswers, setCorrectAnswers] = useState<number>(0);
+    const [showModalCount, setShowModalCount] = useState<boolean>(false);
     const [selectedOption, setSelectedOption] = useState<selectedOptionType>();
 
     const questions: Array<QuestionEntry> = questionsData.filter(
@@ -38,22 +37,32 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     ) as Array<QuestionEntry>;
 
     const onGoBack = () => navigation.goBack();
+
     const onToggleModalCountPoints = () => setShowModalCount(!showModalCount);
-
-    const onCheck = () => {
-        if (selectedOption === questions[numQuestion].correctAnswer) {
-            if (numQuestion < questions.length - 1) {
-                setNumQuestion(prev => prev + 1);
-            }
-        } else {
-            onToggleModalCountPoints();
-        }
-
-        timerRef.current?.onReset();
-    };
 
     const onTimeUp = () => {
         setTimeout(() => timerRef.current?.onReset(), 3000);
+    };
+
+    const onRetry = () => {
+        setNumQuestion(0);
+        setCorrectAnswers(0);
+        timerRef.current?.onReset();
+        onToggleModalCountPoints();
+    };
+
+    const onCheck = () => {
+        if (_.isEmpty(selectedOption)) return;
+
+        if (selectedOption !== questions[numQuestion].correctAnswer) {
+            onToggleModalCountPoints();
+        }
+
+        if (selectedOption === questions[numQuestion].correctAnswer) {
+            setCorrectAnswers(prev => prev + 1);
+            if (numQuestion < questions.length - 1) setNumQuestion(prev => prev + 1);
+            else onToggleModalCountPoints();
+        }
     };
 
     return (
@@ -61,19 +70,19 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
             {showModalCount && (
                 <ModalCountPoints
                     title={'Ohh ..'}
-                    pointsGained={4}
+                    pointsGained={correctAnswers}
                     pointsAcumulated={5}
                     leftButtonText={'Menu'}
                     rightButtonText={'Reintentar'}
                     onPressLeftButton={onGoBack}
-                    onPressRightButton={onToggleModalCountPoints}
+                    onPressRightButton={onRetry}
                 />
             )}
 
             <HeaderContainer>
                 <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t(title)} />
-                <PointsCounter counter={numQuestion} />
+                <PointsCounter counter={correctAnswers} />
             </HeaderContainer>
 
             <GameContainer>

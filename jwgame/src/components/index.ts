@@ -5,5 +5,17 @@ import {TextInput} from './TextInput';
 import {MenuButton} from './MenuButton';
 import {ArrowButton} from './ArrowButton';
 import {OptionButton} from './OptionButton';
+import {PointsCounter} from './PointsCounter';
+import {ModalCountPoints} from './ModalCountPoints';
 
-export {ArrowButton, Button, MenuButton, OptionButton, Text, TextInput, Timer};
+export {
+    Timer,
+    Text,
+    Button,
+    TextInput,
+    MenuButton,
+    ArrowButton,
+    OptionButton,
+    PointsCounter,
+    ModalCountPoints,
+};
