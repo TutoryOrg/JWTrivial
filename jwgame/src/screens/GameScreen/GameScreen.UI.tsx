@@ -1,5 +1,5 @@
 import {Text, ArrowButton} from 'components';
-import {scale, windowWidth} from '@utils/scaleFunctions';
+import {scale} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
 
@@ -22,20 +22,19 @@ export const GameContainer = styled.View`
 
 export const HeaderContainer = styled.View`
     width: 100%;
+    height: 8%;
     align-items: center;
     flex-direction: row;
+    justify-content: space-around;
     top: ${scale(gridSizes.grid3x)}px;
 `;
 
-export const GoBackButton = styled(ArrowButton)`
-    left: ${scale(gridSizes.grid3x)}px;
-`;
+export const GoBackButton = styled(ArrowButton)``;
 
 export const HeaderText = styled(Text)`
     color: ${colors.primaryGrey};
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.xxxLarge)}px;
-    width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
 `;
 
 export const QuestionText = styled(Text)`

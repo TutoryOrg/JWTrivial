@@ -5,8 +5,8 @@ import {colors, fontFamilies, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
-    height: ${scale(gridSizes.grid8x)}px;
-    width: ${scale(gridSizes.grid8x)}px;
+    height: ${scale(gridSizes.grid10x)}px;
+    width: ${scale(gridSizes.grid10x)}px;
     border-radius: ${scale(gridSizes.grid8x)}px;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@ const Container = styled.View`
 
 const CounterText = styled(Text)`
     color: ${colors.white};
-    font-size: ${scale(gridSizes.grid5x)}px;
+    font-size: ${scale(gridSizes.grid6x)}px;
     font-family: ${fontFamilies.NunitoBold};
 `;
 

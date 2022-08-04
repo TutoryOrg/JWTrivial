@@ -1,24 +1,29 @@
 import React from 'react';
 import {Button, Text} from 'components';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
-import styled from 'styled-components/native';
 import {scale} from '@utils/scaleFunctions';
+import styled from 'styled-components/native';
 
 const Container = styled.View`
-    flex: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: ${colors.lightGrey + '90'};
+    background-color: ${colors.lightGrey + 'B0'};
+    z-index: 2;
 `;
 
 const ModalContainer = styled.View`
-    width: 50%;
-    height: 30%;
+    width: 60%;
+    height: 35%;
     border: ${scale(gridSizes.gridx)}px;
     border-radius: ${scale(gridSizes.grid4x)}px;
+    border-color: ${colors.lightGrey};
     align-items: center;
     justify-content: space-around;
     background-color: ${colors.white};
+    bottom: ${scale(gridSizes.grid17x)}px;
 `;
 
 const ModalTitle = styled(Text)`
@@ -64,7 +69,6 @@ const ModalButton = styled(Button)`
     width: 45%;
     height: 100%;
     border-radius: ${scale(gridSizes.grid1x)}px;
-    border: ${scale(gridSizes.gridx)}px;
     margin-left: ${scale(gridSizes.gridx)}px;
     margin-right: ${scale(gridSizes.gridx)}px;
 `;

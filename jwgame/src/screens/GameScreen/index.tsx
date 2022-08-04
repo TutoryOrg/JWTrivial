@@ -16,6 +16,8 @@ import {
 } from './GameScreen.UI';
 import questionsData from 'utils/gamequestions.json';
 import _ from 'lodash';
+import {PointsCounter} from '@components/PointsCounter';
+import {ModalCountPoints} from '@components/ModalCountPoints';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C';
@@ -27,6 +29,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
     const timerRef = useRef<RefTimer>(null);
 
+    const [showModalCount, setShowModalCount] = useState<boolean>(false);
     const [numQuestion, setNumQuestion] = useState<number>(0);
     const [selectedOption, setSelectedOption] = useState<selectedOptionType>();
 
@@ -35,12 +38,15 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     ) as Array<QuestionEntry>;
 
     const onGoBack = () => navigation.goBack();
+    const onToggleModalCountPoints = () => setShowModalCount(!showModalCount);
 
     const onCheck = () => {
         if (selectedOption === questions[numQuestion].correctAnswer) {
             if (numQuestion < questions.length - 1) {
                 setNumQuestion(prev => prev + 1);
             }
+        } else {
+            onToggleModalCountPoints();
         }
 
         timerRef.current?.onReset();
@@ -52,9 +58,22 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
     return (
         <SafeViewBg color={color}>
+            {showModalCount && (
+                <ModalCountPoints
+                    title={'Ohh ..'}
+                    pointsGained={4}
+                    pointsAcumulated={5}
+                    leftButtonText={'Menu'}
+                    rightButtonText={'Reintentar'}
+                    onPressLeftButton={onGoBack}
+                    onPressRightButton={onToggleModalCountPoints}
+                />
+            )}
+
             <HeaderContainer>
                 <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t(title)} />
+                <PointsCounter counter={numQuestion} />
             </HeaderContainer>
 
             <GameContainer>
