@@ -4,9 +4,14 @@ import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {OptionButton} from './index';
 
+const optionNotes = `# Option Button Notes`;
+
 export default {
     title: 'components/OptionButton',
     component: OptionButton,
+    parameters: {
+        notes: optionNotes,
+    },
 } as ComponentMeta<typeof OptionButton>;
 
 export const Basic_darkTheme: ComponentStory<typeof OptionButton> = args => {

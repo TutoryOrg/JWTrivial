@@ -6,8 +6,13 @@ import {Button} from './index';
 import {fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 
+const buttonNotes = ` # Button Notes`;
+
 export default {
     title: 'components/Button',
+    parameters: {
+        notes: buttonNotes,
+    },
     component: Button,
 } as ComponentMeta<typeof Button>;
 

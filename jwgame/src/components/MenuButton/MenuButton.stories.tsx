@@ -5,9 +5,14 @@ import {ThemeProvider} from 'styled-components';
 import {MenuButton} from './index';
 import {colors} from '@utils/constants';
 
+const menuButtonNotes = `# Menu Button Notes`;
+
 export default {
     title: 'components/MenuButton',
     component: MenuButton,
+    parameters: {
+        notes: menuButtonNotes,
+    },
     argTypes: {
         color: {
             options: [

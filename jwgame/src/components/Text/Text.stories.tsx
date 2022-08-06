@@ -6,9 +6,14 @@ import {ThemeProvider} from 'styled-components';
 import {scale} from '@utils/scaleFunctions';
 import {Text} from './index';
 
+const TextNotes = `# Text Notes`;
+
 export default {
     title: 'components/Text',
     component: Text,
+    parameters: {
+        notes: TextNotes,
+    },
 } as ComponentMeta<typeof Text>;
 
 export const Basic_darkTheme: ComponentStory<typeof Text> = args => {

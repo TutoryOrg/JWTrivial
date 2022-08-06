@@ -4,9 +4,14 @@ import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {ModalCountPoints} from '.';
 
+const modalCountPointsNotes = `# Modal Count Points Notes`;
+
 export default {
     title: 'components/ModalCountPoints',
     component: ModalCountPoints,
+    parameters: {
+        notes: modalCountPointsNotes,
+    },
 } as ComponentMeta<typeof ModalCountPoints>;
 
 export const Basic_darkTheme: ComponentStory<typeof ModalCountPoints> = args => {

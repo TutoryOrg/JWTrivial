@@ -4,9 +4,14 @@ import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {TextInput} from './index';
 
+const TextInputNotes = `# Text Input Notes`;
+
 export default {
     title: 'components/TextInput',
     component: TextInput,
+    parameters: {
+        notes: TextInputNotes,
+    },
 } as ComponentMeta<typeof TextInput>;
 
 export const Basic_darkTheme: ComponentStory<typeof TextInput> = args => {

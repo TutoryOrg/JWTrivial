@@ -4,9 +4,18 @@ import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {ArrowButton} from './index';
 
+const arrowNotes = `
+# Arrow Button Notes
+
+This button is used to navigate between screens.
+`;
+
 export default {
     title: 'components/ArrowButton',
     component: ArrowButton,
+    parameters: {
+        notes: arrowNotes,
+    },
     argTypes: {
         directionArrow: {
             options: ['top', 'left', 'right', 'down'],

@@ -4,9 +4,14 @@ import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from '../../themes';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
+const TimerNotes = `# Timer Notes`;
+
 export default {
     title: 'components/Timer',
     component: Timer,
+    parameters: {
+        notes: TimerNotes,
+    },
 } as ComponentMeta<typeof Timer>;
 
 export const Basic_darkTheme: ComponentStory<typeof Timer> = args => {
