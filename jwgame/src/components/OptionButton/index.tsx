@@ -15,7 +15,7 @@ const TouchableContainer = styled.TouchableOpacity<{
             ? colors.green
             : props.correct === false
             ? colors.toastRed
-            : colors.lightGrey};
+            : colors.backgroundGrey};
     height: ${verticalScale(gridSizes.grid10x)}px;
     border-radius: ${scale(gridSizes.grid2x)}px;
 `;
@@ -37,7 +37,7 @@ const OptionText = styled(Text)<{
 }>`
     margin: auto;
     font-family: ${fontFamilies.NunitoBold};
-    color: ${props => (props.selecNunitoBoldted ? colors.white : colors.primaryGrey)};
+    color: ${props => (props.selected ? colors.white : colors.primaryGrey)};
 `;
 
 const Description = styled.View`
