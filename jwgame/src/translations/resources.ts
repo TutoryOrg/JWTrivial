@@ -20,6 +20,9 @@ const resources = {
             stats: 'Stats',
             profile: 'Profile',
             clue: 'Clue',
+            ohh: `Ohh you've failed..`,
+            retry: 'Try Again',
+            check: 'Check',
         },
     },
     es: {
@@ -43,6 +46,9 @@ const resources = {
             stats: 'Estadísticas',
             profile: 'Perfil',
             clue: 'Pista',
+            ohh: 'Ohh has fallado..',
+            retry: 'Reintentar',
+            check: 'Contestar',
         },
     },
 };

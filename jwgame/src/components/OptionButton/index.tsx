@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {forwardRef, Ref, useImperativeHandle, useState} from 'react';
 import {Text} from 'components/Text';
 import {scale, verticalScale} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import styled from 'styled-components/native';
 
-const TouchableContainer = styled.TouchableOpacity`
+const TouchableContainer = styled.TouchableOpacity<{
+    correct;
+}>`
     width: 90%;
     align-items: center;
     flex-direction: row;
-    background-color: ${colors.backgroundGrey};
+    background-color: ${props =>
+        props.correct === true
+            ? colors.green
+            : props.correct === false
+            ? colors.toastRed
+            : colors.lightGrey};
     height: ${verticalScale(gridSizes.grid10x)}px;
     border-radius: ${scale(gridSizes.grid2x)}px;
 `;
@@ -64,21 +71,40 @@ interface OptionButtonProps {
     description: string;
     isSelected: boolean;
     subDescription: string;
+    isCorrectOption?: boolean;
     onPress: () => void;
 }
 
-export const OptionButton = (props: OptionButtonProps): JSX.Element => {
-    const {onPress, isSelected, optionText, description, subDescription} = props;
+export interface RefOptionButton {
+    optionText: string;
+    onCheckCorrectOption: () => void;
+}
 
-    return (
-        <TouchableContainer onPress={onPress}>
-            <CircleOption selected={isSelected}>
-                <OptionText selected={isSelected} text={optionText} />
-            </CircleOption>
-            <Description>
-                <DescriptionText text={description} />
-                <SubDescriptionText text={subDescription} />
-            </Description>
-        </TouchableContainer>
-    );
-};
+export const OptionButton = forwardRef(
+    (props: OptionButtonProps, ref: Ref<RefOptionButton>): JSX.Element => {
+        const {onPress, isCorrectOption, isSelected, optionText, description, subDescription} =
+            props;
+        const [correct, setCorrect] = useState<boolean | undefined>(undefined);
+
+        const onCheckCorrectOption = () => {
+            setCorrect(isCorrectOption);
+            setTimeout(() => setCorrect(undefined), 500);
+        };
+
+        useImperativeHandle(ref, () => {
+            return {optionText, onCheckCorrectOption};
+        });
+
+        return (
+            <TouchableContainer onPress={onPress} correct={correct}>
+                <CircleOption selected={isSelected}>
+                    <OptionText selected={isSelected} text={optionText} />
+                </CircleOption>
+                <Description>
+                    <DescriptionText text={description} />
+                    <SubDescriptionText text={subDescription} />
+                </Description>
+            </TouchableContainer>
+        );
+    }
+);
