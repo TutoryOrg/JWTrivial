@@ -2,6 +2,7 @@ import React, {createRef, RefObject, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Screens} from '@navigation/constants';
 import {RefTimer} from '@components/Timer';
+import {RefOptionButton} from '@components/OptionButton';
 import {QuestionEntry} from '../../../types';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -16,7 +17,6 @@ import {
 } from './GameScreen.UI';
 import questionsData from 'utils/gamequestions.json';
 import _ from 'lodash';
-import {RefOptionButton} from '@components/OptionButton';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
 type selectedOptionType = 'A' | 'B' | 'C' | undefined;
@@ -43,7 +43,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const onToggleModalCountPoints = () => setShowModalCount(!showModalCount);
 
     const onTimeUp = () => {
-        setTimeout(() => timerRef.current?.onReset(), 3000);
+        onToggleModalCountPoints();
     };
 
     const onRetry = () => {

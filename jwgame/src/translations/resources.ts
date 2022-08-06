@@ -23,6 +23,8 @@ const resources = {
             ohh: `Ohh you've failed..`,
             retry: 'Try Again',
             check: 'Check',
+            pointsgained: 'Earned points',
+            pointsaccum: 'Accumulated points ',
         },
     },
     es: {
@@ -49,6 +51,8 @@ const resources = {
             ohh: 'Ohh has fallado..',
             retry: 'Reintentar',
             check: 'Contestar',
+            pointsgained: 'Puntos ganados',
+            pointsaccum: 'Puntos acumulados',
         },
     },
 };

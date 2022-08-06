@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from 'components/Button';
 import {Text} from 'components/Text';
+import {useTranslation} from 'react-i18next';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
 import {scale} from '@utils/scaleFunctions';
 import {Animated} from 'react-native';
@@ -97,6 +98,7 @@ export const ModalCountPoints = (props: ModalCountPointsProps): JSX.Element => {
         onPressRightButton,
         ...rest
     } = props;
+    const {t} = useTranslation();
 
     const {fadeAnim} = useFadeAnimation({fromValue: 0, toValue: 1, duration: 500});
 
@@ -105,12 +107,12 @@ export const ModalCountPoints = (props: ModalCountPointsProps): JSX.Element => {
             <ModalContainer>
                 <ModalTitle text={title} />
                 <InfoContainer>
-                    <PointsInfoText text={'pointsgained' + ':'} />
+                    <PointsInfoText text={t('pointsgained') + ':'} />
                     <PointsNumberText text={pointsGained} />
                 </InfoContainer>
 
                 <InfoContainer>
-                    <PointsInfoText text={'pointsaccum' + ':'} />
+                    <PointsInfoText text={t('pointsaccum') + ':'} />
                     <PointsNumberText text={pointsAcumulated} />
                 </InfoContainer>
 
