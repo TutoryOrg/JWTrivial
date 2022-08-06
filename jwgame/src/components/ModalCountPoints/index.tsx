@@ -19,7 +19,7 @@ const Container = styled(Animated.View)`
 `;
 
 const ModalContainer = styled.View`
-    width: 60%;
+    width: 65%;
     height: 35%;
     border: ${scale(gridSizes.gridx)}px;
     border-radius: ${scale(gridSizes.grid4x)}px;
@@ -37,10 +37,10 @@ const ModalTitle = styled(Text)`
 `;
 
 const InfoContainer = styled.View`
+    width: 90%;
     flex-direction: row;
     alig-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-start;
 `;
 
 const PointsInfoText = styled(Text)`
@@ -55,8 +55,8 @@ const PointsNumberText = styled(Text)`
     color: ${colors.yellow};
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.normal)}px;
-    padding-left: ${scale(gridSizes.grid2x)}px;
-    padding-right: ${scale(gridSizes.grid2x)}px;
+    padding-left: ${scale(gridSizes.gridx)}px;
+    padding-right: ${scale(gridSizes.gridx)}px;
 `;
 
 const ButtonContainer = styled.View`
