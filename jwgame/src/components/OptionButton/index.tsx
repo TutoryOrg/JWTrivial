@@ -24,21 +24,20 @@ const CircleOption = styled.View<{
     selected;
 }>`
     margin-left: 10px;
-    align-items: center;
-    justify-content: center;
     height: ${scale(gridSizes.grid6x)}px;
     width: ${scale(gridSizes.grid6x)}px;
     background-color: ${props => (props?.selected ? colors.indigo : 'transparent')};
     border-radius: ${scale(gridSizes.grid5x)}px;
-    border: 2px solid ${props => (props?.selected ? colors.paleBlue : colors.darkGrey)};
+    border: ${scale(gridSizes.gridx)}px solid
+        ${props => (props?.selected ? colors.paleBlue : colors.darkGrey)};
 `;
 
 const OptionText = styled(Text)<{
     selected;
 }>`
-    height: 100%;
+    margin: auto;
     font-family: ${fontFamilies.NunitoBold};
-    color: ${props => (props.selected ? colors.white : colors.primaryGrey)};
+    color: ${props => (props.selecNunitoBoldted ? colors.white : colors.primaryGrey)};
 `;
 
 const Description = styled.View`
