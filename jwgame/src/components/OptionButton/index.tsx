@@ -23,7 +23,7 @@ const TouchableContainer = styled.TouchableOpacity<{
 const CircleOption = styled.View<{
     selected;
 }>`
-    margin-left: 10px;
+    margin-left: ${scale(gridSizes.grid3x)}px;
     height: ${scale(gridSizes.grid6x)}px;
     width: ${scale(gridSizes.grid6x)}px;
     background-color: ${props => (props?.selected ? colors.indigo : 'transparent')};

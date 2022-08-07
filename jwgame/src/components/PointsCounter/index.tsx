@@ -11,6 +11,7 @@ const Container = styled.View`
     align-items: center;
     justify-content: center;
     background-color: ${colors.yellow};
+    elevation: 5;
 `;
 
 const CounterText = styled(Text)`

@@ -33,6 +33,7 @@ const getStories = () => {
   return [
     require("../src/components/ArrowButton/ArrowButton.stories.tsx"),
     require("../src/components/Button/Button.stories.tsx"),
+    require("../src/components/DropOptions/DropOptions.stories.tsx"),
     require("../src/components/MenuButton/MenuButton.stories.tsx"),
     require("../src/components/ModalCountPoints/ModalCountPoints.stories.tsx"),
     require("../src/components/OptionButton/OptionButton.stories.tsx"),
