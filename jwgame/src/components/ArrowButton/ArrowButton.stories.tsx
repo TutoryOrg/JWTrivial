@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {ArrowButton} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const arrowNotes = `
 # Arrow Button Notes
@@ -27,7 +28,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof ArrowButton> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <ArrowButton {...args} />
+            <ViewStoriesContainer>
+                <ArrowButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -35,7 +38,9 @@ export const Basic_darkTheme: ComponentStory<typeof ArrowButton> = args => {
 export const Basic_lightTheme: ComponentStory<typeof ArrowButton> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <ArrowButton {...args} />
+            <ViewStoriesContainer>
+                <ArrowButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

@@ -30,8 +30,6 @@ export const HeaderContainer = styled.View`
     top: ${scale(gridSizes.grid3x)}px;
 `;
 
-export const GoBackButton = styled(ArrowButton)``;
-
 export const HeaderText = styled(Text)`
     color: ${colors.primaryGrey};
     font-family: ${fontFamilies.NunitoBold};

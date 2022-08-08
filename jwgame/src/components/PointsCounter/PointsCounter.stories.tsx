@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {PointsCounter} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const pointsNotes = `# Points Counter Notes`;
 
@@ -17,7 +18,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof PointsCounter> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <PointsCounter {...args} />
+            <ViewStoriesContainer>
+                <PointsCounter {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -25,7 +28,9 @@ export const Basic_darkTheme: ComponentStory<typeof PointsCounter> = args => {
 export const Basic_lightTheme: ComponentStory<typeof PointsCounter> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <PointsCounter {...args} />
+            <ViewStoriesContainer>
+                <PointsCounter {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

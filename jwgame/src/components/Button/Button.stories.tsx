@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components';
 import {Button} from './index';
 import {fontSizes, gridSizes} from '@utils/constants';
 import {scale, verticalScale} from '@utils/scaleFunctions';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const buttonNotes = ` # Button Notes`;
 
@@ -19,7 +20,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof Button> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <Button {...args} />
+            <ViewStoriesContainer>
+                <Button {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -27,7 +30,9 @@ export const Basic_darkTheme: ComponentStory<typeof Button> = args => {
 export const Basic_lightTheme: ComponentStory<typeof Button> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <Button {...args} />
+            <ViewStoriesContainer>
+                <Button {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

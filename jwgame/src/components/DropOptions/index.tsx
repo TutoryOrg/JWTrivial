@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text} from '@components/Text';
 import {scale} from '@utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
@@ -57,19 +57,30 @@ const DropIconContainer = styled.Image`
 interface DropOptionsProps {
     title: string;
     subTitle: string;
-    icon: React.ReactNode | string;
+    iconSource: NodeRequire;
     options: [{text: string; icon?: React.ReactNode}];
 }
 
 export const DropOptions = (props: DropOptionsProps): JSX.Element => {
+    const {title, subTitle, iconSource, options} = props;
+    const [dropIsOpen, setDropIsOpen] = useState<boolean>(false);
+
+    const onToggleDrop = () => setDropIsOpen(!dropIsOpen);
+
     return (
-        <TouchableContainer>
-            <CircleIconContainer source={require('assets/icons/language.png')} />
+        <TouchableContainer onPress={onToggleDrop}>
+            <CircleIconContainer source={iconSource} />
             <InfoContainer>
-                <DescriptionText text={'Idioma'} />
-                <SubDescriptionText text={'Español'} />
+                <DescriptionText text={title} />
+                <SubDescriptionText text={subTitle} />
             </InfoContainer>
-            <DropIconContainer source={require('assets/icons/down_arrow.png')} />
+            <DropIconContainer
+                source={
+                    dropIsOpen
+                        ? require('assets/icons/down_arrow.png')
+                        : require('assets/icons/line.png')
+                }
+            />
         </TouchableContainer>
     );
 };

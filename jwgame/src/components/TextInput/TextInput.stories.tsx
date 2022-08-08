@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {TextInput} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const TextInputNotes = `# Text Input Notes`;
 
@@ -17,7 +18,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof TextInput> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <TextInput {...args} />
+            <ViewStoriesContainer>
+                <TextInput {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -25,7 +28,9 @@ export const Basic_darkTheme: ComponentStory<typeof TextInput> = args => {
 export const Basic_lightTheme: ComponentStory<typeof TextInput> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <TextInput {...args} />
+            <ViewStoriesContainer>
+                <TextInput {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

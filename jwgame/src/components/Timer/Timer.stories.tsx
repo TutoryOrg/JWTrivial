@@ -3,6 +3,7 @@ import {Timer} from './index';
 import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from '../../themes';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const TimerNotes = `# Timer Notes`;
 
@@ -17,7 +18,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof Timer> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <Timer {...args} />
+            <ViewStoriesContainer>
+                <Timer {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -25,7 +28,9 @@ export const Basic_darkTheme: ComponentStory<typeof Timer> = args => {
 export const Basic_lightTheme: ComponentStory<typeof Timer> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <Timer {...args} />
+            <ViewStoriesContainer>
+                <Timer {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

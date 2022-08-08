@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {DropOptions} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const dropNotes = `
 # Dropdown Options Notes 
@@ -19,7 +20,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof DropOptions> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <DropOptions {...args} />
+            <ViewStoriesContainer>
+                <DropOptions {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -27,11 +30,21 @@ export const Basic_darkTheme: ComponentStory<typeof DropOptions> = args => {
 export const Basic_lightTheme: ComponentStory<typeof DropOptions> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <DropOptions {...args} />
+            <ViewStoriesContainer>
+                <DropOptions {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
 
-Basic_darkTheme.args = {};
+Basic_darkTheme.args = {
+    title: 'Timer',
+    subTitle: '2:20',
+    iconSource: require('assets/icons/clock.png'),
+};
 
-Basic_lightTheme.args = {};
+Basic_lightTheme.args = {
+    title: 'Theme',
+    subTitle: 'light',
+    iconSource: require('assets/icons/dark_light.png'),
+};

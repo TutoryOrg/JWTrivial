@@ -4,6 +4,7 @@ import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {MenuButton} from './index';
 import {colors} from '@utils/constants';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const menuButtonNotes = `# Menu Button Notes`;
 
@@ -31,7 +32,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof MenuButton> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <MenuButton {...args} />
+            <ViewStoriesContainer>
+                <MenuButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -39,7 +42,9 @@ export const Basic_darkTheme: ComponentStory<typeof MenuButton> = args => {
 export const Basic_lightTheme: ComponentStory<typeof MenuButton> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <MenuButton {...args} />
+            <ViewStoriesContainer>
+                <MenuButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

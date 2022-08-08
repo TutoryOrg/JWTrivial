@@ -5,6 +5,7 @@ import {fontSizes} from '@utils/constants';
 import {ThemeProvider} from 'styled-components';
 import {scale} from '@utils/scaleFunctions';
 import {Text} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const TextNotes = `# Text Notes`;
 
@@ -19,7 +20,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof Text> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <Text {...args} />
+            <ViewStoriesContainer>
+                <Text {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -27,7 +30,9 @@ export const Basic_darkTheme: ComponentStory<typeof Text> = args => {
 export const Basic_lightTheme: ComponentStory<typeof Text> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <Text {...args} />
+            <ViewStoriesContainer>
+                <Text {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

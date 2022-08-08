@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {OptionButton} from './index';
+import {ViewStoriesContainer} from '@components/ViewStories';
 
 const optionNotes = `# Option Button Notes`;
 
@@ -17,7 +18,9 @@ export default {
 export const Basic_darkTheme: ComponentStory<typeof OptionButton> = args => {
     return (
         <ThemeProvider theme={darkTheme}>
-            <OptionButton {...args} />
+            <ViewStoriesContainer>
+                <OptionButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };
@@ -25,7 +28,9 @@ export const Basic_darkTheme: ComponentStory<typeof OptionButton> = args => {
 export const Basic_lightTheme: ComponentStory<typeof OptionButton> = args => {
     return (
         <ThemeProvider theme={lightTheme}>
-            <OptionButton {...args} />
+            <ViewStoriesContainer>
+                <OptionButton {...args} />
+            </ViewStoriesContainer>
         </ThemeProvider>
     );
 };

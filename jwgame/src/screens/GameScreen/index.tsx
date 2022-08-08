@@ -6,10 +6,17 @@ import {useTranslation} from 'react-i18next';
 import {RefOptionButton} from '@components/OptionButton';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {PointsCounter, Button, OptionButton, ModalCountPoints, TextInput, Timer} from 'components';
+import {
+    PointsCounter,
+    Button,
+    OptionButton,
+    ModalCountPoints,
+    TextInput,
+    Timer,
+    ArrowButton,
+} from 'components';
 import {
     GameContainer,
-    GoBackButton,
     HeaderContainer,
     HeaderText,
     QuestionText,
@@ -92,7 +99,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
             )}
 
             <HeaderContainer>
-                <GoBackButton onPress={onGoBack} />
+                <ArrowButton onPress={onGoBack} />
                 <HeaderText text={t(title)} />
                 <PointsCounter counter={correctAnswers} />
             </HeaderContainer>
