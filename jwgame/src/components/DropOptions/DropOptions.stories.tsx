@@ -38,13 +38,18 @@ export const Basic_lightTheme: ComponentStory<typeof DropOptions> = args => {
 };
 
 Basic_darkTheme.args = {
-    title: 'Timer',
-    subTitle: '2:20',
-    iconSource: require('assets/icons/clock.png'),
+    title: 'Language',
+    subTitle: 'English',
+    iconSource: require('assets/icons/language.png'),
+    options: [
+        {text: 'Español', icon: require('assets/icons/spain.png')},
+        {text: 'English', icon: require('assets/icons/britain.png')},
+    ],
 };
 
 Basic_lightTheme.args = {
     title: 'Theme',
     subTitle: 'light',
     iconSource: require('assets/icons/dark_light.png'),
+    options: [{text: 'Light'}, {text: 'Dark'}],
 };

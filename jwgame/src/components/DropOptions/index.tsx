@@ -54,11 +54,45 @@ const DropIconContainer = styled.Image`
     margin-right: ${scale(gridSizes.grid5x)}px;
 `;
 
+const DropOptionsContainer = styled.View<{
+    active;
+}>`
+    width: 90%;
+    align-items: flex-end;
+    display: ${props => (props?.active ? 'flex' : 'none')};
+`;
+
+const DropTouchableOption = styled.TouchableOpacity`
+    width: 80%;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom-width: 2px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-color: ${colors.paleBlue};
+    background-color: ${colors.backgroundWhite};
+`;
+
+const OptionText = styled(Text)`
+    width: 100%;
+    text-align: left;
+    color: ${colors.primaryGrey};
+    font-size: ${scale(fontSizes.large)}px;
+    font-family: ${fontFamilies.NunitoBold};
+`;
+
+const OptionImage = styled.Image`
+    width: ${scale(gridSizes.grid5x)}px;
+    height: ${scale(gridSizes.grid5x)}px;
+`;
+
 interface DropOptionsProps {
     title: string;
     subTitle: string;
     iconSource: NodeRequire;
-    options: [{text: string; icon?: React.ReactNode}];
+    options: {text: string; icon?: NodeRequire}[];
 }
 
 export const DropOptions = (props: DropOptionsProps): JSX.Element => {
@@ -68,19 +102,31 @@ export const DropOptions = (props: DropOptionsProps): JSX.Element => {
     const onToggleDrop = () => setDropIsOpen(!dropIsOpen);
 
     return (
-        <TouchableContainer onPress={onToggleDrop}>
-            <CircleIconContainer source={iconSource} />
-            <InfoContainer>
-                <DescriptionText text={title} />
-                <SubDescriptionText text={subTitle} />
-            </InfoContainer>
-            <DropIconContainer
-                source={
-                    dropIsOpen
-                        ? require('assets/icons/down_arrow.png')
-                        : require('assets/icons/line.png')
-                }
-            />
-        </TouchableContainer>
+        <>
+            <TouchableContainer onPress={onToggleDrop}>
+                <CircleIconContainer source={iconSource} />
+                <InfoContainer>
+                    <DescriptionText text={title} />
+                    <SubDescriptionText text={subTitle} />
+                </InfoContainer>
+                <DropIconContainer
+                    source={
+                        dropIsOpen
+                            ? require('assets/icons/down_arrow.png')
+                            : require('assets/icons/line.png')
+                    }
+                />
+            </TouchableContainer>
+            <DropOptionsContainer active={dropIsOpen}>
+                {options?.map((op, index) => {
+                    return (
+                        <DropTouchableOption key={index}>
+                            <OptionText text={op.text} />
+                            <OptionImage source={op?.icon} />
+                        </DropTouchableOption>
+                    );
+                })}
+            </DropOptionsContainer>
+        </>
     );
 };
