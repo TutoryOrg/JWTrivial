@@ -1,8 +1,8 @@
 import React, {createRef, RefObject, useRef, useState} from 'react';
-import {Screens} from '@navigation/constants';
+import {QuestionEntry} from '@types';
 import {RefTimer} from '@components/Timer';
-import {QuestionEntry} from '../../../types';
 import {useTranslation} from 'react-i18next';
+import {Screens} from '@navigation/constants';
 import {RefOptionButton} from '@components/OptionButton';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';

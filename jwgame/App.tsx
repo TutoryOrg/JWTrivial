@@ -4,10 +4,10 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-import {ThemeProvider} from 'styled-components';
 import {useColorScheme} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from './src/themes';
+import {NavigationContainer} from '@react-navigation/native';
 import {MainNavigator} from './src/navigation/MainNavigator';
 import StorybookUIRoot from './.ondevice/Storybook';
 import Config from 'react-native-config';
@@ -23,4 +23,4 @@ const App = (): JSX.Element => {
     );
 };
 
-export default Config.STORYBOOK_MODE === 'false' ? StorybookUIRoot : App;
+export default Config.STORYBOOK_MODE === 'true' ? StorybookUIRoot : App;

@@ -1,6 +1,6 @@
-import {scale} from '@utils/scaleFunctions';
-import {Text, ArrowButton} from 'components';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {Text} from 'components';
+import {scale} from 'utils/scaleFunctions';
+import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 export const SafeViewBg = styled.SafeAreaView<{
