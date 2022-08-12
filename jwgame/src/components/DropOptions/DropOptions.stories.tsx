@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {DropOptions} from './index';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const dropNotes = `
 # Dropdown Options Notes 

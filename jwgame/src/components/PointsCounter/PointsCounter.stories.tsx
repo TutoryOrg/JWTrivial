@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {PointsCounter} from './index';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const pointsNotes = `# Points Counter Notes`;
 

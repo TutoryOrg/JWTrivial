@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {scale} from '@utils/scaleFunctions';
+import {scale} from 'utils/scaleFunctions';
 import {Button} from 'components/Button';
 import {Animated} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useFadeAnimation} from 'hooks/useFadeAnimation';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const Container = styled(Animated.View)`

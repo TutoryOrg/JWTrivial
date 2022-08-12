@@ -1,6 +1,6 @@
 import React from 'react';
-import {scale} from '@utils/scaleFunctions';
-import {fontFamilies, fontSizes} from '@utils/constants';
+import {scale} from 'utils/scaleFunctions';
+import {fontFamilies, fontSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 interface TextProps {

@@ -4,9 +4,11 @@ import {HomeScreen} from 'screens/HomeScreen';
 import {GameScreen} from 'screens/GameScreen';
 import {MenuScreen} from 'screens/MenuScreen';
 import {LoginScreen} from 'screens/LoginScreen';
+import {SettingsScreen} from 'screens/SettingsScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
+    [Screens.Settings]: undefined;
     [Screens.HomeScreen]: undefined;
     [Screens.MenuScreen]: undefined;
     [Screens.LoginScreen]: undefined;
@@ -33,6 +35,12 @@ const MainNavigator = (): JSX.Element => (
         <MainStack.Screen
             name={Screens.GameScreen}
             component={GameScreen}
+            options={{headerShown: false}}
+        />
+
+        <MainStack.Screen
+            name={Screens.Settings}
+            component={SettingsScreen}
             options={{headerShown: false}}
         />
 

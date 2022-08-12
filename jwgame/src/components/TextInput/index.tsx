@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {scale, verticalScale} from '@utils/scaleFunctions';
-import {fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {scale, verticalScale} from 'utils/scaleFunctions';
+import {fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`

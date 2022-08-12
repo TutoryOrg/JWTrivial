@@ -1,7 +1,7 @@
 import {Screens} from 'navigation/constants';
-import {scale, windowWidth} from '@utils/scaleFunctions';
+import {scale, windowWidth} from 'utils/scaleFunctions';
 import {Text, MenuButton, ArrowButton} from 'components';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 export const SafeViewBg = styled.SafeAreaView`
@@ -68,7 +68,7 @@ export const MenuOptions = [
     {
         text: 'settings',
         color: colors.yellow,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.Settings,
     },
     {
         text: 'profile',

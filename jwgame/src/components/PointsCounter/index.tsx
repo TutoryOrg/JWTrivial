@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {scale} from '@utils/scaleFunctions';
-import {colors, fontFamilies, gridSizes} from '@utils/constants';
+import {scale} from 'utils/scaleFunctions';
+import {colors, fontFamilies, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`

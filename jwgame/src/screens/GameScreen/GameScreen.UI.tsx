@@ -7,23 +7,23 @@ export const SafeViewBg = styled.SafeAreaView<{
     color;
 }>`
     flex: 1;
+    height: 100%;
     align-items: center;
     background-color: ${props => props.color};
-    height: 100%;
     transform: rotate(0deg);
 `;
 
 export const GameContainer = styled.View`
     height: 80%;
     width: 100%;
-    margin-top: 20px;
     align-items: center;
     justify-content: space-around;
+    margin-top: ${scale(gridSizes.grid6x)}px;
 `;
 
 export const HeaderContainer = styled.View`
-    width: 100%;
     height: 8%;
+    width: 100%;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;

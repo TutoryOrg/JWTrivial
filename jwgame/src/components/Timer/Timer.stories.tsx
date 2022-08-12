@@ -3,7 +3,7 @@ import {Timer} from './index';
 import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from '../../themes';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const TimerNotes = `# Timer Notes`;
 

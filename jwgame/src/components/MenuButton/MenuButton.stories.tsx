@@ -3,8 +3,8 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {MenuButton} from './index';
-import {colors} from '@utils/constants';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {colors} from 'utils/constants';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const menuButtonNotes = `# Menu Button Notes`;
 

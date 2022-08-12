@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from 'components/Text';
-import {colors, fontFamilies, gridSizes} from '@utils/constants';
-import {moderateScale, scale, verticalScale} from '@utils/scaleFunctions';
+import {colors, fontFamilies, gridSizes} from 'utils/constants';
+import {moderateScale, scale, verticalScale} from 'utils/scaleFunctions';
 import styled from 'styled-components/native';
 
 const ButtonContainer = styled.TouchableOpacity<{

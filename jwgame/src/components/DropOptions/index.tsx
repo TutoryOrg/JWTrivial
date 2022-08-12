@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
-import {Text} from '@components/Text';
-import {scale} from '@utils/scaleFunctions';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {Text} from 'components/Text';
+import {scale} from 'utils/scaleFunctions';
+import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const TouchableContainer = styled.TouchableOpacity`
     width: 90%;
-    height: 12%;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    height: ${scale(gridSizes.grid12x)}px;
+    margin-top: ${scale(gridSizes.grid1x)}px;
+    border-top-width: ${scale(gridSizes.gridx)}px;
+    border-bottom-width: ${scale(gridSizes.gridx)}px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -49,8 +50,8 @@ const SubDescriptionText = styled(Text)<{
 `;
 
 const DropIconContainer = styled.Image`
-    width: ${scale(gridSizes.grid7x)}px;
     height: 80%;
+    width: ${scale(gridSizes.grid7x)}px;
     margin-right: ${scale(gridSizes.grid5x)}px;
 `;
 
@@ -60,17 +61,18 @@ const DropOptionsContainer = styled.View<{
     width: 90%;
     align-items: flex-end;
     display: ${props => (props?.active ? 'flex' : 'none')};
+    margin-bottom: ${scale(gridSizes.gridx)}px;
 `;
 
 const DropTouchableOption = styled.TouchableOpacity`
     width: 80%;
-    height: 50px;
+    height: ${scale(gridSizes.grid10x)}px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-bottom-width: 2px;
-    padding-left: 30px;
-    padding-right: 30px;
+    border-bottom-width: ${scale(gridSizes.gridx)}px;
+    padding-left: ${scale(gridSizes.grid6x)}px;
+    padding-right: ${scale(gridSizes.grid6x)}px;
     border-color: ${colors.paleBlue};
     background-color: ${colors.backgroundWhite};
 `;
@@ -91,7 +93,7 @@ const OptionImage = styled.Image`
 interface DropOptionsProps {
     title: string;
     subTitle: string;
-    iconSource: NodeRequire;
+    iconSource?: NodeRequire;
     options: {text: string; icon?: NodeRequire}[];
 }
 

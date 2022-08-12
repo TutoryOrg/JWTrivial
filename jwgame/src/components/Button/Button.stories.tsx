@@ -3,9 +3,9 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {Button} from './index';
-import {fontSizes, gridSizes} from '@utils/constants';
-import {scale, verticalScale} from '@utils/scaleFunctions';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {fontSizes, gridSizes} from 'utils/constants';
+import {scale, verticalScale} from 'utils/scaleFunctions';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const buttonNotes = ` # Button Notes`;
 

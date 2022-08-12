@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {TextInput} from './index';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const TextInputNotes = `# Text Input Notes`;
 

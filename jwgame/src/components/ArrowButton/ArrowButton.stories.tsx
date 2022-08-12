@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {ArrowButton} from './index';
-import {ViewStoriesContainer} from '@components/ViewStories';
+import {ViewStoriesContainer} from 'components/ViewStories';
 
 const arrowNotes = `
 # Arrow Button Notes

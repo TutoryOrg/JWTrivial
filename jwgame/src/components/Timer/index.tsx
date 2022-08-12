@@ -1,8 +1,8 @@
 import React, {useImperativeHandle, forwardRef, useEffect, useState, Ref} from 'react';
 import {Text} from 'components/Text';
 import {useTranslation} from 'react-i18next';
-import {scale, verticalScale} from '@utils/scaleFunctions';
-import {colors, fontFamilies, fontSizes, gridSizes} from '@utils/constants';
+import {scale, verticalScale} from 'utils/scaleFunctions';
+import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
