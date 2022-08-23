@@ -68,11 +68,11 @@ export const MenuOptions = [
     {
         text: 'settings',
         color: colors.yellow,
-        goToScreen: Screens.Settings,
+        goToScreen: Screens.SettingsScreen,
     },
     {
         text: 'profile',
         color: colors.green,
-        goToScreen: Screens.HomeScreen,
+        goToScreen: Screens.ProfileScreen,
     },
 ];

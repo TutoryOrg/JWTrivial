@@ -1,7 +1,7 @@
 const resources = {
     en: {
         translation: {
-            user_name: 'Name',
+            name: 'Name',
             password: 'Password',
             login: 'Login',
             login_admin: 'Login as Admin',
@@ -25,11 +25,14 @@ const resources = {
             check: 'Check',
             pointsgained: 'Earned points',
             pointsaccum: 'Accumulated points ',
+            reset: 'Reset',
+            totalCorrect: 'Total Correct',
+            totalWrong: 'Total Wrong',
         },
     },
     es: {
         translation: {
-            user_name: 'Nombre',
+            name: 'Nombre',
             password: 'Contraseña',
             login: 'Entrar',
             login_admin: 'Entrar como Admin',
@@ -53,6 +56,9 @@ const resources = {
             check: 'Contestar',
             pointsgained: 'Puntos ganados',
             pointsaccum: 'Puntos acumulados',
+            reset: 'Resetar',
+            totalCorrect: 'Total Correctas',
+            totalWrong: 'Total Falladas',
         },
     },
 };

@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 
 const Container = styled.View`
     height: ${verticalScale(gridSizes.grid6x)}px;
-    width: 80%;
+    width: 70%;
 `;
 
 const ContainerInput = styled.View`
