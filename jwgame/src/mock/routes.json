@@ -1,0 +1,4 @@
+{
+    "/locations/countries": "/countries",
+    "/locations/countries/:cid": "/countries?code=:cid"
+}

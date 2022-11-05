@@ -1,0 +1,47 @@
+[
+    {
+        "dboid": "102000000000002600001",
+        "code": "108",
+        "name": "ESPAÑA",
+        "provcoded": true,
+        "vatacronym": "ES",
+        "nationality": "ESPANYOLA",
+        "regcoded": true
+    },
+    {
+        "dboid": "102001200000015600069",
+        "code": "110",
+        "name": "FRANCIA",
+        "provcoded": false,
+        "vatacronym": "FR",
+        "nationality": null,
+        "regcoded": false
+    },
+    {
+        "dboid": "102001200000017000069",
+        "code": "124",
+        "name": "ANDORRA",
+        "provcoded": false,
+        "vatacronym": "AN",
+        "nationality": "ANDORRA2",
+        "regcoded": false
+    },
+    {
+        "dboid": "102001200000017200069",
+        "code": "126",
+        "name": "ALEMANIA",
+        "provcoded": false,
+        "vatacronym": "AL",
+        "nationality": "ALEMANIA",
+        "regcoded": false
+    },
+    {
+        "dboid": "102001200000016100069",
+        "code": "115",
+        "name": "ITALIA",
+        "provcoded": false,
+        "vatacronym": "IT",
+        "nationality": "ITALIA",
+        "regcoded": false
+    }
+]
