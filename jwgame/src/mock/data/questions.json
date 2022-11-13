@@ -1,7 +1,7 @@
 [
     {
         "typeQuestion": "whowas",
-        "question": "What is Lorem Ipsum?",
+        "question": "Who was Lorem Ipsum?",
         "correctAnswer": "A",
         "clue": "Lorem Ipsum",
         "options": {
@@ -23,7 +23,7 @@
     },
     {
         "typeQuestion": "whosaid",
-        "question": "What is Lorem Ipsum?",
+        "question": "Who said Lorem Ipsum?",
         "correctAnswer": "A",
         "clue": "Lorem Ipsum",
         "options": {
@@ -34,7 +34,7 @@
     },
     {
         "typeQuestion": "history",
-        "question": "What is Lorem Ipsum?",
+        "question": "History Lorem Ipsum?",
         "correctAnswer": "A",
         "clue": "Lorem Ipsum",
         "options": {
@@ -45,8 +45,30 @@
     },
     {
         "typeQuestion": "prophecies",
-        "question": "What is Lorem Ipsum?",
+        "question": "Prophecies Lorem Ipsum?",
         "correctAnswer": "A",
+        "clue": "Lorem Ipsum",
+        "options": {
+            "A": "Sheets",
+            "B": "Letraset",
+            "C": "Containing"
+        }
+    },
+    {
+        "typeQuestion": "history",
+        "question": "History 2 Lorem Ipsum?",
+        "correctAnswer": "A",
+        "clue": "Lorem Ipsum",
+        "options": {
+            "A": "Sheets",
+            "B": "Letraset",
+            "C": "Containing"
+        }
+    },
+    {
+        "typeQuestion": "prophecies",
+        "question": "Prophecies 2 Lorem Ipsum?",
+        "correctAnswer": "B",
         "clue": "Lorem Ipsum",
         "options": {
             "A": "Sheets",

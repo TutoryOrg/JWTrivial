@@ -1,6 +1,7 @@
 export type CorrectAnswer = 'A' | 'B' | 'C';
 
 export interface QuestionEntry {
+    typeQuestion: string;
     question: string;
     correctAnswer: CorrectAnswer;
     clue: string;

@@ -69,9 +69,9 @@ export const SubHeadingStatsText = styled(Text)`
 export const ProfileImage = styled.Image`
     width: ${scale(gridSizes.grid18x)}px;
     height: ${scale(gridSizes.grid18x)}px;
-    border-radius: ${scale(gridSizes.grid20x)}px;
-    border-width: ${scale(gridSizes.gridx)}px;
     border-color: ${colors.primaryGrey};
+    border-width: ${scale(gridSizes.gridx)}px;
+    border-radius: ${scale(gridSizes.grid20x)}px;
 `;
 
 export const LabelPointsCorrect = styled(LabelPointsInfo)`

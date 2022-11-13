@@ -1,4 +1,6 @@
 {
     "/locations/countries": "/countries",
-    "/locations/countries/:cid": "/countries?code=:cid"
+    "/locations/countries/:cid": "/countries?code=:cid",
+    "/questions": "/questions",
+    "/questions/:typeQuestion": "/questions?typeQuestion=:typeQuestion"
 }

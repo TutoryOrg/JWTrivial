@@ -1,4 +1,5 @@
 import React, {createRef, RefObject, useRef, useState} from 'react';
+import {useQuestions} from 'hooks/useQuestions';
 import {QuestionEntry} from '@types';
 import {RefTimer} from 'components/Timer';
 import {useTranslation} from 'react-i18next';
@@ -22,7 +23,6 @@ import {
     QuestionText,
     SafeViewBg,
 } from './GameScreen.UI';
-import questionsData from 'utils/gamequestions.json';
 import _ from 'lodash';
 
 type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameScreen>;
@@ -30,6 +30,7 @@ type selectedOptionType = 'A' | 'B' | 'C' | undefined;
 
 export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
+    const questionsData = useQuestions({typeQuestion: route?.params?.title as string});
     const timerRef = useRef<RefTimer>(null);
     const optionRef: RefObject<RefOptionButton>[] = [];
 
@@ -41,9 +42,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const [showModalCount, setShowModalCount] = useState<boolean>(false);
     const [selectedOption, setSelectedOption] = useState<selectedOptionType>();
 
-    const questions: Array<QuestionEntry> = questionsData.filter(
-        question => question.typeQuestion === (route?.params?.title as string)
-    ) as Array<QuestionEntry>;
+    const questions: Array<QuestionEntry> = questionsData as Array<QuestionEntry>;
 
     const onGoBack = () => navigation.goBack();
 
