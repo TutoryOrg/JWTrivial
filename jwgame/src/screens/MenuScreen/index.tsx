@@ -11,14 +11,15 @@ import {
     HeaderContainer,
     MenuOptions,
 } from './MenuScreen.UI';
+import {useLocations} from 'hooks/useLocations';
 
 type MenuScreenProps = NativeStackScreenProps<MainStackParamList>;
 
 export function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
     const {t} = useTranslation();
-
+    const locations = useLocations();
     const onGoBack = () => navigation.goBack();
-
+    console.log({locations});
     return (
         <SafeViewBg>
             <HeaderContainer>
