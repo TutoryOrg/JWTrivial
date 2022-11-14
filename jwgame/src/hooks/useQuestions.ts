@@ -18,6 +18,7 @@ export function useQuestions({typeQuestion}: IuseQuestions): QuestionEntry[] {
                 });
             setQuestions(res);
         }
+
         fetchQuestions();
     }, []);
 
