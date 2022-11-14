@@ -15,6 +15,7 @@ import {
     TextInput,
     Timer,
     ArrowButton,
+    Text,
 } from 'components';
 import {
     GameContainer,
@@ -30,7 +31,9 @@ type selectedOptionType = 'A' | 'B' | 'C' | undefined;
 
 export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const {t} = useTranslation();
-    const questionsData = useQuestions({typeQuestion: route?.params?.title as string});
+    const [questionsData, loadingQuestions] = useQuestions({
+        typeQuestion: route?.params?.title as string,
+    });
     const timerRef = useRef<RefTimer>(null);
     const optionRef: RefObject<RefOptionButton>[] = [];
 
@@ -104,36 +107,48 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
             </HeaderContainer>
 
             <GameContainer>
-                <QuestionText text={!_.isEmpty(questions) && questions[numQuestion].question} />
+                {loadingQuestions ? (
+                    <Text text={'Loading ...'} />
+                ) : (
+                    <>
+                        <QuestionText
+                            text={!_.isEmpty(questions) && questions[numQuestion].question}
+                        />
 
-                <Timer ref={timerRef} minutes={1} seconds={4} onTimeUp={onTimeUp} />
+                        <Timer ref={timerRef} minutes={1} seconds={4} onTimeUp={onTimeUp} />
 
-                {!_.isEmpty(questions) &&
-                    Object.keys(questions[numQuestion].options).map((option, index) => {
-                        optionRef.push(createRef<RefOptionButton>());
-                        return (
-                            <OptionButton
-                                key={index}
-                                ref={optionRef[index]}
-                                optionText={option}
-                                description={questions[numQuestion].options[option]}
-                                subDescription={''}
-                                isSelected={selectedOption === option}
-                                isCorrectOption={option === questions[numQuestion].correctAnswer}
-                                onPress={() => setSelectedOption(option as selectedOptionType)}
-                            />
-                        );
-                    })}
+                        {!_.isEmpty(questions) &&
+                            Object.keys(questions[numQuestion].options).map((option, index) => {
+                                optionRef.push(createRef<RefOptionButton>());
+                                return (
+                                    <OptionButton
+                                        key={index}
+                                        ref={optionRef[index]}
+                                        optionText={option}
+                                        description={questions[numQuestion].options[option]}
+                                        subDescription={''}
+                                        isSelected={selectedOption === option}
+                                        isCorrectOption={
+                                            option === questions[numQuestion].correctAnswer
+                                        }
+                                        onPress={() =>
+                                            setSelectedOption(option as selectedOptionType)
+                                        }
+                                    />
+                                );
+                            })}
 
-                <Button primary text={t('check')} onPressBn={onCheck} />
+                        <Button primary text={t('check')} onPressBn={onCheck} />
 
-                <TextInput
-                    isSecret={true}
-                    isEditable={false}
-                    label={t('clue')}
-                    placeHolder={''}
-                    defaultValue={!_.isEmpty(questions) ? questions[numQuestion].clue : ''}
-                />
+                        <TextInput
+                            isSecret={true}
+                            isEditable={false}
+                            label={t('clue')}
+                            placeHolder={''}
+                            defaultValue={!_.isEmpty(questions) ? questions[numQuestion].clue : ''}
+                        />
+                    </>
+                )}
             </GameContainer>
         </SafeViewBg>
     );
