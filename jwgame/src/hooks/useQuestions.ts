@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
 import {QuestionEntry} from '@types';
+import {useEffect, useState} from 'react';
 
 interface IuseQuestions {
     typeQuestion: string;
