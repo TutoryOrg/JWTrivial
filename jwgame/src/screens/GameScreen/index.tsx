@@ -108,7 +108,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
             <GameContainer>
                 {loadingQuestions ? (
-                    <Text text={'Loading ...'} />
+                    <Text color="black" text={'Loading ...'} />
                 ) : (
                     <>
                         <QuestionText
