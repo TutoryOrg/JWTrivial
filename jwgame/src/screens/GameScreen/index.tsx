@@ -30,16 +30,15 @@ type GameScreenProps = NativeStackScreenProps<MainStackParamList, Screens.GameSc
 type selectedOptionType = 'A' | 'B' | 'C' | undefined;
 
 export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
+    const title = route?.params?.title ?? '';
+    const color = route?.params?.color ?? '';
+    const typeQuestion = route?.params?.title ?? '';
+
     const {t} = useTranslation();
-    const [questionsData, loadingQuestions] = useQuestions({
-        typeQuestion: route?.params?.title as string,
-    });
     const timerRef = useRef<RefTimer>(null);
     const optionRef: RefObject<RefOptionButton>[] = [];
 
-    const title = route?.params?.title ?? '';
-    const color = route?.params?.color ?? '';
-
+    const [questionsData, loadingQuestions] = useQuestions({typeQuestion: typeQuestion});
     const [numQuestion, setNumQuestion] = useState<number>(0);
     const [correctAnswers, setCorrectAnswers] = useState<number>(0);
     const [showModalCount, setShowModalCount] = useState<boolean>(false);
