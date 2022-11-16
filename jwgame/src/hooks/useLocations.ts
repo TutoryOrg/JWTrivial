@@ -13,7 +13,7 @@ export function useLocations(): ICountries[] {
             const res = await fetch('http://localhost:3001/locations/countries')
                 .then(response => response.json())
                 .then(obj => {
-                    return obj.map(country => {
+                    return obj.map((country: ICountries) => {
                         return {
                             code: country.code,
                             name: country.name,
