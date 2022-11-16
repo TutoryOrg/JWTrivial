@@ -31,6 +31,7 @@ export function ProfileScreen({navigation}: ProfileScreen): JSX.Element {
                 <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t('profile')} />
             </HeaderContainer>
+
             <ContentContainer>
                 <ProfileImage source={require('assets/icons/userIcon_250.png')} />
                 <SectionNameContainer>

@@ -4,7 +4,7 @@ import {gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const ArrowIcon = styled.Image<{
-    directionArrow;
+    directionArrow: string;
 }>`
     height: ${scale(gridSizes.grid6x)}px;
     width: ${scale(gridSizes.grid6x)}px;
