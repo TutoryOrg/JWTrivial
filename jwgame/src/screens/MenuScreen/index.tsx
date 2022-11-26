@@ -16,12 +16,10 @@ type MenuScreenProps = NativeStackScreenProps<MainStackParamList>;
 
 export function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
     const {t} = useTranslation();
-    const onGoBack = () => navigation.goBack();
 
     return (
         <SafeViewBg>
             <HeaderContainer>
-                <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t('menu')} />
             </HeaderContainer>
 

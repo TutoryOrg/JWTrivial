@@ -25,7 +25,7 @@ export const HeaderText = styled(Text)`
     color: ${colors.primaryGrey};
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.xxxLarge)}px;
-    width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
+    width: ${windowWidth}px;
 `;
 
 export const ContentContainer = styled.View`

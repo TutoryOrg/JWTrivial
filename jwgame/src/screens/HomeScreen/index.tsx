@@ -10,7 +10,7 @@ type HomeNavProp = NativeStackScreenProps<MainStackParamList>;
 export function HomeScreen({navigation}: HomeNavProp): JSX.Element {
     const {t} = useTranslation();
 
-    setTimeout(() => navigation.navigate(Screens.MenuScreen), 1000);
+    setTimeout(() => navigation.navigate(Screens.BottomNavigator), 1000);
 
     return (
         <SafeViewBg>
@@ -20,7 +20,7 @@ export function HomeScreen({navigation}: HomeNavProp): JSX.Element {
             <PlayButton
                 primary
                 text={t('play')}
-                onPress={() => navigation.navigate(Screens.MenuScreen)}
+                onPress={() => navigation.navigate(Screens.BottomNavigator)}
             />
         </SafeViewBg>
     );

@@ -28,6 +28,7 @@
         "@react-native-community/cli-platform-ios": "^6.2.0",
         "@react-native-community/datetimepicker": "^6.1.2",
         "@react-native-community/slider": "^4.2.1",
+        "@react-navigation/bottom-tabs": "^6.4.1",
         "@react-navigation/drawer": "^6.1.8",
         "@react-navigation/native": "^6.0.6",
         "@react-navigation/native-stack": "^6.2.5",

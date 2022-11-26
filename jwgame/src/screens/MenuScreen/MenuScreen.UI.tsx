@@ -25,7 +25,7 @@ export const HeaderText = styled(Text)`
     color: ${colors.primaryGrey};
     font-family: ${fontFamilies.NunitoBold};
     font-size: ${scale(fontSizes.xxxLarge)}px;
-    width: ${windowWidth - scale(gridSizes.grid6x) * 2}px;
+    width: ${windowWidth}px;
 `;
 
 export const MenuContainer = styled.View`
@@ -64,15 +64,5 @@ export const MenuOptions = [
         color: colors.menuBlue,
         goToScreen: Screens.GameScreen,
         bgColor: colors.fadeBlue,
-    },
-    {
-        text: 'settings',
-        color: colors.yellow,
-        goToScreen: Screens.SettingsScreen,
-    },
-    {
-        text: 'profile',
-        color: colors.green,
-        goToScreen: Screens.ProfileScreen,
     },
 ];

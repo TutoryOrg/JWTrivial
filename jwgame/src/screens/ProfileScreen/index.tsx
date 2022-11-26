@@ -23,12 +23,10 @@ type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen({navigation}: ProfileScreen): JSX.Element {
     const {t} = useTranslation();
-    const onGoBack = () => navigation.goBack();
 
     return (
         <SafeViewBg>
             <HeaderContainer>
-                <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t('profile')} />
             </HeaderContainer>
 

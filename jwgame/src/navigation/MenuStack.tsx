@@ -1,28 +1,27 @@
 import React from 'react';
 import {Screens} from './constants';
-import {HomeScreen} from 'screens/HomeScreen';
+import {MenuScreen} from 'screens/MenuScreen';
+import {GameScreen} from 'screens/GameScreen';
+
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {BottomNavigator} from './BottomNavigator';
 
 export type MainStackParamList = {
-    [Screens.HomeScreen]: undefined;
-    [Screens.BottomNavigator]: undefined;
+    [Screens.MenuScreen]: undefined;
     [Screens.GameScreen]: {title: string; color: string} | undefined;
 };
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
 
-export const MainNavigator = (): JSX.Element => (
+export const MenuStack = (): JSX.Element => (
     <MainStack.Navigator>
         <MainStack.Screen
-            name={Screens.HomeScreen}
-            component={HomeScreen}
+            name={Screens.MenuScreen}
+            component={MenuScreen}
             options={{headerShown: false}}
         />
-
         <MainStack.Screen
-            name={Screens.BottomNavigator}
-            component={BottomNavigator}
+            name={Screens.GameScreen}
+            component={GameScreen}
             options={{headerShown: false}}
         />
     </MainStack.Navigator>

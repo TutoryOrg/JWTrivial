@@ -7,8 +7,8 @@ import React from 'react';
 import {useColorScheme} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from './src/themes';
+import {MainNavigator} from 'navigation/MainNavigator';
 import {NavigationContainer} from '@react-navigation/native';
-import {MainNavigator} from './src/navigation/MainNavigator';
 import StorybookUIRoot from './.ondevice/Storybook';
 import Config from 'react-native-config';
 

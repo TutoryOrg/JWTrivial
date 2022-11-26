@@ -5,4 +5,6 @@ export enum Screens {
     LoginScreen = 'LoginScreen',
     ProfileScreen = 'ProfileScreen',
     SettingsScreen = 'SettingsScreen',
+    BottomNavigator = 'BottomNavigator',
+    MenuStack = 'MenuStack',
 }

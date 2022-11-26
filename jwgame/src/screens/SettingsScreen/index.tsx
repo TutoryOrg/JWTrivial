@@ -21,7 +21,6 @@ export function SettingsScreen({navigation}: SettingsScreenProps): JSX.Element {
     return (
         <SafeViewBg>
             <HeaderContainer>
-                <GoBackButton onPress={onGoBack} />
                 <HeaderText text={t('settings')} />
             </HeaderContainer>
             <ContentContainer>
