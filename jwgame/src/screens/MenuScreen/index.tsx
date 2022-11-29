@@ -1,10 +1,10 @@
 import React from 'react';
+import {Screens} from 'navigation/constants';
 import {useTranslation} from 'react-i18next';
-import {MainStackParamList} from '@navigation/MainNavigator';
+import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
     MenuOptionButton,
-    GoBackButton,
     HeaderText,
     MenuContainer,
     SafeViewBg,
@@ -30,7 +30,7 @@ export function MenuScreen({navigation}: MenuScreenProps): JSX.Element {
                         text={t(menu.text)}
                         color={menu.color}
                         onPress={() =>
-                            navigation.navigate(menu.goToScreen, {
+                            navigation.navigate(Screens.GameScreen, {
                                 title: menu.text,
                                 color: menu.bgColor ?? '',
                             })
