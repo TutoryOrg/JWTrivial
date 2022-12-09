@@ -10,7 +10,7 @@
         "adb:setup": "adb reverse tcp:3001 tcp:3010",
         "start:storybook": "react-native start",
         "start:clean": "react-native start --reset-cache",
-        "mock:api": "json-server --watch src/mock/db.js --port 3010 --routes src/mock/routes.json --middlewares src/mock/middleware.js --delay 500",
+        "mock:api": "json-server --watch src/mock/db.js --port 3010 --routes src/mock/routes.json --middlewares src/mock/middleware.js --delay 500 --static src/mock/files",
         "upgrade": "react-native upgrade",
         "link": "react-native link",
         "eject": "react-native eject",

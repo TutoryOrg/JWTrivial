@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState} from "react";
 
 interface ICountries {
     code: string;
@@ -10,7 +10,7 @@ export function useLocations(): ICountries[] {
 
     useEffect(() => {
         async function fetchLocations() {
-            const res = await fetch('http://localhost:3001/locations/countries')
+            const res = await fetch("http://localhost:3001/locations/countries")
                 .then(response => response.json())
                 .then(obj => {
                     return obj.map((country: ICountries) => {
