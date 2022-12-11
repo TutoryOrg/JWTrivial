@@ -1,8 +1,8 @@
-import React from "react";
-import {Screens} from "./constants";
-import {HomeScreen} from "screens/HomeScreen";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {BottomNavigator} from "./BottomNavigator";
+import React from 'react';
+import {Screens} from './constants';
+import {HomeScreen} from 'screens/HomeScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {BottomNavigator} from './BottomNavigator';
 
 export type MainStackParamList = {
     [Screens.HomeScreen]: undefined;

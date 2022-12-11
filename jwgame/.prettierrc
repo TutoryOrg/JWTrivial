@@ -5,7 +5,7 @@
     "semi": true,
     "tabWidth": 4,
     "printWidth": 100,
-    "singleQuote": false,
+    "singleQuote": true,
     "bracketSpacing": false,
     "jsxBracketSameLine": true
 }
