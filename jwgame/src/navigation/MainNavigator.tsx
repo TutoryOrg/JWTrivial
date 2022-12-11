@@ -1,5 +1,6 @@
 import React from 'react';
 import {Screens} from './constants';
+import {GameScreen} from 'screens/GameScreen';
 import {HomeScreen} from 'screens/HomeScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {BottomNavigator} from './BottomNavigator';
@@ -17,6 +18,12 @@ export const MainNavigator = (): JSX.Element => (
         <MainStack.Screen
             name={Screens.HomeScreen}
             component={HomeScreen}
+            options={{headerShown: false}}
+        />
+
+        <MainStack.Screen
+            name={Screens.GameScreen}
+            component={GameScreen}
             options={{headerShown: false}}
         />
 
