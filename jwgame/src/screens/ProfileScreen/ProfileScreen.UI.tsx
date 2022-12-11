@@ -29,7 +29,7 @@ export const HeaderText = styled(Text)`
 `;
 
 export const ContentContainer = styled.View`
-    height: ${windowHeight / 1.2}px;
+    height: ${windowHeight / 1.3}px;
     width: 100%;
     align-items: center;
     margin-top: ${scale(gridSizes.grid6x)}px;

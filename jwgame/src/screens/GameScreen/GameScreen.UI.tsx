@@ -4,7 +4,7 @@ import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 export const SafeViewBg = styled.SafeAreaView<{
-    color;
+    color: string;
 }>`
     flex: 1;
     height: 100%;
