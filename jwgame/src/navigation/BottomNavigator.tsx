@@ -1,12 +1,12 @@
 import React from 'react';
 import {Screens} from './constants';
 import {MenuStack} from './MenuStack';
-import {useTranslation} from 'react-i18next';
-import {SettingsScreen} from 'screens/SettingsScreen';
-import {ProfileScreen} from 'screens/ProfileScreen';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {scale} from 'utils/scaleFunctions';
 import {gridSizes} from 'utils/constants';
+import {scale} from 'utils/scaleFunctions';
+import {useTranslation} from 'react-i18next';
+import {ProfileScreen} from 'screens/ProfileScreen';
+import {SettingsScreen} from 'screens/SettingsScreen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import styled from 'styled-components/native';
 
 const Tab = createBottomTabNavigator();

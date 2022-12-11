@@ -61,7 +61,7 @@ const PointsNumberText = styled(Text)`
 
 const ButtonContainer = styled.View`
     width: 100%;
-    height: ${scale(gridSizes.grid6x)}px;
+    height: ${scale(gridSizes.grid7x)}px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
