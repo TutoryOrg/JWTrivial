@@ -1,4 +1,4 @@
-import {Text, ArrowButton} from 'components';
+import {Text} from 'components';
 import {scale, windowWidth} from 'utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
@@ -15,10 +15,6 @@ export const HeaderContainer = styled.View`
     align-items: center;
     flex-direction: row;
     top: ${scale(gridSizes.grid3x)}px;
-`;
-
-export const GoBackButton = styled(ArrowButton)`
-    left: ${scale(gridSizes.grid3x)}px;
 `;
 
 export const HeaderText = styled(Text)`

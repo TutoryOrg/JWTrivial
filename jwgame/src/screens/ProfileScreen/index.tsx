@@ -5,7 +5,6 @@ import {MainStackParamList} from '@navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
     ContentContainer,
-    GoBackButton,
     HeaderContainer,
     HeaderText,
     LabelPointsCorrect,
@@ -21,7 +20,7 @@ import {
 
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
-export function ProfileScreen({navigation}: ProfileScreen): JSX.Element {
+export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
 
     return (

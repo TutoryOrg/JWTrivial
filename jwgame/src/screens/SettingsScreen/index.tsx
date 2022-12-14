@@ -1,22 +1,10 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {MainStackParamList} from '@navigation/MainNavigator';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {
-    GoBackButton,
-    HeaderText,
-    SafeViewBg,
-    HeaderContainer,
-    ContentContainer,
-} from './SettingsScreen.UI';
+import {HeaderText, SafeViewBg, HeaderContainer, ContentContainer} from './SettingsScreen.UI';
 import {DropOptions} from 'components';
 
-type SettingsScreenProps = NativeStackScreenProps<MainStackParamList>;
-
-export function SettingsScreen({navigation}: SettingsScreenProps): JSX.Element {
+export function SettingsScreen(): JSX.Element {
     const {t} = useTranslation();
-
-    const onGoBack = () => navigation.goBack();
 
     return (
         <SafeViewBg>
