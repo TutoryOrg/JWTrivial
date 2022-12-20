@@ -47,9 +47,11 @@ interface TextInputProps {
     label: string;
     placeHolder: string;
     defaultValue: string;
+    onEndEditing: (text: string) => void;
 }
+
 export const TextInput = (props: TextInputProps): JSX.Element => {
-    const {isSecret, isEditable, placeHolder, label, defaultValue, ...rest} = props;
+    const {isSecret, isEditable, placeHolder, label, defaultValue, onEndEditing, ...rest} = props;
     const [hideText, setHideText] = useState(isSecret);
 
     return (
@@ -62,6 +64,7 @@ export const TextInput = (props: TextInputProps): JSX.Element => {
                     secureTextEntry={hideText}
                     placeholder={placeHolder}
                     maxLength={20}
+                    onEndEditing={onEndEditing}
                 />
 
                 {isSecret && (

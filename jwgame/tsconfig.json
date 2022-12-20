@@ -17,6 +17,7 @@
             "@assets/*": ["assets/*"],
             "@navigation/*": ["navigation/*"],
             "@components/*": ["components/*"],
+            "@store":["store/*"],
             "@types": ["../types.d.ts"]
         },
         "strict": true /* Enable all strict type-checking options. */,

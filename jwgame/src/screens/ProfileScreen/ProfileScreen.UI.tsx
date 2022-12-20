@@ -35,7 +35,7 @@ export const SectionNameContainer = styled.View`
     width: 100%;
     height: 30%;
     align-items: center;
-    padding-top: ${scale(gridSizes.grid6x)}px;
+    justify-content: flex-start;
 `;
 
 export const SectionStatsContainer = styled.View`
@@ -83,4 +83,11 @@ export const ResetButton = styled(Button)`
     width: 30%;
     height: ${scale(gridSizes.grid6x)}px;
     border-radius: ${scale(gridSizes.grid2x)}px;
+`;
+
+export const SaveButton = styled(Button)`
+    width: 30%;
+    height: ${scale(gridSizes.grid6x)}px;
+    border-radius: ${scale(gridSizes.grid2x)}px;
+    margin-top: ${scale(gridSizes.grid12x)}px;
 `;

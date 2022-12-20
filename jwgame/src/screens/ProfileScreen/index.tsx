@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {TextInput} from 'components';
 import {useTranslation} from 'react-i18next';
-import {MainStackParamList} from '@navigation/MainNavigator';
+import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {KEY_CONSTANTS, readData, storeData} from 'store/async';
 import {
     ContentContainer,
     HeaderContainer,
@@ -11,6 +12,7 @@ import {
     LabelPointsWrong,
     ProfileImage,
     ResetButton,
+    SaveButton,
     SafeViewBg,
     SectionNameContainer,
     SectionStatsContainer,
@@ -22,6 +24,21 @@ type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
+    const [userName, setUserName] = useState<string>('');
+
+    const getUserName = async () => {
+        const data = await readData(KEY_CONSTANTS.USERNAME);
+        setUserName(data);
+    };
+
+    const onSaveName = () => {
+        storeData(KEY_CONSTANTS.USERNAME, userName);
+    };
+
+    useEffect(() => {
+        getUserName();
+        return () => setUserName('');
+    }, []);
 
     return (
         <SafeViewBg>
@@ -38,8 +55,10 @@ export function ProfileScreen(): JSX.Element {
                         placeHolder={''}
                         isSecret={false}
                         isEditable={true}
-                        defaultValue={'salcocer'}
+                        defaultValue={userName}
+                        onEndEditing={(e: any) => setUserName(e.nativeEvent.text)}
                     />
+                    <SaveButton primary={true} text={t('save')} onPressBn={onSaveName} />
                 </SectionNameContainer>
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
