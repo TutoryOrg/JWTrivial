@@ -43,6 +43,10 @@ export function ProfileScreen(): JSX.Element {
         setDisplayName(e.nativeEvent.text);
     };
 
+    const onPressReset = () => {
+        console.log('onPressRest');
+    };
+
     useEffect(() => {
         onGetNameFromStore();
     }, []);
@@ -77,11 +81,7 @@ export function ProfileScreen(): JSX.Element {
                     <SubHeadingStatsText text={t('stats')} />
                     <LabelPointsCorrect text={t('totalCorrect')} points={9} />
                     <LabelPointsWrong text={t('totalWrong')} points={9} />
-                    <ResetButton
-                        primary={true}
-                        text={t('reset')}
-                        onPressBn={() => console.log('reset')}
-                    />
+                    <ResetButton primary={true} text={t('reset')} onPressBn={onPressReset} />
                 </SectionStatsContainer>
             </ContentContainer>
         </SafeViewBg>
