@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const storeData = async (key: string, value: string): Promise<void> => {
+export const storeData = async (key: string, value: string): Promise<void | boolean> => {
     try {
-        const savedValue = typeof value === 'string' ? value : JSON.stringify(value);
-        await AsyncStorage.setItem(`@${key}`, savedValue);
+        await AsyncStorage.setItem(`@${key}`, value);
+        return true;
     } catch (e) {
         // saving error
         console.error(e);

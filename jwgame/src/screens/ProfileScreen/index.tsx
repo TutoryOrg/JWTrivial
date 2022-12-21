@@ -19,25 +19,32 @@ import {
     SubHeadingNameText,
     SubHeadingStatsText,
 } from './ProfileScreen.UI';
+import _ from 'lodash';
 
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
-    const [userName, setUserName] = useState<string>('');
+    const [savedName, setSavedName] = useState<string>('');
+    const [displayName, setDisplayName] = useState<string>('');
 
-    const getUserName = async () => {
-        const data = await readData(KEY_CONSTANTS.USERNAME);
-        setUserName(data);
+    const onGetNameFromStore = async () => {
+        const name = await readData(KEY_CONSTANTS.USERNAME);
+        setSavedName(name);
+        setDisplayName(name);
     };
 
-    const onSaveName = () => {
-        storeData(KEY_CONSTANTS.USERNAME, userName);
+    const onSaveNameToStore = () => {
+        storeData(KEY_CONSTANTS.USERNAME, displayName);
+        setSavedName(displayName);
+    };
+
+    const onEndEditingName = (e: {nativeEvent: {text: React.SetStateAction<string>}}) => {
+        setDisplayName(e.nativeEvent.text);
     };
 
     useEffect(() => {
-        getUserName();
-        return () => setUserName('');
+        onGetNameFromStore();
     }, []);
 
     return (
@@ -55,11 +62,17 @@ export function ProfileScreen(): JSX.Element {
                         placeHolder={''}
                         isSecret={false}
                         isEditable={true}
-                        defaultValue={userName}
-                        onEndEditing={(e: any) => setUserName(e.nativeEvent.text)}
+                        defaultValue={displayName}
+                        onEndEditing={onEndEditingName}
                     />
-                    <SaveButton primary={true} text={t('save')} onPressBn={onSaveName} />
+                    <SaveButton
+                        text={t('save')}
+                        primary={!_.isEqual(displayName, savedName)}
+                        disabled={_.isEqual(displayName, savedName)}
+                        onPressBn={onSaveNameToStore}
+                    />
                 </SectionNameContainer>
+
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
                     <LabelPointsCorrect text={t('totalCorrect')} points={9} />
