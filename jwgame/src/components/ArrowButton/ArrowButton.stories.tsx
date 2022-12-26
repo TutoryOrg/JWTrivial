@@ -1,9 +1,9 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
-import {ThemeProvider} from 'styled-components';
 import {ArrowButton} from './index';
+import {lightTheme, darkTheme} from 'themes';
+import {ThemeProvider} from 'styled-components';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const arrowNotes = `
 # Arrow Button Notes
