@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jwgame-staging-164210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::177410508889:role/amplify-jwgame-staging-164210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::177410508889:role/amplify-jwgame-staging-164210-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-jwgame-staging-164210-deployment",
+      "UnauthRoleName": "amplify-jwgame-staging-164210-unauthRole",
+      "StackName": "amplify-jwgame-staging-164210",
+      "StackId": "arn:aws:cloudformation:eu-west-3:177410508889:stack/amplify-jwgame-staging-164210/657a2c70-8f73-11ed-9307-06fe0c9d6cfe",
+      "AmplifyAppId": "d13llgbn2kg1uk"
+    },
+    "categories": {
+      "auth": {
+        "jwgame1f3a56a4": {}
+      },
+      "api": {
+        "jwgame": {}
+      },
+      "storage": {
+        "imagestorage": {}
+      }
+    }
+  }
+}

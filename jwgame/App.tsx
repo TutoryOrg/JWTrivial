@@ -1,26 +1,79 @@
-/**
- * @author stalynAlejandro
- */
+import React, {useState} from 'react';
+import {Button} from 'react-native';
+import {Amplify} from '@aws-amplify/core';
+import {Authenticator, useAuthenticator} from '@aws-amplify/ui-react-native';
+import awsExports from './src/aws-exports';
+import {CognitoUser} from 'amazon-cognito-identity-js/enhance-rn.js';
+import {listNotes} from './src/graphql/queries';
+import {
+    createNote as createNoteMutation,
+    deleteNote as deleteNoteMutation,
+} from './src/graphql/mutations';
+import {API, Storage} from 'aws-amplify';
 
-import 'react-native-gesture-handler';
-import React from 'react';
-import {useColorScheme} from 'react-native';
-import {ThemeProvider} from 'styled-components';
-import {lightTheme, darkTheme} from './src/themes';
-import {MainNavigator} from 'navigation/MainNavigator';
-import {NavigationContainer} from '@react-navigation/native';
-import StorybookUIRoot from './.ondevice/Storybook';
-import Config from 'react-native-config';
+Amplify.configure(awsExports);
 
-const App = (): JSX.Element => {
-    const isDarkMode = useColorScheme() === 'dark';
+function SignOutButton() {
+    const {signOut} = useAuthenticator();
+    return <Button title="Sign Out" onPress={signOut} />;
+}
+
+function App() {
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        fetchNotes();
+    }, []);
+
+    async function fetchNotes() {
+        const apiData = await API.graphql({query: listNotes});
+        const notesFromAPI = apiData.data.listNotes.items;
+        await Promise.all(
+            notesFromAPI.map(async note => {
+                if (note.image) {
+                    const url = await Storage.get(note.name);
+                    note.image = url;
+                }
+                return note;
+            })
+        );
+        setNotes(notesFromAPI);
+    }
+
+    async function createNote(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        const image = form.get('image');
+        const data = {
+            name: form.get('name'),
+            description: form.get('description'),
+            image: image.name,
+        };
+        if (!!data.image) await Storage.put(data.name, image);
+        await API.graphql({
+            query: createNoteMutation,
+            variables: {input: data},
+        });
+        fetchNotes();
+        event.target.reset();
+    }
+
+    async function deleteNote({id}) {
+        const newNotes = notes.filter(note => note.id !== id);
+        setNotes(newNotes);
+        await API.graphql({
+            query: deleteNoteMutation,
+            variables: {input: {id}},
+        });
+    }
+
     return (
-        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-            <NavigationContainer>
-                <MainNavigator />
-            </NavigationContainer>
-        </ThemeProvider>
+        <Authenticator.Provider>
+            <Authenticator>
+                <SignOutButton />
+            </Authenticator>
+        </Authenticator.Provider>
     );
-};
+}
 
-export default Config.STORYBOOK_MODE === 'true' ? StorybookUIRoot : App;
+export default App;

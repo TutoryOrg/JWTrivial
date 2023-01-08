@@ -1,0 +1,102 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jwgame-staging-164210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::177410508889:role/amplify-jwgame-staging-164210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::177410508889:role/amplify-jwgame-staging-164210-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-jwgame-staging-164210-deployment",
+      "UnauthRoleName": "amplify-jwgame-staging-164210-unauthRole",
+      "StackName": "amplify-jwgame-staging-164210",
+      "StackId": "arn:aws:cloudformation:eu-west-3:177410508889:stack/amplify-jwgame-staging-164210/657a2c70-8f73-11ed-9307-06fe0c9d6cfe",
+      "AmplifyAppId": "d13llgbn2kg1uk"
+    }
+  },
+  "auth": {
+    "jwgame1f3a56a4": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-jwgame-staging-164210-deployment/amplify-cfn-templates/auth/jwgame1f3a56a4-cloudformation-template.json",
+        "logicalId": "authjwgame1f3a56a4"
+      },
+      "lastPushTimeStamp": "2023-01-08T23:24:20.893Z",
+      "output": {
+        "UserPoolId": "eu-west-3_2EZQWY552",
+        "AppClientIDWeb": "2qn4qjgsp5vs884tdjdjpefh6g",
+        "AppClientID": "3k4k9rbh6p2gdefimh4abo3usu",
+        "IdentityPoolId": "eu-west-3:9f48b623-c42e-4d5b-82c5-133b782bcfd5",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-west-3:177410508889:userpool/eu-west-3_2EZQWY552",
+        "IdentityPoolName": "jwgame1f3a56a4_identitypool_1f3a56a4__staging",
+        "UserPoolName": "jwgame1f3a56a4_userpool_1f3a56a4"
+      },
+      "lastPushDirHash": "l5VyuePSB+slFuzXckS9Vvu6yg4="
+    }
+  },
+  "api": {
+    "jwgame": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "tzw4ui443rel7g7yygmqjoxbgy",
+        "GraphQLAPIEndpointOutput": "https://jcadcpr22vfbbat77moceprt2y.appsync-api.eu-west-3.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-zsmidgbe7zgitmiok4sdq3caca"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-jwgame-staging-164210-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apijwgame"
+      },
+      "lastPushTimeStamp": "2023-01-08T23:24:20.908Z",
+      "lastPushDirHash": "1Me6q5YEb7d0rey9ur01JgT8+nU="
+    }
+  },
+  "storage": {
+    "imagestorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2023-01-08T23:24:21.253Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-jwgame-staging-164210-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageimagestorage"
+      },
+      "output": {
+        "BucketName": "jwgamebucketstorageforimages164210-staging",
+        "Region": "eu-west-3"
+      },
+      "lastPushDirHash": "YZyQDJujedr/AI+V8G3Odg2Fcow="
+    }
+  }
+}
