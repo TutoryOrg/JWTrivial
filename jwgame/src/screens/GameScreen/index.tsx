@@ -1,12 +1,15 @@
 import React, {createRef, RefObject, useRef, useState} from 'react';
 import {QuestionEntry} from '@types';
+import {useDispatch, useSelector} from 'react-redux';
 import {RefTimer} from 'components/Timer';
 import {useTranslation} from 'react-i18next';
-import {Screens} from '@navigation/constants';
+import {RootState} from 'store/redux';
+import {Screens} from 'navigation/constants';
 import {useQuestions} from 'hooks/useQuestions';
 import {RefOptionButton} from 'components/OptionButton';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {addWrongPoints, addCorrectPoints} from 'store/redux/points';
 import {
     PointsCounter,
     Button,
@@ -35,6 +38,8 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const typeQuestion = route?.params?.title ?? '';
 
     const {t} = useTranslation();
+    const dispatch = useDispatch();
+
     const timerRef = useRef<RefTimer>(null);
     const optionRef: RefObject<RefOptionButton>[] = [];
 
@@ -45,6 +50,8 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const [selectedOption, setSelectedOption] = useState<selectedOptionType>();
 
     const questions: Array<QuestionEntry> = questionsData as Array<QuestionEntry>;
+
+    const correctPoints = useSelector((state: RootState) => state.points.correct);
 
     const onGoBack = () => navigation.goBack();
 
@@ -68,10 +75,12 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
             if (selectedOption !== questions[numQuestion].correctAnswer) {
                 onToggleModalCountPoints();
+                dispatch(addWrongPoints());
             }
 
             if (selectedOption === questions[numQuestion].correctAnswer) {
                 setCorrectAnswers(prev => prev + 1);
+                dispatch(addCorrectPoints());
                 if (numQuestion < questions.length - 1) setNumQuestion(prev => prev + 1);
                 else onToggleModalCountPoints();
             }
@@ -91,7 +100,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
                 <ModalCountPoints
                     title={t('ohh')}
                     pointsGained={correctAnswers}
-                    pointsAcumulated={5}
+                    pointsAcumulated={correctPoints}
                     leftButtonText={t('menu')}
                     rightButtonText={t('retry')}
                     onPressLeftButton={onGoBack}

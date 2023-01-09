@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button} from 'react-native';
 import {Amplify} from '@aws-amplify/core';
 import {Authenticator, useAuthenticator} from '@aws-amplify/ui-react-native';
