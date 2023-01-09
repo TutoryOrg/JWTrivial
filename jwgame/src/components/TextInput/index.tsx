@@ -47,7 +47,7 @@ interface TextInputProps {
     label: string;
     placeHolder: string;
     defaultValue: string;
-    onEndEditing: (e: {nativeEvent: {text: React.SetStateAction<string>}}) => void;
+    onEndEditing?: (e: {nativeEvent: {text: React.SetStateAction<string>}}) => void;
 }
 
 export const TextInput = (props: TextInputProps): JSX.Element => {

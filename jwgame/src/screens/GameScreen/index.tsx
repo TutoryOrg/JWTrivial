@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RefTimer} from 'components/Timer';
 import {useTranslation} from 'react-i18next';
 import {RootState} from 'store/redux/rxstore';
-import {Screens} from '@navigation/constants';
+import {Screens} from 'navigation/constants';
 import {useQuestions} from 'hooks/useQuestions';
 import {RefOptionButton} from 'components/OptionButton';
 import {MainStackParamList} from 'navigation/MainNavigator';
@@ -37,8 +37,9 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
     const color = route?.params?.color ?? '';
     const typeQuestion = route?.params?.title ?? '';
 
-    const dispatch = useDispatch();
     const {t} = useTranslation();
+    const dispatch = useDispatch();
+
     const timerRef = useRef<RefTimer>(null);
     const optionRef: RefObject<RefOptionButton>[] = [];
 

@@ -27,8 +27,9 @@ import {resetPoints} from 'store/redux/points/poinstSlice';
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
-    const dispatch = useDispatch();
     const {t} = useTranslation();
+    const dispatch = useDispatch();
+
     const [savedName, setSavedName] = useState<string>('');
     const [displayName, setDisplayName] = useState<string>('');
 
@@ -50,9 +51,7 @@ export function ProfileScreen(): JSX.Element {
         setDisplayName(e.nativeEvent.text);
     };
 
-    const onPressReset = () => {
-        dispatch(resetPoints());
-    };
+    const onPressReset = () => dispatch(resetPoints());
 
     useEffect(() => {
         onGetNameFromStore();

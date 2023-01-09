@@ -11,8 +11,8 @@ import {MainNavigator} from 'navigation/MainNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {rxstore} from 'store/redux/rxstore';
 import {Provider} from 'react-redux';
-import StorybookUIRoot from './.ondevice/Storybook';
-import Config from 'react-native-config';
+// import StorybookUIRoot from './.ondevice/Storybook';
+// import Config from 'react-native-config';
 
 const App = (): JSX.Element => {
     const isDarkMode = useColorScheme() === 'dark';
@@ -27,4 +27,5 @@ const App = (): JSX.Element => {
     );
 };
 
-export default Config.STORYBOOK_MODE === 'true' ? StorybookUIRoot : App;
+// export default Config.STORYBOOK_MODE === 'true' ? StorybookUIRoot : App;
+export default App;
