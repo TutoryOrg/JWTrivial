@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {TextInput} from 'components';
+import {RootState} from 'store/redux';
 import {useTranslation} from 'react-i18next';
+import {resetPoints} from 'store/redux/points';
+import {useDispatch, useSelector} from 'react-redux';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {KEY_CONSTANTS, readData, storeData} from 'store/async';
@@ -20,10 +23,6 @@ import {
     SubHeadingStatsText,
 } from './ProfileScreen.UI';
 import _ from 'lodash';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from 'store/redux/rxstore';
-import {resetPoints} from 'store/redux/points/poinstSlice';
-
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {

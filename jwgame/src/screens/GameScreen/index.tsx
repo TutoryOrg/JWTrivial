@@ -3,13 +3,13 @@ import {QuestionEntry} from '@types';
 import {useDispatch, useSelector} from 'react-redux';
 import {RefTimer} from 'components/Timer';
 import {useTranslation} from 'react-i18next';
-import {RootState} from 'store/redux/rxstore';
+import {RootState} from 'store/redux';
 import {Screens} from 'navigation/constants';
 import {useQuestions} from 'hooks/useQuestions';
 import {RefOptionButton} from 'components/OptionButton';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {addWrongPoints, addCorrectPoints} from 'store/redux/points/poinstSlice';
+import {addWrongPoints, addCorrectPoints} from 'store/redux/points';
 import {
     PointsCounter,
     Button,
