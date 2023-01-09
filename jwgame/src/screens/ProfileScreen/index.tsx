@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {TextInput} from 'components';
+import {RootState} from 'store/redux';
 import {useTranslation} from 'react-i18next';
+import {resetPoints} from 'store/redux/points';
+import {useDispatch, useSelector} from 'react-redux';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {KEY_CONSTANTS, readData, storeData} from 'store/async';
@@ -20,13 +23,17 @@ import {
     SubHeadingStatsText,
 } from './ProfileScreen.UI';
 import _ from 'lodash';
-
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
+    const dispatch = useDispatch();
+
     const [savedName, setSavedName] = useState<string>('');
     const [displayName, setDisplayName] = useState<string>('');
+
+    const wrongPoints = useSelector((state: RootState) => state.points.wrong);
+    const correctPoints = useSelector((state: RootState) => state.points.correct);
 
     const onGetNameFromStore = async () => {
         const name = await readData(KEY_CONSTANTS.USERNAME);
@@ -43,9 +50,7 @@ export function ProfileScreen(): JSX.Element {
         setDisplayName(e.nativeEvent.text);
     };
 
-    const onPressReset = () => {
-        console.log('onPressRest');
-    };
+    const onPressReset = () => dispatch(resetPoints());
 
     useEffect(() => {
         onGetNameFromStore();
@@ -79,8 +84,8 @@ export function ProfileScreen(): JSX.Element {
 
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
-                    <LabelPointsCorrect text={t('totalCorrect')} points={9} />
-                    <LabelPointsWrong text={t('totalWrong')} points={9} />
+                    <LabelPointsWrong text={t('totalWrong')} points={wrongPoints} />
+                    <LabelPointsCorrect text={t('totalCorrect')} points={correctPoints} />
                     <ResetButton primary={true} text={t('reset')} onPressBn={onPressReset} />
                 </SectionStatsContainer>
             </ContentContainer>
