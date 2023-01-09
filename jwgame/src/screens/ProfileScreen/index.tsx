@@ -20,13 +20,20 @@ import {
     SubHeadingStatsText,
 } from './ProfileScreen.UI';
 import _ from 'lodash';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from 'store/redux/rxstore';
+import {resetPoints} from 'store/redux/points/poinstSlice';
 
 type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
+    const dispatch = useDispatch();
     const {t} = useTranslation();
     const [savedName, setSavedName] = useState<string>('');
     const [displayName, setDisplayName] = useState<string>('');
+
+    const wrongPoints = useSelector((state: RootState) => state.points.wrong);
+    const correctPoints = useSelector((state: RootState) => state.points.correct);
 
     const onGetNameFromStore = async () => {
         const name = await readData(KEY_CONSTANTS.USERNAME);
@@ -44,7 +51,7 @@ export function ProfileScreen(): JSX.Element {
     };
 
     const onPressReset = () => {
-        console.log('onPressRest');
+        dispatch(resetPoints());
     };
 
     useEffect(() => {
@@ -79,8 +86,8 @@ export function ProfileScreen(): JSX.Element {
 
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
-                    <LabelPointsCorrect text={t('totalCorrect')} points={9} />
-                    <LabelPointsWrong text={t('totalWrong')} points={9} />
+                    <LabelPointsWrong text={t('totalWrong')} points={wrongPoints} />
+                    <LabelPointsCorrect text={t('totalCorrect')} points={correctPoints} />
                     <ResetButton primary={true} text={t('reset')} onPressBn={onPressReset} />
                 </SectionStatsContainer>
             </ContentContainer>

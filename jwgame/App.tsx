@@ -9,17 +9,21 @@ import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from './src/themes';
 import {MainNavigator} from 'navigation/MainNavigator';
 import {NavigationContainer} from '@react-navigation/native';
+import {rxstore} from 'store/redux/rxstore';
+import {Provider} from 'react-redux';
 import StorybookUIRoot from './.ondevice/Storybook';
 import Config from 'react-native-config';
 
 const App = (): JSX.Element => {
     const isDarkMode = useColorScheme() === 'dark';
     return (
-        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-            <NavigationContainer>
-                <MainNavigator />
-            </NavigationContainer>
-        </ThemeProvider>
+        <Provider store={rxstore}>
+            <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+                <NavigationContainer>
+                    <MainNavigator />
+                </NavigationContainer>
+            </ThemeProvider>
+        </Provider>
     );
 };
 
