@@ -19,11 +19,11 @@ const pointsSlice = createSlice({
             state.wrong = 0;
             state.correct = 0;
         },
-        addCorrectPoints(state) {
-            state.correct = state.correct + 1;
-        },
         addWrongPoints(state) {
             state.wrong = state.wrong + 1;
+        },
+        addCorrectPoints(state) {
+            state.correct = state.correct + 1;
         },
     },
 });

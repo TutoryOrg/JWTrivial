@@ -1,5 +1,5 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {pointsReducer} from './points';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({points: pointsReducer});
 
