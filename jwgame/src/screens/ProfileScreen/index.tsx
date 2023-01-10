@@ -84,8 +84,8 @@ export function ProfileScreen(): JSX.Element {
 
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
-                    <LabelPointsWrong text={t('totalWrong')} points={wrongPoints} />
                     <LabelPointsCorrect text={t('totalCorrect')} points={correctPoints} />
+                    <LabelPointsWrong text={t('totalWrong')} points={wrongPoints} />
                     <ResetButton primary={true} text={t('reset')} onPressBn={onPressReset} />
                 </SectionStatsContainer>
             </ContentContainer>
