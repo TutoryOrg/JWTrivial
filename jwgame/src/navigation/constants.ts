@@ -1,4 +1,5 @@
 export enum Screens {
+    MenuStack = 'MenuStack',
     GameScreen = 'GameScreen',
     MenuScreen = 'MenuScreen',
     HomeScreen = 'HomeScreen',
@@ -6,5 +7,4 @@ export enum Screens {
     ProfileScreen = 'ProfileScreen',
     SettingsScreen = 'SettingsScreen',
     BottomNavigator = 'BottomNavigator',
-    MenuStack = 'MenuStack',
 }
