@@ -19,14 +19,14 @@ const pointsSlice = createSlice({
             state.wrong = 0;
             state.correct = 0;
         },
-        addWrongPoints(state) {
-            state.wrong = state.wrong + 1;
+        setCorrectPoints(state, action: PayloadAction<number>) {
+            state.correct = action.payload;
         },
-        addCorrectPoints(state) {
-            state.correct = state.correct + 1;
+        setWrongPoints(state, action: PayloadAction<number>) {
+            state.wrong = action.payload;
         },
     },
 });
 
-export const {setPoints, resetPoints, addCorrectPoints, addWrongPoints} = pointsSlice.actions;
+export const {setPoints, resetPoints, setCorrectPoints, setWrongPoints} = pointsSlice.actions;
 export const pointsReducer = pointsSlice.reducer;

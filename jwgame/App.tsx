@@ -16,6 +16,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const App = (): JSX.Element => {
     const isDarkMode = useColorScheme() === 'dark';
+
     return (
         <Provider store={store}>
             <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>

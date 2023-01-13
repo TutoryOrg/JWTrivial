@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {TextInput} from 'components';
 import {RootState} from 'store/redux';
 import {useTranslation} from 'react-i18next';
+import {setUserName} from 'store/redux/user';
 import {resetPoints} from 'store/redux/points';
 import {useDispatch, useSelector} from 'react-redux';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {KEY_CONSTANTS, readData, storeData} from 'store/async';
 import {
     ContentContainer,
     HeaderContainer,
@@ -29,22 +29,10 @@ export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
     const dispatch = useDispatch();
 
-    const [savedName, setSavedName] = useState<string>('');
-    const [displayName, setDisplayName] = useState<string>('');
+    const user = useSelector((state: RootState) => state.user);
+    const points = useSelector((state: RootState) => state.points);
 
-    const wrongPoints = useSelector((state: RootState) => state.points.wrong);
-    const correctPoints = useSelector((state: RootState) => state.points.correct);
-
-    const onGetNameFromStore = async () => {
-        const name = await readData(KEY_CONSTANTS.USERNAME);
-        setSavedName(name);
-        setDisplayName(name);
-    };
-
-    const onSaveNameToStore = () => {
-        storeData(KEY_CONSTANTS.USERNAME, displayName);
-        setSavedName(displayName);
-    };
+    const [displayName, setDisplayName] = useState<string>(user.name);
 
     const onEndEditingName = (e: {nativeEvent: {text: React.SetStateAction<string>}}) => {
         setDisplayName(e.nativeEvent.text);
@@ -52,9 +40,7 @@ export function ProfileScreen(): JSX.Element {
 
     const onPressReset = () => dispatch(resetPoints());
 
-    useEffect(() => {
-        onGetNameFromStore();
-    }, []);
+    const onSaveName = () => dispatch(setUserName(displayName));
 
     return (
         <SafeViewBg>
@@ -71,21 +57,21 @@ export function ProfileScreen(): JSX.Element {
                         placeHolder={''}
                         isSecret={false}
                         isEditable={true}
-                        defaultValue={displayName}
+                        defaultValue={user.name}
                         onEndEditing={onEndEditingName}
                     />
                     <SaveButton
                         text={t('save')}
-                        primary={!_.isEqual(displayName, savedName)}
-                        disabled={_.isEqual(displayName, savedName)}
-                        onPressBn={onSaveNameToStore}
+                        primary={!_.isEqual(displayName, user.name)}
+                        disabled={_.isEqual(displayName, user.name)}
+                        onPressBn={onSaveName}
                     />
                 </SectionNameContainer>
 
                 <SectionStatsContainer enabled={false}>
                     <SubHeadingStatsText text={t('stats')} />
-                    <LabelPointsCorrect text={t('totalCorrect')} points={correctPoints} />
-                    <LabelPointsWrong text={t('totalWrong')} points={wrongPoints} />
+                    <LabelPointsCorrect text={t('totalCorrect')} points={points.correct} />
+                    <LabelPointsWrong text={t('totalWrong')} points={points.wrong} />
                     <ResetButton primary={true} text={t('reset')} onPressBn={onPressReset} />
                 </SectionStatsContainer>
             </ContentContainer>
