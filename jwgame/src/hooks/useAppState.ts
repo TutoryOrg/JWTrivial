@@ -1,6 +1,5 @@
 import {useLayoutEffect, useState} from 'react';
-import {loadState} from 'store/async/loadState';
-import {saveState} from 'store/async/saveState';
+import {loadState, saveState} from 'store/async';
 import {rootReducer, emptyStore} from 'store/redux';
 import {configureStore, Store} from '@reduxjs/toolkit';
 
