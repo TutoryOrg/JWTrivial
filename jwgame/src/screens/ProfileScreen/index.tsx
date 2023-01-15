@@ -38,7 +38,7 @@ export function ProfileScreen(): JSX.Element {
         setDisplayName(e.nativeEvent.text);
     };
 
-    const onPressReset = async () => {
+    const onPressReset = () => {
         dispatch(resetPoints());
     };
 
