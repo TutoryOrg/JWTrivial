@@ -1,5 +1,5 @@
-import {scale, windowHeight, windowWidth} from 'utils/scaleFunctions';
 import {LabelPointsInfo, Text, Button} from 'components';
+import {scale, windowHeight, windowWidth} from 'utils/scaleFunctions';
 import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 

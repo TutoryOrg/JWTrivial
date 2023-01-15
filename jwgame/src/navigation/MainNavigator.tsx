@@ -2,8 +2,8 @@ import React from 'react';
 import {Screens} from './constants';
 import {GameScreen} from 'screens/GameScreen';
 import {HomeScreen} from 'screens/HomeScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {BottomNavigator} from './BottomNavigator';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
     [Screens.HomeScreen]: undefined;

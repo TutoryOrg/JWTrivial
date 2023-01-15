@@ -1,7 +1,7 @@
 import {GameScreen} from './GameScreen';
 import {HomeScreen} from './HomeScreen';
-import {LoginScreen} from './LoginScreen';
 import {MenuScreen} from './MenuScreen';
+import {LoginScreen} from './LoginScreen';
 import {ProfileScreen} from './ProfileScreen';
 import {SettingsScreen} from './SettingsScreen';
 
