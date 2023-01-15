@@ -14,7 +14,7 @@ import {NavigationContainer} from '@react-navigation/native';
 // import StorybookUIRoot from './.ondevice/Storybook';
 // import Config from 'react-native-config';
 
-const App = (): JSX.Element | null => {
+const App = (): JSX.Element => {
     const store = useAppState();
     const isDarkMode = useColorScheme() === 'dark';
 
