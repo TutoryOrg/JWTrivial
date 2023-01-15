@@ -1,8 +1,24 @@
 import {userReducer} from './user';
 import {pointsReducer} from './points';
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import {useDispatch} from 'react-redux';
+import {
+    AnyAction,
+    CombinedState,
+    combineReducers,
+    configureStore,
+    ThunkDispatch,
+} from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({user: userReducer, points: pointsReducer});
+export const rootReducer = combineReducers({user: userReducer, points: pointsReducer});
+
+export const emptyStore = configureStore({reducer: rootReducer});
+
+function _getDispatch() {
+    return emptyStore.dispatch;
+}
 
 export type RootState = ReturnType<typeof rootReducer>;
-export const store = configureStore({reducer: rootReducer});
+export type AppDispatch = ReturnType<typeof _getDispatch>;
+
+export const useAppDispatch = (): ThunkDispatch<CombinedState<RootState>, undefined, AnyAction> =>
+    useDispatch<AppDispatch>();

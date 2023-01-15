@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {TextInput} from 'components';
-import {RootState} from 'store/redux';
+import {useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {setUserName} from 'store/redux/user';
 import {resetPoints} from 'store/redux/points';
-import {useDispatch, useSelector} from 'react-redux';
+import {RootState, useAppDispatch} from 'store/redux';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
@@ -27,7 +27,7 @@ type ProfileScreen = NativeStackScreenProps<MainStackParamList>;
 
 export function ProfileScreen(): JSX.Element {
     const {t} = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const user = useSelector((state: RootState) => state.user);
     const points = useSelector((state: RootState) => state.points);
@@ -38,9 +38,13 @@ export function ProfileScreen(): JSX.Element {
         setDisplayName(e.nativeEvent.text);
     };
 
-    const onPressReset = () => dispatch(resetPoints());
+    const onPressReset = async () => {
+        dispatch(resetPoints());
+    };
 
-    const onSaveName = () => dispatch(setUserName(displayName));
+    const onSaveName = () => {
+        dispatch(setUserName(displayName));
+    };
 
     return (
         <SafeViewBg>

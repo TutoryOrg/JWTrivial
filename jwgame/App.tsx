@@ -4,9 +4,9 @@
 
 import 'react-native-gesture-handler';
 import React from 'react';
-import {store} from 'store/redux';
 import {Provider} from 'react-redux';
 import {useColorScheme} from 'react-native';
+import {useAppState} from 'hooks/useAppState';
 import {ThemeProvider} from 'styled-components';
 import {lightTheme, darkTheme} from './src/themes';
 import {MainNavigator} from 'navigation/MainNavigator';
@@ -14,7 +14,8 @@ import {NavigationContainer} from '@react-navigation/native';
 // import StorybookUIRoot from './.ondevice/Storybook';
 // import Config from 'react-native-config';
 
-const App = (): JSX.Element => {
+const App = (): JSX.Element | null => {
+    const store = useAppState();
     const isDarkMode = useColorScheme() === 'dark';
 
     return (
