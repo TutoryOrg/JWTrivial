@@ -10,12 +10,9 @@ import {
 } from '@reduxjs/toolkit';
 
 export const rootReducer = combineReducers({user: userReducer, points: pointsReducer});
-
 export const emptyStore = configureStore({reducer: rootReducer});
 
-function _getDispatch() {
-    return emptyStore.dispatch;
-}
+const _getDispatch = () => emptyStore.dispatch;
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = ReturnType<typeof _getDispatch>;
