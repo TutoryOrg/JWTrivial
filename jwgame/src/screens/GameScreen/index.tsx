@@ -61,9 +61,7 @@ export function GameScreen({navigation, route}: GameScreenProps): JSX.Element {
 
     const onToggleModalCountPoints = () => setShowModalCount(!showModalCount);
 
-    const onTimeUp = () => {
-        onToggleModalCountPoints();
-    };
+    const onTimeUp = () => onToggleModalCountPoints();
 
     const onRetry = () => {
         setNumQuestion(0);
