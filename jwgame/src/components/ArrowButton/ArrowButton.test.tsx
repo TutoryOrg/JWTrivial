@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import {ArrowButton, directionTypes} from './index';
+import {ArrowButton} from './index';
 
 import renderer from 'react-test-renderer';
 
