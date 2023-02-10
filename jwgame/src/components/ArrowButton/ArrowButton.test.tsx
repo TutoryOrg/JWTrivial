@@ -13,15 +13,15 @@ describe('ArrowButton', () => {
         renderer.create(<ArrowButton {...defaultProps} />);
     });
 
-    it('components renders directionArrow up', () => {
+    it('renders directionArrow up', () => {
         renderer.create(<ArrowButton {...defaultProps} directionArrow="top" />);
     });
 
-    it('test renders directionArrow down', () => {
+    it('renders directionArrow down', () => {
         renderer.create(<ArrowButton {...defaultProps} directionArrow="down" />);
     });
 
-    it('test renders directionArrow right', () => {
+    it('renders directionArrow right', () => {
         renderer.create(<ArrowButton {...defaultProps} directionArrow="right" />);
     });
 });

@@ -17,7 +17,7 @@ describe('DropOptions', () => {
         renderComponent();
     });
 
-    it('component toggles ', () => {
+    it('component toggles', () => {
         render(renderComponent());
         expect(screen.getByTestId('drop-options')).toBeDefined();
 
