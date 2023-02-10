@@ -105,7 +105,7 @@ export const DropOptions = (props: DropOptionsProps): JSX.Element => {
 
     return (
         <>
-            <TouchableContainer onPress={onToggleDrop}>
+            <TouchableContainer testID="drop-options"  onPress={onToggleDrop}>
                 <CircleIconContainer source={iconSource} />
                 <InfoContainer>
                     <DescriptionText text={title} />

@@ -1,8 +1,27 @@
 import 'react-native';
 import React from 'react';
 import {DropOptions} from './index';
-import renderer from 'react-test-renderer';
+import {render, screen, fireEvent} from '@testing-library/react-native';
+import {ViewStoriesContainer} from '../ViewStories';
 
-it('renders correctly', () => {
-    renderer.create(<DropOptions />);
+describe('DropOptions', () => {
+    const renderComponent = props => {
+        return (
+            <ViewStoriesContainer>
+                <DropOptions {...props} />
+            </ViewStoriesContainer>
+        );
+    };
+
+    it('component renders', () => {
+        renderComponent();
+    });
+
+    it('component toggles ', () => {
+        render(renderComponent());
+        expect(screen.getByTestId('drop-options')).toBeDefined();
+
+        const dropOptions = screen.getByTestId('drop-options');
+        fireEvent.press(dropOptions);
+    });
 });
