@@ -15,6 +15,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const App = (): JSX.Element => {
     const store = useAppState();
+
     const isDarkMode = useColorScheme() === 'dark';
 
     return (

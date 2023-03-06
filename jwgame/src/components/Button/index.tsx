@@ -44,6 +44,8 @@ interface ButtonProps {
 
 export const Button = (props: ButtonProps): JSX.Element => {
     const {onPressBn, text, primary, ...rest} = props;
+    // const helllo = world;
+
     return (
         <Container onPress={onPressBn} primary={primary} {...rest}>
             <ButtonText primary={primary} text={text?.toUpperCase()} />
