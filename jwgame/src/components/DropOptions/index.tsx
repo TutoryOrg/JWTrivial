@@ -40,9 +40,7 @@ const DescriptionText = styled(Text)`
     font-family: ${fontFamilies.NunitoBold};
 `;
 
-const SubDescriptionText = styled(Text)<{
-    text;
-}>`
+const SubDescriptionText = styled(Text)`
     width: 100%;
     text-align: left;
     color: ${colors.primaryGrey};
@@ -56,11 +54,11 @@ const DropIconContainer = styled.Image`
 `;
 
 const DropOptionsContainer = styled.View<{
-    active;
+    active: boolean;
 }>`
     width: 90%;
     align-items: flex-end;
-    display: ${props => (props?.active ? 'flex' : 'none')};
+    display: ${props  => (props?.active ? 'flex' : 'none')};
     margin-bottom: ${scale(gridSizes.gridx)}px;
 `;
 
@@ -105,7 +103,7 @@ export const DropOptions = (props: DropOptionsProps): JSX.Element => {
 
     return (
         <>
-            <TouchableContainer testID="drop-options"  onPress={onToggleDrop}>
+            <TouchableContainer testID="drop-options" onPress={onToggleDrop}>
                 <CircleIconContainer source={iconSource} />
                 <InfoContainer>
                     <DescriptionText text={title} />
