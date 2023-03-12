@@ -8,7 +8,7 @@ const ArrowIcon = styled.Image<{
 }>`
     height: ${scale(gridSizes.grid6x)}px;
     width: ${scale(gridSizes.grid6x)}px;
-    transform: ${props => {
+    transform: ${(props: any) => {
         if (props?.directionArrow === 'top') {
             return 'rotate(90deg)';
         }

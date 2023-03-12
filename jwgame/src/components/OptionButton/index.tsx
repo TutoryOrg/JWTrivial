@@ -5,12 +5,12 @@ import {colors, fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 
 const TouchableContainer = styled.TouchableOpacity<{
-    correct;
+    correct: boolean;
 }>`
     width: 90%;
     align-items: center;
     flex-direction: row;
-    background-color: ${props =>
+    background-color: ${(props: any) =>
         props.correct === true
             ? colors.green
             : props.correct === false
@@ -21,7 +21,7 @@ const TouchableContainer = styled.TouchableOpacity<{
 `;
 
 const CircleOption = styled.View<{
-    selected;
+    selected: boolean;
 }>`
     margin-left: ${scale(gridSizes.grid3x)}px;
     height: ${scale(gridSizes.grid6x)}px;
@@ -33,7 +33,7 @@ const CircleOption = styled.View<{
 `;
 
 const OptionText = styled(Text)<{
-    selected;
+    selected: boolean;
 }>`
     margin: auto;
     font-family: ${fontFamilies.NunitoBold};
