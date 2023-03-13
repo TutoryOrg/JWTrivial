@@ -285,7 +285,29 @@ Both of the above aproaches work and you can use whatever fits your requirements
 
 # Request payloads
 
-Our previous example of the POST route handler didn't accept any client params. Let's fix this by adding the `@Body()` decorator here. 
+Our previous example of the POST route handler didn't accept any client params. Let's fix this by adding the `@Body()` decorator here.
 
-But first (if you use TypeScript) we need to determine the *DTO(Data Transfer Object)* schema. A DTO is an object that defines how the data will be sent over the network. We could determine the DTO schema using classes here. 
+But first (if you use TypeScript) we need to determine the _DTO(Data Transfer Object)_ schema. A DTO is an object that defines how the data will be sent over the network.
+We could determine the DTO schema using classes here. Classes are part of the JSES6 standard, and therefore they are preserved as real entities in the compiled js. On the other hand, since TypeScript interfaces are removed during the transpilation, Nest can't refer to them at runtime. This is important because features such as _Pipes_ enable additional possibilities when they have access to the metatype of the variable at runtime.
+
+Let's create the `CreateCatDTO` class:
+
+```js
+export class CreateCatDto {
+    name: string;
+    age: number;
+    breed: string;
+}
+```
+
+It has only three basic properties. Thereafter we can use the newly created DTO inside the `CatsController`:
+
+```js
+@Post()
+async create(@Body() createCatDto: CreateCatDto){
+  return 'This action adds a new cat';
+}
+
+```
+
 
