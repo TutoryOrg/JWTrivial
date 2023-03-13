@@ -238,3 +238,54 @@ findOne(@Param('id') id:string): string{
     returns `This action returns a #${id} cat`;
 }
 ```
+
+# Sub-Domain Routing
+
+The `@Controller` decorator can take a `host` option to require that the HTTP host of the incoming request matches some specific value.
+
+```js
+@Controller({ host: 'admin.example.com' })
+export class AdminController {
+    @Get()
+    index(): string {
+        return 'Admin Page';
+    }
+}
+```
+
+# Scopes
+
+For people coming from different programming language background, it might be unexpected to learn that in Nest, almost everything is shared across incoming requests. We have a connection pool to the database, singleton services with global state, etc. Rememeber that Node.js doesn't follow the request/response **Multi-Threaded Stateles Model** in which every request is processed by a separate thread. Hence. using a singleton instances is fully _safe for our applications_.
+
+However, there are edge-cases when request-based lifetime of the controller may be the desired behaviour, for instance pre-request caching in GraphQL applications, request tracking or multi-tenancy.
+
+# Asynchronicity
+
+We love modern js and we know that data extraction is mostrly _asynchronous_. That's why Nest supports `async` functions.
+
+Every async functions has to return a `Promise`. This means that you can return a deferred value that Nest will be able to resolve by itself.
+
+```js
+@Get()
+async findAll():Promise<any[]>{
+    return [];
+}
+```
+
+Nest route handlers are even more powerful by being able to return RxJs observable streams. Nest will automatically subscribe to the source underneath and take the last emitted value (once the stream is completed).
+
+```js
+@Get()
+findAll(): Observable<any[]>{
+    return of([]);
+}
+```
+
+Both of the above aproaches work and you can use whatever fits your requirements.
+
+# Request payloads
+
+Our previous example of the POST route handler didn't accept any client params. Let's fix this by adding the `@Body()` decorator here. 
+
+But first (if you use TypeScript) we need to determine the *DTO(Data Transfer Object)* schema. A DTO is an object that defines how the data will be sent over the network. We could determine the DTO schema using classes here. 
+

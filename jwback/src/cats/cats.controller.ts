@@ -52,4 +52,13 @@ export class CatsController {
             return { url: 'https//docs.nestjs.com/v5/' };
         }
     }
+
+    // Sub-Domain Routing
+    // @Controller({ host: ':account.example.com' })
+    // export class AccountController {
+    //   @Get()
+    //   getInfo(@HostParam('account') account: string) {
+    //     return account;
+    //   }
+    // }
 }
