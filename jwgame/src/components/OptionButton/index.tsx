@@ -41,6 +41,7 @@ const OptionText = styled(Text)<{
 `;
 
 const Description = styled.View`
+    height: 20px;
     margin-left: ${scale(gridSizes.grid4x)}px;
     align-items: center;
     justify-content: center;
