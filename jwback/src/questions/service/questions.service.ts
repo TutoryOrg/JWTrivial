@@ -17,8 +17,11 @@ export class QuestionsService {
         return this.questionModel.find().exec();
     }
 
-    async findAllByNumber(n: number): Promise<Question[]> {
-        console.log(n);
-        return this.questionModel.find().exec();
+    async findAllWithLimit(n: number): Promise<Question[]> {
+        return this.questionModel
+            .find()
+            .limit(n)
+            .skip(Math.floor(Math.random() * n))
+            .exec();
     }
 }

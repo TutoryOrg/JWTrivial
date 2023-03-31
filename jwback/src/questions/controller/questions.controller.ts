@@ -1,6 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { QuestionsService } from '../service/questions.service';
 import { Question } from '../schema/questions.schema';
+import { QuestionsService } from '../service/questions.service';
+import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('questions')
 export class QuestionsController {
@@ -8,13 +8,11 @@ export class QuestionsController {
 
     @Get('getQuestions')
     public async getQuestions(): Promise<Question[]> {
-        const result = await this.questionsService.findAll();
-        return result;
+        return await this.questionsService.findAll();
     }
 
     @Get(':n')
     public async getQuestionsByNumber(@Param() param): Promise<Question[]> {
-        const result = await this.questionsService.findAll();
-        return result;
+        return await this.questionsService.findAllWithLimit(param.n);
     }
 }

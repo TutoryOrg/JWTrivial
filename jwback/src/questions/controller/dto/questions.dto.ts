@@ -1,5 +1,5 @@
-import { IsNotEmpty, IsObject, IsString, ValidateNested } from 'class-validator';
 import { TypeQuestion } from 'src/questions/schema/questions.schema';
+import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 
 export class QuestionDto {
     @IsString()
