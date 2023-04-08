@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
+import { Question } from '../schema/questions.schema';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Question } from '../schema/questions.schema';
 import { QuestionDto } from '../controller/dto/questions.dto';
 
 @Injectable()
@@ -18,10 +18,6 @@ export class QuestionsService {
     }
 
     async findAllWithLimit(n: number): Promise<Question[]> {
-        return this.questionModel
-            .find()
-            .limit(n)
-            .skip(Math.floor(Math.random() * n))
-            .exec();
+        return this.questionModel.aggregate([{ $sample: { size: +n } }]);
     }
 }
