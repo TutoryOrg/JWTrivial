@@ -75,6 +75,7 @@ interface TimerProps {
     seconds: number;
     onTimeUp: () => void;
 }
+
 export interface RefTimer {
     onReset: () => void;
 }
