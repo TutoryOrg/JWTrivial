@@ -1,9 +1,9 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {LabelPointsInfo} from './index';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const lableNotes = `
 # Label Poinst Info Notes

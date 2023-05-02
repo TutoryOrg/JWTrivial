@@ -1,7 +1,7 @@
-import {useLayoutEffect, useState} from 'react';
 import {loadState, saveState} from 'store/async';
-import {rootReducer, emptyStore} from 'store/redux';
 import {configureStore, Store} from '@reduxjs/toolkit';
+import {rootReducer, emptyStore} from 'store/redux';
+import {useLayoutEffect, useState} from 'react';
 
 export function useAppState(): Store {
     const [store, setStore] = useState<Store>(emptyStore);

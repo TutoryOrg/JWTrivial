@@ -1,6 +1,6 @@
 import {userReducer} from './user';
-import {pointsReducer} from './points';
 import {useDispatch} from 'react-redux';
+import {pointsReducer} from './points';
 import {
     AnyAction,
     CombinedState,

@@ -4,12 +4,12 @@
 
 import React from 'react';
 import {Provider} from 'react-redux';
-import {useColorScheme} from 'react-native';
 import {useAppState} from 'hooks/useAppState';
-import {ThemeProvider} from 'styled-components';
-import {lightTheme, darkTheme} from './src/themes';
 import {MainNavigator} from 'navigation/MainNavigator';
+import {ThemeProvider} from 'styled-components';
+import {useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import {lightTheme, darkTheme} from './src/themes';
 
 const App = (): JSX.Element => {
     const store = useAppState();

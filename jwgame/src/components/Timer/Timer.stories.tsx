@@ -1,9 +1,9 @@
 import React from 'react';
 import {Timer} from './index';
 import {ThemeProvider} from 'styled-components';
+import {ViewStoriesContainer} from 'components/ViewStories';
 import {lightTheme, darkTheme} from '../../themes';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {ViewStoriesContainer} from 'components/ViewStories';
 
 const TimerNotes = `# Timer Notes`;
 

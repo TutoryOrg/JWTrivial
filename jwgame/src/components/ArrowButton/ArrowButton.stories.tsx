@@ -1,8 +1,8 @@
 import React from 'react';
 import {ArrowButton} from './index';
-import {lightTheme, darkTheme} from 'themes';
 import {ThemeProvider} from 'styled-components';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from 'themes';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const arrowNotes = `

@@ -1,16 +1,16 @@
 import React, {createRef, RefObject, useRef, useState} from 'react';
-import {QuestionEntry} from '@types';
 import {colors} from 'utils/constants';
-import {useSelector} from 'react-redux';
-import {RefTimer} from 'components/Timer';
 import {Screens} from 'navigation/constants';
-import {useTranslation} from 'react-i18next';
-import {ActivityIndicator} from 'react-native';
+import {RefTimer} from 'components/Timer';
+import {useSelector} from 'react-redux';
 import {useQuestions} from 'hooks/useQuestions';
-import {RootState, useAppDispatch} from 'store/redux';
+import {QuestionEntry} from '@types';
+import {useTranslation} from 'react-i18next';
 import {RefOptionButton} from 'components/OptionButton';
+import {ActivityIndicator} from 'react-native';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootState, useAppDispatch} from 'store/redux';
 import {setWrongPoints, setCorrectPoints} from 'store/redux/points';
 import {
     PointsCounter,

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {TextInput} from 'components';
 import {useSelector} from 'react-redux';
-import {useTranslation} from 'react-i18next';
 import {setUserName} from 'store/redux/user';
 import {resetPoints} from 'store/redux/points';
-import {RootState, useAppDispatch} from 'store/redux';
+import {useTranslation} from 'react-i18next';
 import {MainStackParamList} from 'navigation/MainNavigator';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootState, useAppDispatch} from 'store/redux';
 import {
     ContentContainer,
     HeaderContainer,

@@ -1,5 +1,5 @@
-import {Text, Button, TextInput} from 'components';
 import {scale, verticalScale} from 'utils/scaleFunctions';
+import {Text, Button, TextInput} from 'components';
 import {fontFamilies, fontSizes, gridSizes} from 'utils/constants';
 import styled from 'styled-components/native';
 

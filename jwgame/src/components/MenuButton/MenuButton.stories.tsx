@@ -1,10 +1,10 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
-import {ThemeProvider} from 'styled-components';
-import {MenuButton} from './index';
 import {colors} from 'utils/constants';
+import {MenuButton} from './index';
+import {ThemeProvider} from 'styled-components';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const menuButtonNotes = `# Menu Button Notes`;
 

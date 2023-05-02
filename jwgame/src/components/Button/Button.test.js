@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
-import {Button} from './index';
 import renderer from 'react-test-renderer';
+import {Button} from './index';
 
 it('renders correctly', () => {
     renderer.create(<Button />);

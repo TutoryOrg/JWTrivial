@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
-import {ArrowButton} from './index';
 import renderer from 'react-test-renderer';
+import {ArrowButton} from './index';
 
 describe('ArrowButton', () => {
     const defaultProps = {

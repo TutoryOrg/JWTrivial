@@ -1,11 +1,11 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
-import {ThemeProvider} from 'styled-components';
 import {Button} from './index';
+import {ThemeProvider} from 'styled-components';
 import {fontSizes, gridSizes} from 'utils/constants';
 import {scale, verticalScale} from 'utils/scaleFunctions';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const buttonNotes = ` # Button Notes`;
 

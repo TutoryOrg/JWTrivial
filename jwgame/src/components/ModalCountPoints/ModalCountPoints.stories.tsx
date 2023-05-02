@@ -1,8 +1,8 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
 import {ThemeProvider} from 'styled-components';
 import {ModalCountPoints} from '.';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const modalCountPointsNotes = `# Modal Count Points Notes`;
 

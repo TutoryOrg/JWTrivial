@@ -1,11 +1,11 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
+import {Text} from './index';
+import {scale} from 'utils/scaleFunctions';
 import {fontSizes} from 'utils/constants';
 import {ThemeProvider} from 'styled-components';
-import {scale} from 'utils/scaleFunctions';
-import {Text} from './index';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const TextNotes = `# Text Notes`;
 

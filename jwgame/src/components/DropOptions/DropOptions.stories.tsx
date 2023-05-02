@@ -1,9 +1,9 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {lightTheme, darkTheme} from '../../themes';
-import {ThemeProvider} from 'styled-components';
 import {DropOptions} from './index';
+import {ThemeProvider} from 'styled-components';
 import {ViewStoriesContainer} from 'components/ViewStories';
+import {lightTheme, darkTheme} from '../../themes';
+import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 const dropNotes = `
 # Dropdown Options Notes 
