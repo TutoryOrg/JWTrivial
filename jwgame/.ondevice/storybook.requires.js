@@ -5,7 +5,18 @@ import {
   addDecorator,
   addParameters,
   addArgsEnhancer,
+  clearDecorators,
 } from "@storybook/react-native";
+
+global.STORIES = [
+  {
+    titlePrefix: "",
+    directory: "./src/components",
+    files: "**/*.stories.?(ts|tsx|js|jsx)",
+    importPathMatcher:
+      "^\\.[\\\\/](?:src\\/components(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(?:ts|tsx|js|jsx)?)$",
+  },
+];
 
 import "@storybook/addon-ondevice-notes/register";
 import "@storybook/addon-ondevice-controls/register";
@@ -17,6 +28,14 @@ import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addAr
 import { decorators, parameters } from "./preview";
 
 if (decorators) {
+  if (__DEV__) {
+    // stops the warning from showing on every HMR
+    require("react-native").LogBox.ignoreLogs([
+      "`clearDecorators` is deprecated and will be removed in Storybook 7.0",
+    ]);
+  }
+  // workaround for global decorators getting infinitely applied on HMR, see https://github.com/storybookjs/react-native/issues/185
+  clearDecorators();
   decorators.forEach((decorator) => addDecorator(decorator));
 }
 
@@ -24,25 +43,24 @@ if (parameters) {
   addParameters(parameters);
 }
 
-// temporary fix for https://github.com/storybookjs/react-native/issues/327 whilst the issue is investigated
 try {
   argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 } catch {}
 
 const getStories = () => {
-  return [
-    require("../src/components/ArrowButton/ArrowButton.stories.tsx"),
-    require("../src/components/Button/Button.stories.tsx"),
-    require("../src/components/DropOptions/DropOptions.stories.tsx"),
-    require("../src/components/LabelPointsInfo/LabelPointsInfo.stories.tsx"),
-    require("../src/components/MenuButton/MenuButton.stories.tsx"),
-    require("../src/components/ModalCountPoints/ModalCountPoints.stories.tsx"),
-    require("../src/components/OptionButton/OptionButton.stories.tsx"),
-    require("../src/components/PointsCounter/PointsCounter.stories.tsx"),
-    require("../src/components/Text/Text.stories.tsx"),
-    require("../src/components/TextInput/TextInput.stories.tsx"),
-    require("../src/components/Timer/Timer.stories.tsx"),
-  ];
+  return {
+    "./src/components/ArrowButton/ArrowButton.stories.tsx": require("../src/components/ArrowButton/ArrowButton.stories.tsx"),
+    "./src/components/Button/Button.stories.tsx": require("../src/components/Button/Button.stories.tsx"),
+    "./src/components/DropOptions/DropOptions.stories.tsx": require("../src/components/DropOptions/DropOptions.stories.tsx"),
+    "./src/components/LabelPointsInfo/LabelPointsInfo.stories.tsx": require("../src/components/LabelPointsInfo/LabelPointsInfo.stories.tsx"),
+    "./src/components/MenuButton/MenuButton.stories.tsx": require("../src/components/MenuButton/MenuButton.stories.tsx"),
+    "./src/components/ModalCountPoints/ModalCountPoints.stories.tsx": require("../src/components/ModalCountPoints/ModalCountPoints.stories.tsx"),
+    "./src/components/OptionButton/OptionButton.stories.tsx": require("../src/components/OptionButton/OptionButton.stories.tsx"),
+    "./src/components/PointsCounter/PointsCounter.stories.tsx": require("../src/components/PointsCounter/PointsCounter.stories.tsx"),
+    "./src/components/Text/Text.stories.tsx": require("../src/components/Text/Text.stories.tsx"),
+    "./src/components/TextInput/TextInput.stories.tsx": require("../src/components/TextInput/TextInput.stories.tsx"),
+    "./src/components/Timer/Timer.stories.tsx": require("../src/components/Timer/Timer.stories.tsx"),
+  };
 };
 
 configure(getStories, module, false);
