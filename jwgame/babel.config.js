@@ -8,6 +8,5 @@ module.exports = {
                 extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
             },
         ],
-        '@babel/plugin-proposal-export-namespace-from',
     ],
 };

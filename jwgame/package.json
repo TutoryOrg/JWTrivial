@@ -16,12 +16,11 @@
         "eject": "react-native eject",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
         "prettify": "prettier --write \"src/**/*.ts*\"",
-        "update-stories": "sb-rn-get-stories --config-path .ondevice",
-        "prestart": "npm run update-stories"
+        "update-stories": "sb-rn-get-stories --config-path .ondevice"
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^1.17.11",
-        "@react-native-community/cli-platform-ios": "^6.2.0",
+        "@react-native-community/cli-platform-ios": "^6.0.0",
         "@react-native-community/datetimepicker": "^6.1.2",
         "@react-native-community/hooks": "^2.8.1",
         "@react-native-community/slider": "^4.2.1",
@@ -38,12 +37,12 @@
         "react-is": "^18.2.0",
         "react-native": "0.68.1",
         "react-native-config": "^1.4.6",
-        "react-native-gesture-handler": "^2.0.0",
+        "react-native-gesture-handler": "2.8.0",
         "react-native-reanimated": "^2.9.1",
         "react-native-safe-area-context": "^3.3.2",
         "react-native-screens": "^3.15.0",
         "react-native-web": "^0.17.7",
-        "react-redux": "^8.0.5",
+        "react-redux": "^7.2.9",
         "styled-components": "^5.3.3"
     },
     "devDependencies": {
@@ -52,7 +51,7 @@
         "@react-native-community/eslint-config": "^2.0.0",
         "@redux-devtools/core": "^3.13.1",
         "@testing-library/dom": "^8.20.0",
-        "@testing-library/react-native": "^11.5.2",
+        "@testing-library/react-native": "^7.0.2",
         "@testing-library/user-event": "^14.4.3",
         "@types/lodash": "^4.14.177",
         "@types/react-native": "^0.66.4",
